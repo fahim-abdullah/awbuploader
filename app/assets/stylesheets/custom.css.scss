@@ -1,0 +1,80 @@
+@import "bootstrap";
+
+* {
+    font-family: 'Quicksand', sans-serif;
+}
+
+.navbar {
+    background-image: linear-gradient(to right, #F00000, #E9233D);
+}
+
+.navbar-toggler {
+    top: 0%;
+    left: 100%;
+    transform: translate(-150%, 35%);
+    position: fixed;
+}
+
+.nav-link {
+    letter-spacing: 0.1px;
+    font-weight: 600;
+    margin: 0 10px;
+    font-size: 14px;
+    color: white;
+    text-decoration: none;
+}
+
+.nav-link:hover {
+    color: white; 
+}
+
+#msg {
+    margin-top: 40px;
+    color: black;
+}
+
+.red-heading {
+    font-family: 'Cabin', sans-serif;
+    margin: 20px 30px;
+}
+
+.text {
+	padding: 0; 
+	margin: 0 30px;
+}
+
+.awbField {
+    padding: 10px;
+    font-size: 12px;
+    margin: 2px;
+    border: none;
+    border: 1px solid black;
+    border-radius: 1px;
+}
+
+.uploadBtn {
+    padding: 2px;
+    color: black;
+}
+
+.submit {
+    font-weight: 600;
+    padding: 10px 30px;
+    border: none;
+    border: 1px solid #F00000;
+    color: white;
+    margin: 5px 2px;
+    border-radius: 3px;
+    font-size: 12px;
+    height: 40px;
+    width: 130px;
+    transition: 0.3s;
+    background-color: #F00000;
+    text-decoration: none;
+}
+
+.submit:hover {
+    color: white;
+    background-color: black;
+    border: 1px solid black;
+}

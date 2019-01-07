@@ -1,0 +1,12 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Awbnum:</strong>
+  <%= @record.awbnum %>
+</p>
+
+<%= link_to 'View', @record.file, target: '_blank' %> |
+<%= link_to 'Download', @record.file, download: '' %> |
+
+<%= link_to 'Edit', edit_record_path(@record) %> |
+<%= link_to 'Back', records_path %>

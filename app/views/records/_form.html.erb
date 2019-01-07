@@ -1,0 +1,19 @@
+<%= form_with(model: record, local: true, class: 'form-horizontal') do |form| %>
+  <% if record.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(record.errors.count, "error") %> prohibited this record from being saved:</h2>
+
+      <ul>
+      <% record.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+    <%= form.text_field :awbnum, :required => true, class: 'awbField col-10', placeholder: 'AWB Number' %>
+    <%= form.file_field :file, :required => true, class: 'uploadBtn' %>
+    <br>
+    <%= form.submit 'Submit', :class => 'submit' %>
+
+<% end %>

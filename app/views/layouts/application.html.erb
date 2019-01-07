@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>RcUploader</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%=  stylesheet_link_tag 'application', 'https://fonts.googleapis.com/css?family=Cabin|Quicksand' %>
+
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <nav class="navbar navbar-expand-md static-top">
+      <div class="container">
+          <a class="navbar-brand" href="#">
+              <img src="https://www.redcargo.asia/wp-content/uploads/2018/07/cargo-asia-logo.png" width="20%" alt="" style="background-color: white;">
+          </a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive">
+              <%= image_tag("ham.png", :alt => "menu", :style => "width: 25px") %>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarResponsive">
+              <ul class="navbar-nav ml-auto">
+                  <li class="nav-item">
+                      <a class="nav-link" href="#">RedCargo Site</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link" href="#">Admin Login</a>
+                  </li>
+              </ul>
+          </div>
+      </div>
+    </nav>
+
+    <%= yield %>
+
+  </body>
+</html>
