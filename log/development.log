@@ -4008,3 +4008,75 @@ ActionView::Template::Error (undefined method `find' for nil:NilClass):
   
 app/views/records/index.html.erb:26:in `block in _app_views_records_index_html_erb__3894993686723011664_70331869244600'
 app/views/records/index.html.erb:20:in `_app_views_records_index_html_erb__3894993686723011664_70331869244600'
+Started GET "/" for 127.0.0.1 at 2019-01-07 17:54:29 +0800
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/fahimabdullah/.rvm/gems/ruby-2.4.1/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+Processing by RecordsController#index as HTML
+  Rendering records/index.html.erb within layouts/application
+  [1m[36mRecord Load (0.5ms)[0m  [1m[34mSELECT "records".* FROM "records"[0m
+  ↳ app/views/records/index.html.erb:20
+  Rendered records/index.html.erb within layouts/application (16.6ms)
+Completed 500 Internal Server Error in 38ms (ActiveRecord: 1.1ms)
+
+
+  
+ActionView::Template::Error (undefined method `find' for nil:NilClass):
+    23:               <td><%= link_to 'Show', record %></td>
+    24:               <td><%= link_to 'Edit', edit_record_path(record) %></td>
+    25:               <td><%= link_to 'Destroy', record, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    26:               <td><%= link_to 'Download', @record.find(record.id), download: ''  %></td>
+    27:             </tr>
+    28:           <% end %>
+    29:         </tbody>
+  
+app/views/records/index.html.erb:26:in `block in _app_views_records_index_html_erb___2134452060537521040_70196554628720'
+app/views/records/index.html.erb:20:in `_app_views_records_index_html_erb___2134452060537521040_70196554628720'
+Started GET "/" for 127.0.0.1 at 2019-01-07 17:54:46 +0800
+Processing by RecordsController#index as HTML
+  Rendering records/index.html.erb within layouts/application
+  [1m[36mRecord Load (0.3ms)[0m  [1m[34mSELECT "records".* FROM "records"[0m
+  ↳ app/views/records/index.html.erb:20
+  Rendered records/index.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 417ms (Views: 413.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/records/new" for 127.0.0.1 at 2019-01-07 17:54:52 +0800
+Processing by RecordsController#new as HTML
+  Rendering records/new.html.erb within layouts/application
+  Rendered records/_form.html.erb (26.4ms)
+  Rendered records/new.html.erb within layouts/application (31.4ms)
+Completed 200 OK in 156ms (Views: 144.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/records" for 127.0.0.1 at 2019-01-07 17:54:54 +0800
+Processing by RecordsController#index as HTML
+  Rendering records/index.html.erb within layouts/application
+  [1m[36mRecord Load (0.4ms)[0m  [1m[34mSELECT "records".* FROM "records"[0m
+  ↳ app/views/records/index.html.erb:20
+  Rendered records/index.html.erb within layouts/application (6.1ms)
+Completed 200 OK in 111ms (Views: 105.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/records/1" for 127.0.0.1 at 2019-01-07 17:54:57 +0800
+Processing by RecordsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mRecord Load (0.3ms)[0m  [1m[34mSELECT  "records".* FROM "records" WHERE "records"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/records_controller.rb:67
+  Rendering records/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.5ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 1], ["record_type", "Record"], ["name", "file"], ["LIMIT", 1]]
+  ↳ app/views/records/show.html.erb:8
+  [1m[36mActiveStorage::Blob Load (0.4ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/records/show.html.erb:8
+  Rendered records/show.html.erb within layouts/application (77.5ms)
+Completed 200 OK in 149ms (Views: 129.7ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/records" for 127.0.0.1 at 2019-01-07 17:55:00 +0800
+Processing by RecordsController#index as HTML
+  Rendering records/index.html.erb within layouts/application
+  [1m[36mRecord Load (0.4ms)[0m  [1m[34mSELECT "records".* FROM "records"[0m
+  ↳ app/views/records/index.html.erb:20
+  Rendered records/index.html.erb within layouts/application (6.6ms)
+Completed 200 OK in 106ms (Views: 100.1ms | ActiveRecord: 0.4ms)
+
+
