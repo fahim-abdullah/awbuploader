@@ -4,7 +4,8 @@ class RecordsController < ApplicationController
   # GET /records
   # GET /records.json
   def index
-    @records = Record.all
+    @records = Record.all.with_attached_file
+    # @files = Record.all
   end
 
   # GET /records/1

@@ -4080,3 +4080,1635 @@ Processing by RecordsController#index as HTML
 Completed 200 OK in 106ms (Views: 100.1ms | ActiveRecord: 0.4ms)
 
 
+Started GET "/" for 127.0.0.1 at 2019-01-08 09:43:18 +0800
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/fahimabdullah/.rvm/gems/ruby-2.4.1/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+Processing by RecordsController#index as HTML
+  Rendering records/index.html.erb within layouts/application
+  [1m[36mRecord Load (0.4ms)[0m  [1m[34mSELECT "records".* FROM "records"[0m
+  ↳ app/views/records/index.html.erb:20
+  Rendered records/index.html.erb within layouts/application (19.8ms)
+Completed 500 Internal Server Error in 42ms (ActiveRecord: 1.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `find' for #<Record:0x007fa7f50b0208>):
+    20:           <% @records.each do |record| %>
+    21:             <tr>
+    22:               <td><%= record.awbnum %></td>
+    23:               <td><%= (record.find(:id).file).to_s %></td>
+    24:               <td><%= link_to 'Show', record %></td>
+    25:               <td><%= link_to 'Edit', edit_record_path(record) %></td>
+    26:               <td><%= link_to 'Destroy', record, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  
+app/views/records/index.html.erb:23:in `block in _app_views_records_index_html_erb__4036793892803070696_70179673396920'
+app/views/records/index.html.erb:20:in `_app_views_records_index_html_erb__4036793892803070696_70179673396920'
+  [1m[36mRecord Load (1.4ms)[0m  [1m[34mSELECT  "records".* FROM "records" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mRecord Load (0.4ms)[0m  [1m[34mSELECT  "records".* FROM "records" WHERE "records"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mRecord Load (0.5ms)[0m  [1m[34mSELECT  "records".* FROM "records" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mRecord Load (0.3ms)[0m  [1m[34mSELECT  "records".* FROM "records" ORDER BY "records"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mRecord Load (0.3ms)[0m  [1m[34mSELECT  "records".* FROM "records" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mActiveStorage::Attachment Load (0.8ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? AND "active_storage_attachments"."record_id" IN (?, ?, ?, ?, ?)[0m  [["record_type", "Record"], ["name", "file"], ["record_id", 1], ["record_id", 2], ["record_id", 3], ["record_id", 4], ["record_id", 5]]
+  [1m[36mActiveStorage::Blob Load (0.5ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" IN (?, ?, ?, ?)[0m  [["id", 1], ["id", 2], ["id", 3], ["id", 4]]
+  [1m[36mRecord Load (0.2ms)[0m  [1m[34mSELECT  "records".* FROM "records" ORDER BY "records"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? AND "active_storage_attachments"."record_id" = ?[0m  [["record_type", "Record"], ["name", "file"], ["record_id", 5]]
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ?[0m  [["id", 4]]
+  [1m[36mRecord Load (0.2ms)[0m  [1m[34mSELECT  "records".* FROM "records" ORDER BY "records"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? AND "active_storage_attachments"."record_id" = ?[0m  [["record_type", "Record"], ["name", "file"], ["record_id", 5]]
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ?[0m  [["id", 4]]
+Started GET "/" for 127.0.0.1 at 2019-01-08 09:53:20 +0800
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/fahimabdullah/.rvm/gems/ruby-2.4.1/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+Processing by RecordsController#index as HTML
+  Rendering records/index.html.erb within layouts/application
+  [1m[36mRecord Load (0.5ms)[0m  [1m[34mSELECT "records".* FROM "records"[0m
+  ↳ app/views/records/index.html.erb:20
+  [1m[36mActiveStorage::Attachment Load (0.7ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? AND "active_storage_attachments"."record_id" IN (?, ?, ?, ?, ?)[0m  [["record_type", "Record"], ["name", "file"], ["record_id", 1], ["record_id", 2], ["record_id", 3], ["record_id", 4], ["record_id", 5]]
+  ↳ app/views/records/index.html.erb:20
+  [1m[36mActiveStorage::Blob Load (0.5ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" IN (?, ?, ?, ?)[0m  [["id", 1], ["id", 2], ["id", 3], ["id", 4]]
+  ↳ app/views/records/index.html.erb:20
+  Rendered records/index.html.erb within layouts/application (68.0ms)
+Completed 200 OK in 395ms (Views: 378.1ms | ActiveRecord: 4.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-01-08 09:53:39 +0800
+Processing by RecordsController#index as HTML
+  Rendering records/index.html.erb within layouts/application
+  [1m[36mRecord Load (0.2ms)[0m  [1m[34mSELECT "records".* FROM "records"[0m
+  ↳ app/views/records/index.html.erb:21
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? AND "active_storage_attachments"."record_id" IN (?, ?, ?, ?, ?)[0m  [["record_type", "Record"], ["name", "file"], ["record_id", 1], ["record_id", 2], ["record_id", 3], ["record_id", 4], ["record_id", 5]]
+  ↳ app/views/records/index.html.erb:21
+  [1m[36mActiveStorage::Blob Load (0.4ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" IN (?, ?, ?, ?)[0m  [["id", 1], ["id", 2], ["id", 3], ["id", 4]]
+  ↳ app/views/records/index.html.erb:21
+  Rendered records/index.html.erb within layouts/application (7.3ms)
+Completed 200 OK in 95ms (Views: 89.4ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-01-08 09:54:35 +0800
+Processing by RecordsController#index as HTML
+  Rendering records/index.html.erb within layouts/application
+  [1m[36mRecord Load (0.2ms)[0m  [1m[34mSELECT "records".* FROM "records"[0m
+  ↳ app/views/records/index.html.erb:21
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? AND "active_storage_attachments"."record_id" IN (?, ?, ?, ?, ?)[0m  [["record_type", "Record"], ["name", "file"], ["record_id", 1], ["record_id", 2], ["record_id", 3], ["record_id", 4], ["record_id", 5]]
+  ↳ app/views/records/index.html.erb:21
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" IN (?, ?, ?, ?)[0m  [["id", 1], ["id", 2], ["id", 3], ["id", 4]]
+  ↳ app/views/records/index.html.erb:21
+  Rendered records/index.html.erb within layouts/application (21.7ms)
+Completed 500 Internal Server Error in 31ms (ActiveRecord: 0.7ms)
+
+
+  
+ActionView::Template::Error (to_model delegated to attachment, but attachment is nil):
+    25:               <td><%= link_to 'Show', record %></td>
+    26:               <td><%= link_to 'Edit', edit_record_path(record) %></td>
+    27:               <td><%= link_to 'Destroy', record, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    28:               <td><%= link_to 'Download', record.file, download: '' %></td>
+    29:             </tr>
+    30:           <% end %>
+    31:         </tbody>
+  
+app/views/records/index.html.erb:28:in `block in _app_views_records_index_html_erb___711269335863912602_70120989271600'
+app/views/records/index.html.erb:21:in `_app_views_records_index_html_erb___711269335863912602_70120989271600'
+Started GET "/" for 127.0.0.1 at 2019-01-08 09:57:42 +0800
+Processing by RecordsController#index as HTML
+  Rendering records/index.html.erb within layouts/application
+  [1m[36mRecord Load (1.4ms)[0m  [1m[34mSELECT "records".* FROM "records"[0m
+  ↳ app/views/records/index.html.erb:21
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? AND "active_storage_attachments"."record_id" IN (?, ?, ?, ?, ?)[0m  [["record_type", "Record"], ["name", "file"], ["record_id", 1], ["record_id", 2], ["record_id", 3], ["record_id", 4], ["record_id", 5]]
+  ↳ app/views/records/index.html.erb:21
+  [1m[36mActiveStorage::Blob Load (0.5ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" IN (?, ?, ?, ?)[0m  [["id", 1], ["id", 2], ["id", 3], ["id", 4]]
+  ↳ app/views/records/index.html.erb:21
+  Rendered records/index.html.erb within layouts/application (24.0ms)
+Completed 500 Internal Server Error in 46ms (ActiveRecord: 2.3ms)
+
+
+  
+ActionView::Template::Error (to_model delegated to attachment, but attachment is nil):
+    25:               <td><%= link_to 'Show', record %></td>
+    26:               <td><%= link_to 'Edit', edit_record_path(record) %></td>
+    27:               <td><%= link_to 'Destroy', record, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    28:               <td><%= link_to 'Download', record.file, download: '' %></td>
+    29:             </tr>
+    30:           <% end %>
+    31:         </tbody>
+  
+app/views/records/index.html.erb:28:in `block in _app_views_records_index_html_erb___711269335863912602_70120955013920'
+app/views/records/index.html.erb:21:in `_app_views_records_index_html_erb___711269335863912602_70120955013920'
+Started GET "/" for 127.0.0.1 at 2019-01-08 09:58:06 +0800
+Processing by RecordsController#index as HTML
+  Rendering records/index.html.erb within layouts/application
+  [1m[36mRecord Load (0.2ms)[0m  [1m[34mSELECT "records".* FROM "records"[0m
+  ↳ app/views/records/index.html.erb:21
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? AND "active_storage_attachments"."record_id" IN (?, ?, ?, ?, ?)[0m  [["record_type", "Record"], ["name", "file"], ["record_id", 1], ["record_id", 2], ["record_id", 3], ["record_id", 4], ["record_id", 5]]
+  ↳ app/views/records/index.html.erb:21
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" IN (?, ?, ?, ?)[0m  [["id", 1], ["id", 2], ["id", 3], ["id", 4]]
+  ↳ app/views/records/index.html.erb:21
+  Rendered records/index.html.erb within layouts/application (9.1ms)
+Completed 500 Internal Server Error in 19ms (ActiveRecord: 0.7ms)
+
+
+  
+ActionView::Template::Error (to_model delegated to attachment, but attachment is nil):
+    25:               <td><%= link_to 'Show', record %></td>
+    26:               <td><%= link_to 'Edit', edit_record_path(record) %></td>
+    27:               <td><%= link_to 'Destroy', record, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    28:               <td><%= link_to 'Download', record.file %></td>
+    29:             </tr>
+    30:           <% end %>
+    31:         </tbody>
+  
+app/views/records/index.html.erb:28:in `block in _app_views_records_index_html_erb___711269335863912602_70120937091740'
+app/views/records/index.html.erb:21:in `_app_views_records_index_html_erb___711269335863912602_70120937091740'
+  [1m[36mRecord Load (0.4ms)[0m  [1m[34mSELECT  "records".* FROM "records" ORDER BY "records"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? AND "active_storage_attachments"."record_id" = ?[0m  [["record_type", "Record"], ["name", "file"], ["record_id", 5]]
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ?[0m  [["id", 4]]
+Started GET "/" for 127.0.0.1 at 2019-01-08 10:00:24 +0800
+Processing by RecordsController#index as HTML
+  Rendering records/index.html.erb within layouts/application
+  [1m[36mRecord Load (0.2ms)[0m  [1m[34mSELECT "records".* FROM "records"[0m
+  ↳ app/views/records/index.html.erb:21
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? AND "active_storage_attachments"."record_id" IN (?, ?, ?, ?, ?)[0m  [["record_type", "Record"], ["name", "file"], ["record_id", 1], ["record_id", 2], ["record_id", 3], ["record_id", 4], ["record_id", 5]]
+  ↳ app/views/records/index.html.erb:21
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" IN (?, ?, ?, ?)[0m  [["id", 1], ["id", 2], ["id", 3], ["id", 4]]
+  ↳ app/views/records/index.html.erb:21
+  Rendered records/index.html.erb within layouts/application (10.1ms)
+Completed 500 Internal Server Error in 19ms (ActiveRecord: 0.8ms)
+
+
+  
+ActionView::Template::Error (to_model delegated to attachment, but attachment is nil):
+    25:               <td><%= link_to 'Show', record %></td>
+    26:               <td><%= link_to 'Edit', edit_record_path(record) %></td>
+    27:               <td><%= link_to 'Destroy', record, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    28:               <!-- <td><%= link_to 'Download', record.file %></td> -->
+    29:             </tr>
+    30:           <% end %>
+    31:         </tbody>
+  
+app/views/records/index.html.erb:28:in `block in _app_views_records_index_html_erb___711269335863912602_70120984249800'
+app/views/records/index.html.erb:21:in `_app_views_records_index_html_erb___711269335863912602_70120984249800'
+Started GET "/" for 127.0.0.1 at 2019-01-08 10:00:36 +0800
+Processing by RecordsController#index as HTML
+  Rendering records/index.html.erb within layouts/application
+  [1m[36mRecord Load (0.2ms)[0m  [1m[34mSELECT "records".* FROM "records"[0m
+  ↳ app/views/records/index.html.erb:21
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? AND "active_storage_attachments"."record_id" IN (?, ?, ?, ?, ?)[0m  [["record_type", "Record"], ["name", "file"], ["record_id", 1], ["record_id", 2], ["record_id", 3], ["record_id", 4], ["record_id", 5]]
+  ↳ app/views/records/index.html.erb:21
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" IN (?, ?, ?, ?)[0m  [["id", 1], ["id", 2], ["id", 3], ["id", 4]]
+  ↳ app/views/records/index.html.erb:21
+  Rendered records/index.html.erb within layouts/application (5.9ms)
+Completed 200 OK in 82ms (Views: 77.5ms | ActiveRecord: 0.7ms)
+
+
+  [1m[36mRecord Load (0.2ms)[0m  [1m[34mSELECT  "records".* FROM "records" ORDER BY "records"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? AND "active_storage_attachments"."record_id" = ?[0m  [["record_type", "Record"], ["name", "file"], ["record_id", 5]]
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ?[0m  [["id", 4]]
+  [1m[36mRecord Load (0.3ms)[0m  [1m[34mSELECT  "records".* FROM "records" ORDER BY "records"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? AND "active_storage_attachments"."record_id" = ?[0m  [["record_type", "Record"], ["name", "file"], ["record_id", 5]]
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ?[0m  [["id", 4]]
+  [1m[36mRecord Load (0.2ms)[0m  [1m[34mSELECT  "records".* FROM "records" ORDER BY "records"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? AND "active_storage_attachments"."record_id" = ?[0m  [["record_type", "Record"], ["name", "file"], ["record_id", 5]]
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ?[0m  [["id", 4]]
+  [1m[36mRecord Load (0.3ms)[0m  [1m[34mSELECT  "records".* FROM "records" ORDER BY "records"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? AND "active_storage_attachments"."record_id" = ?[0m  [["record_type", "Record"], ["name", "file"], ["record_id", 5]]
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ?[0m  [["id", 4]]
+  [1m[36mRecord Load (0.2ms)[0m  [1m[34mSELECT  "records".* FROM "records" ORDER BY "records"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? AND "active_storage_attachments"."record_id" = ?[0m  [["record_type", "Record"], ["name", "file"], ["record_id", 5]]
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ?[0m  [["id", 4]]
+  [1m[36mRecord Load (0.3ms)[0m  [1m[34mSELECT  "records".* FROM "records" ORDER BY "records"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? AND "active_storage_attachments"."record_id" = ?[0m  [["record_type", "Record"], ["name", "file"], ["record_id", 5]]
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ?[0m  [["id", 4]]
+  [1m[36mRecord Load (0.1ms)[0m  [1m[34mSELECT  "records".* FROM "records" ORDER BY "records"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? AND "active_storage_attachments"."record_id" = ?[0m  [["record_type", "Record"], ["name", "file"], ["record_id", 5]]
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ?[0m  [["id", 4]]
+Started GET "/" for 127.0.0.1 at 2019-01-08 10:04:16 +0800
+Processing by RecordsController#index as HTML
+  Rendering records/index.html.erb within layouts/application
+  [1m[36mRecord Load (0.2ms)[0m  [1m[34mSELECT "records".* FROM "records"[0m
+  ↳ app/views/records/index.html.erb:21
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? AND "active_storage_attachments"."record_id" IN (?, ?, ?, ?, ?)[0m  [["record_type", "Record"], ["name", "file"], ["record_id", 1], ["record_id", 2], ["record_id", 3], ["record_id", 4], ["record_id", 5]]
+  ↳ app/views/records/index.html.erb:21
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" IN (?, ?, ?, ?)[0m  [["id", 1], ["id", 2], ["id", 3], ["id", 4]]
+  ↳ app/views/records/index.html.erb:21
+  Rendered records/index.html.erb within layouts/application (8.1ms)
+Completed 200 OK in 86ms (Views: 82.2ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-01-08 10:04:21 +0800
+Processing by RecordsController#index as HTML
+  Rendering records/index.html.erb within layouts/application
+  [1m[36mRecord Load (0.2ms)[0m  [1m[34mSELECT "records".* FROM "records"[0m
+  ↳ app/views/records/index.html.erb:21
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? AND "active_storage_attachments"."record_id" IN (?, ?, ?, ?, ?)[0m  [["record_type", "Record"], ["name", "file"], ["record_id", 1], ["record_id", 2], ["record_id", 3], ["record_id", 4], ["record_id", 5]]
+  ↳ app/views/records/index.html.erb:21
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" IN (?, ?, ?, ?)[0m  [["id", 1], ["id", 2], ["id", 3], ["id", 4]]
+  ↳ app/views/records/index.html.erb:21
+  Rendered records/index.html.erb within layouts/application (7.6ms)
+Completed 200 OK in 64ms (Views: 59.9ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-01-08 10:04:22 +0800
+Processing by RecordsController#index as HTML
+  Rendering records/index.html.erb within layouts/application
+  [1m[36mRecord Load (0.2ms)[0m  [1m[34mSELECT "records".* FROM "records"[0m
+  ↳ app/views/records/index.html.erb:21
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? AND "active_storage_attachments"."record_id" IN (?, ?, ?, ?, ?)[0m  [["record_type", "Record"], ["name", "file"], ["record_id", 1], ["record_id", 2], ["record_id", 3], ["record_id", 4], ["record_id", 5]]
+  ↳ app/views/records/index.html.erb:21
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" IN (?, ?, ?, ?)[0m  [["id", 1], ["id", 2], ["id", 3], ["id", 4]]
+  ↳ app/views/records/index.html.erb:21
+  Rendered records/index.html.erb within layouts/application (7.0ms)
+Completed 200 OK in 68ms (Views: 64.7ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-01-08 10:04:23 +0800
+Processing by RecordsController#index as HTML
+  Rendering records/index.html.erb within layouts/application
+  [1m[36mRecord Load (0.4ms)[0m  [1m[34mSELECT "records".* FROM "records"[0m
+  ↳ app/views/records/index.html.erb:21
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? AND "active_storage_attachments"."record_id" IN (?, ?, ?, ?, ?)[0m  [["record_type", "Record"], ["name", "file"], ["record_id", 1], ["record_id", 2], ["record_id", 3], ["record_id", 4], ["record_id", 5]]
+  ↳ app/views/records/index.html.erb:21
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" IN (?, ?, ?, ?)[0m  [["id", 1], ["id", 2], ["id", 3], ["id", 4]]
+  ↳ app/views/records/index.html.erb:21
+  Rendered records/index.html.erb within layouts/application (7.2ms)
+Completed 200 OK in 79ms (Views: 75.2ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/records/new" for 127.0.0.1 at 2019-01-08 10:04:59 +0800
+Processing by RecordsController#new as HTML
+  Rendering records/new.html.erb within layouts/application
+  Rendered records/_form.html.erb (26.8ms)
+  Rendered records/new.html.erb within layouts/application (35.6ms)
+Completed 200 OK in 123ms (Views: 117.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/records" for 127.0.0.1 at 2019-01-08 10:05:02 +0800
+Processing by RecordsController#index as HTML
+  Rendering records/index.html.erb within layouts/application
+  [1m[36mRecord Load (0.3ms)[0m  [1m[34mSELECT "records".* FROM "records"[0m
+  ↳ app/views/records/index.html.erb:21
+  [1m[36mActiveStorage::Attachment Load (0.5ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? AND "active_storage_attachments"."record_id" IN (?, ?, ?, ?, ?)[0m  [["record_type", "Record"], ["name", "file"], ["record_id", 1], ["record_id", 2], ["record_id", 3], ["record_id", 4], ["record_id", 5]]
+  ↳ app/views/records/index.html.erb:21
+  [1m[36mActiveStorage::Blob Load (0.7ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" IN (?, ?, ?, ?)[0m  [["id", 1], ["id", 2], ["id", 3], ["id", 4]]
+  ↳ app/views/records/index.html.erb:21
+  Rendered records/index.html.erb within layouts/application (17.7ms)
+Completed 200 OK in 108ms (Views: 100.9ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/records/new" for 127.0.0.1 at 2019-01-08 10:05:04 +0800
+Processing by RecordsController#new as HTML
+  Rendering records/new.html.erb within layouts/application
+  Rendered records/_form.html.erb (10.5ms)
+  Rendered records/new.html.erb within layouts/application (17.2ms)
+Completed 200 OK in 110ms (Views: 87.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/records" for 127.0.0.1 at 2019-01-08 10:05:05 +0800
+Processing by RecordsController#index as HTML
+  Rendering records/index.html.erb within layouts/application
+  [1m[36mRecord Load (0.5ms)[0m  [1m[34mSELECT "records".* FROM "records"[0m
+  ↳ app/views/records/index.html.erb:21
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? AND "active_storage_attachments"."record_id" IN (?, ?, ?, ?, ?)[0m  [["record_type", "Record"], ["name", "file"], ["record_id", 1], ["record_id", 2], ["record_id", 3], ["record_id", 4], ["record_id", 5]]
+  ↳ app/views/records/index.html.erb:21
+  [1m[36mActiveStorage::Blob Load (0.5ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" IN (?, ?, ?, ?)[0m  [["id", 1], ["id", 2], ["id", 3], ["id", 4]]
+  ↳ app/views/records/index.html.erb:21
+  Rendered records/index.html.erb within layouts/application (14.2ms)
+Completed 200 OK in 106ms (Views: 100.6ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/records" for 127.0.0.1 at 2019-01-08 10:06:34 +0800
+Processing by RecordsController#index as HTML
+  Rendering records/index.html.erb within layouts/application
+  [1m[36mRecord Load (0.2ms)[0m  [1m[34mSELECT "records".* FROM "records"[0m
+  ↳ app/views/records/index.html.erb:21
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? AND "active_storage_attachments"."record_id" IN (?, ?, ?, ?, ?)[0m  [["record_type", "Record"], ["name", "file"], ["record_id", 1], ["record_id", 2], ["record_id", 3], ["record_id", 4], ["record_id", 5]]
+  ↳ app/views/records/index.html.erb:21
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" IN (?, ?, ?, ?)[0m  [["id", 1], ["id", 2], ["id", 3], ["id", 4]]
+  ↳ app/views/records/index.html.erb:21
+  Rendered records/index.html.erb within layouts/application (14.5ms)
+Completed 500 Internal Server Error in 26ms (ActiveRecord: 0.7ms)
+
+
+  
+ActionView::Template::Error (undefined method `signed_id' for #<Record:0x007f8c9bf429a8>):
+    25:               <td><%= link_to 'Show', record %></td>
+    26:               <td><%= link_to 'Edit', edit_record_path(record) %></td>
+    27:               <td><%= link_to 'Destroy', record, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    28:               <td><%= link_to record.file, rails_blob_path(record, disposition: 'preview') %></td>
+    29:             </tr>
+    30:           <% end %>
+    31:         </tbody>
+  
+app/views/records/index.html.erb:28:in `block in _app_views_records_index_html_erb___711269335863912602_70120982597520'
+app/views/records/index.html.erb:21:in `_app_views_records_index_html_erb___711269335863912602_70120982597520'
+Started GET "/records" for 127.0.0.1 at 2019-01-08 10:06:51 +0800
+Processing by RecordsController#index as HTML
+  Rendering records/index.html.erb within layouts/application
+  [1m[36mRecord Load (0.2ms)[0m  [1m[34mSELECT "records".* FROM "records"[0m
+  ↳ app/views/records/index.html.erb:21
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? AND "active_storage_attachments"."record_id" IN (?, ?, ?, ?, ?)[0m  [["record_type", "Record"], ["name", "file"], ["record_id", 1], ["record_id", 2], ["record_id", 3], ["record_id", 4], ["record_id", 5]]
+  ↳ app/views/records/index.html.erb:21
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" IN (?, ?, ?, ?)[0m  [["id", 1], ["id", 2], ["id", 3], ["id", 4]]
+  ↳ app/views/records/index.html.erb:21
+  Rendered records/index.html.erb within layouts/application (319.7ms)
+Completed 500 Internal Server Error in 334ms (ActiveRecord: 0.7ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `document' for #<#<Class:0x007f8c9f14a5e0>:0x007f8ca095afe0>):
+    25:               <td><%= link_to 'Show', record %></td>
+    26:               <td><%= link_to 'Edit', edit_record_path(record) %></td>
+    27:               <td><%= link_to 'Destroy', record, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    28:               <td><%= link_to record.file, rails_blob_path(document, disposition: 'preview') %></td>
+    29:             </tr>
+    30:           <% end %>
+    31:         </tbody>
+  
+app/views/records/index.html.erb:28:in `block in _app_views_records_index_html_erb___711269335863912602_70120983168540'
+app/views/records/index.html.erb:21:in `_app_views_records_index_html_erb___711269335863912602_70120983168540'
+Started GET "/records" for 127.0.0.1 at 2019-01-08 10:06:59 +0800
+Processing by RecordsController#index as HTML
+  Rendering records/index.html.erb within layouts/application
+  [1m[36mRecord Load (0.3ms)[0m  [1m[34mSELECT "records".* FROM "records"[0m
+  ↳ app/views/records/index.html.erb:21
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? AND "active_storage_attachments"."record_id" IN (?, ?, ?, ?, ?)[0m  [["record_type", "Record"], ["name", "file"], ["record_id", 1], ["record_id", 2], ["record_id", 3], ["record_id", 4], ["record_id", 5]]
+  ↳ app/views/records/index.html.erb:21
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" IN (?, ?, ?, ?)[0m  [["id", 1], ["id", 2], ["id", 3], ["id", 4]]
+  ↳ app/views/records/index.html.erb:21
+  Rendered records/index.html.erb within layouts/application (12.9ms)
+Completed 500 Internal Server Error in 23ms (ActiveRecord: 0.9ms)
+
+
+  
+ActionView::Template::Error (undefined method `signed_id' for #<Record:0x007f8ca0d11d28>):
+    25:               <td><%= link_to 'Show', record %></td>
+    26:               <td><%= link_to 'Edit', edit_record_path(record) %></td>
+    27:               <td><%= link_to 'Destroy', record, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    28:               <td><%= link_to record.file, rails_blob_path(record, disposition: 'preview') %></td>
+    29:             </tr>
+    30:           <% end %>
+    31:         </tbody>
+  
+app/views/records/index.html.erb:28:in `block in _app_views_records_index_html_erb___711269335863912602_70120985166240'
+app/views/records/index.html.erb:21:in `_app_views_records_index_html_erb___711269335863912602_70120985166240'
+Started GET "/records" for 127.0.0.1 at 2019-01-08 10:07:25 +0800
+Processing by RecordsController#index as HTML
+  Rendering records/index.html.erb within layouts/application
+  [1m[36mRecord Load (0.2ms)[0m  [1m[34mSELECT "records".* FROM "records"[0m
+  ↳ app/views/records/index.html.erb:21
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? AND "active_storage_attachments"."record_id" IN (?, ?, ?, ?, ?)[0m  [["record_type", "Record"], ["name", "file"], ["record_id", 1], ["record_id", 2], ["record_id", 3], ["record_id", 4], ["record_id", 5]]
+  ↳ app/views/records/index.html.erb:21
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" IN (?, ?, ?, ?)[0m  [["id", 1], ["id", 2], ["id", 3], ["id", 4]]
+  ↳ app/views/records/index.html.erb:21
+  Rendered records/index.html.erb within layouts/application (14.4ms)
+Completed 500 Internal Server Error in 26ms (ActiveRecord: 0.7ms)
+
+
+  
+ActionView::Template::Error (undefined method `filename' for #<Record:0x007f8c9f1a0a08>
+Did you mean?  file=):
+    25:               <td><%= link_to 'Show', record %></td>
+    26:               <td><%= link_to 'Edit', edit_record_path(record) %></td>
+    27:               <td><%= link_to 'Destroy', record, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    28:               <td><%= link_to record.filename, rails_blob_path(record, disposition: 'preview') %></td>
+    29:             </tr>
+    30:           <% end %>
+    31:         </tbody>
+  
+app/views/records/index.html.erb:28:in `block in _app_views_records_index_html_erb___711269335863912602_70120970895820'
+app/views/records/index.html.erb:21:in `_app_views_records_index_html_erb___711269335863912602_70120970895820'
+Started GET "/records" for 127.0.0.1 at 2019-01-08 10:08:14 +0800
+Processing by RecordsController#index as HTML
+  Rendering records/index.html.erb within layouts/application
+  [1m[36mRecord Load (0.2ms)[0m  [1m[34mSELECT "records".* FROM "records"[0m
+  ↳ app/views/records/index.html.erb:21
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? AND "active_storage_attachments"."record_id" IN (?, ?, ?, ?, ?)[0m  [["record_type", "Record"], ["name", "file"], ["record_id", 1], ["record_id", 2], ["record_id", 3], ["record_id", 4], ["record_id", 5]]
+  ↳ app/views/records/index.html.erb:21
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" IN (?, ?, ?, ?)[0m  [["id", 1], ["id", 2], ["id", 3], ["id", 4]]
+  ↳ app/views/records/index.html.erb:21
+  Rendered records/index.html.erb within layouts/application (12.6ms)
+Completed 500 Internal Server Error in 23ms (ActiveRecord: 0.6ms)
+
+
+  
+ActionView::Template::Error (undefined method `signed_id' for #<Record:0x007f8c9b1ad2e8>):
+    25:               <td><%= link_to 'Show', record %></td>
+    26:               <td><%= link_to 'Edit', edit_record_path(record) %></td>
+    27:               <td><%= link_to 'Destroy', record, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    28:               <td><%= link_to 'Download', rails_blob_path(record, disposition: 'preview') %></td>
+    29:             </tr>
+    30:           <% end %>
+    31:         </tbody>
+  
+app/views/records/index.html.erb:28:in `block in _app_views_records_index_html_erb___711269335863912602_70120983054860'
+app/views/records/index.html.erb:21:in `_app_views_records_index_html_erb___711269335863912602_70120983054860'
+Started GET "/records" for 127.0.0.1 at 2019-01-08 10:11:58 +0800
+Processing by RecordsController#index as HTML
+  Rendering records/index.html.erb within layouts/application
+  [1m[36mRecord Load (0.2ms)[0m  [1m[34mSELECT "records".* FROM "records"[0m
+  ↳ app/views/records/index.html.erb:21
+  [1m[36mActiveStorage::Attachment Load (1.0ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? AND "active_storage_attachments"."record_id" IN (?, ?, ?, ?, ?)[0m  [["record_type", "Record"], ["name", "file"], ["record_id", 1], ["record_id", 2], ["record_id", 3], ["record_id", 4], ["record_id", 5]]
+  ↳ app/views/records/index.html.erb:21
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" IN (?, ?, ?, ?)[0m  [["id", 1], ["id", 2], ["id", 3], ["id", 4]]
+  ↳ app/views/records/index.html.erb:21
+  Rendered records/index.html.erb within layouts/application (8.7ms)
+Completed 200 OK in 86ms (Views: 82.5ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/records" for 127.0.0.1 at 2019-01-08 10:12:07 +0800
+Processing by RecordsController#index as HTML
+  Rendering records/index.html.erb within layouts/application
+  [1m[36mRecord Load (0.2ms)[0m  [1m[34mSELECT "records".* FROM "records"[0m
+  ↳ app/views/records/index.html.erb:21
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? AND "active_storage_attachments"."record_id" IN (?, ?, ?, ?, ?)[0m  [["record_type", "Record"], ["name", "file"], ["record_id", 1], ["record_id", 2], ["record_id", 3], ["record_id", 4], ["record_id", 5]]
+  ↳ app/views/records/index.html.erb:21
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" IN (?, ?, ?, ?)[0m  [["id", 1], ["id", 2], ["id", 3], ["id", 4]]
+  ↳ app/views/records/index.html.erb:21
+  Rendered records/index.html.erb within layouts/application (8.9ms)
+Completed 200 OK in 68ms (Views: 64.3ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/records" for 127.0.0.1 at 2019-01-08 10:12:08 +0800
+Processing by RecordsController#index as HTML
+  Rendering records/index.html.erb within layouts/application
+  [1m[36mRecord Load (0.2ms)[0m  [1m[34mSELECT "records".* FROM "records"[0m
+  ↳ app/views/records/index.html.erb:21
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? AND "active_storage_attachments"."record_id" IN (?, ?, ?, ?, ?)[0m  [["record_type", "Record"], ["name", "file"], ["record_id", 1], ["record_id", 2], ["record_id", 3], ["record_id", 4], ["record_id", 5]]
+  ↳ app/views/records/index.html.erb:21
+  [1m[36mActiveStorage::Blob Load (0.4ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" IN (?, ?, ?, ?)[0m  [["id", 1], ["id", 2], ["id", 3], ["id", 4]]
+  ↳ app/views/records/index.html.erb:21
+  Rendered records/index.html.erb within layouts/application (8.7ms)
+Completed 200 OK in 71ms (Views: 66.4ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/records" for 127.0.0.1 at 2019-01-08 10:12:15 +0800
+Processing by RecordsController#index as HTML
+  Rendering records/index.html.erb within layouts/application
+  [1m[36mRecord Load (0.2ms)[0m  [1m[34mSELECT "records".* FROM "records"[0m
+  ↳ app/views/records/index.html.erb:21
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? AND "active_storage_attachments"."record_id" IN (?, ?, ?, ?, ?)[0m  [["record_type", "Record"], ["name", "file"], ["record_id", 1], ["record_id", 2], ["record_id", 3], ["record_id", 4], ["record_id", 5]]
+  ↳ app/views/records/index.html.erb:21
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" IN (?, ?, ?, ?)[0m  [["id", 1], ["id", 2], ["id", 3], ["id", 4]]
+  ↳ app/views/records/index.html.erb:21
+  Rendered records/index.html.erb within layouts/application (7.5ms)
+Completed 200 OK in 73ms (Views: 70.0ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/records" for 127.0.0.1 at 2019-01-08 10:12:20 +0800
+Processing by RecordsController#index as HTML
+  Rendering records/index.html.erb within layouts/application
+  [1m[36mRecord Load (0.2ms)[0m  [1m[34mSELECT "records".* FROM "records"[0m
+  ↳ app/views/records/index.html.erb:21
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? AND "active_storage_attachments"."record_id" IN (?, ?, ?, ?, ?)[0m  [["record_type", "Record"], ["name", "file"], ["record_id", 1], ["record_id", 2], ["record_id", 3], ["record_id", 4], ["record_id", 5]]
+  ↳ app/views/records/index.html.erb:21
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" IN (?, ?, ?, ?)[0m  [["id", 1], ["id", 2], ["id", 3], ["id", 4]]
+  ↳ app/views/records/index.html.erb:21
+  Rendered records/index.html.erb within layouts/application (7.1ms)
+Completed 200 OK in 71ms (Views: 68.0ms | ActiveRecord: 0.9ms)
+
+
+  [1m[36mRecord Load (0.2ms)[0m  [1m[34mSELECT  "records".* FROM "records" ORDER BY "records"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? AND "active_storage_attachments"."record_id" = ?[0m  [["record_type", "Record"], ["name", "file"], ["record_id", 5]]
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ?[0m  [["id", 4]]
+  [1m[36mRecord Load (0.1ms)[0m  [1m[34mSELECT  "records".* FROM "records" ORDER BY "records"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? AND "active_storage_attachments"."record_id" = ?[0m  [["record_type", "Record"], ["name", "file"], ["record_id", 5]]
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ?[0m  [["id", 4]]
+  [1m[36mRecord Load (0.2ms)[0m  [1m[34mSELECT  "records".* FROM "records" ORDER BY "records"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? AND "active_storage_attachments"."record_id" = ?[0m  [["record_type", "Record"], ["name", "file"], ["record_id", 5]]
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ?[0m  [["id", 4]]
+  [1m[36mRecord Load (1.5ms)[0m  [1m[34mSELECT  "records".* FROM "records" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mActiveStorage::Attachment Load (0.7ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? AND "active_storage_attachments"."record_id" IN (?, ?, ?, ?, ?)[0m  [["record_type", "Record"], ["name", "file"], ["record_id", 1], ["record_id", 2], ["record_id", 3], ["record_id", 4], ["record_id", 5]]
+  [1m[36mActiveStorage::Blob Load (0.5ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" IN (?, ?, ?, ?)[0m  [["id", 1], ["id", 2], ["id", 3], ["id", 4]]
+  [1m[36mRecord Load (0.4ms)[0m  [1m[34mSELECT  "records".* FROM "records" WHERE "records"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? AND "active_storage_attachments"."record_id" = ?[0m  [["record_type", "Record"], ["name", "file"], ["record_id", 3]]
+Started GET "/records" for 127.0.0.1 at 2019-01-08 10:14:47 +0800
+Processing by RecordsController#index as HTML
+  [1m[36mRecord Load (0.2ms)[0m  [1m[34mSELECT "records".* FROM "records"[0m
+  ↳ app/controllers/records_controller.rb:9
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? AND "active_storage_attachments"."record_id" IN (?, ?, ?, ?, ?)[0m  [["record_type", "Record"], ["name", "file"], ["record_id", 1], ["record_id", 2], ["record_id", 3], ["record_id", 4], ["record_id", 5]]
+  ↳ app/controllers/records_controller.rb:9
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" IN (?, ?, ?, ?)[0m  [["id", 1], ["id", 2], ["id", 3], ["id", 4]]
+  ↳ app/controllers/records_controller.rb:9
+Completed 500 Internal Server Error in 46ms (ActiveRecord: 2.4ms)
+
+
+  
+Module::DelegationError (to_model delegated to attachment, but attachment is nil):
+  
+app/controllers/records_controller.rb:10:in `block in index'
+app/controllers/records_controller.rb:9:in `map'
+app/controllers/records_controller.rb:9:in `index'
+Started GET "/records" for 127.0.0.1 at 2019-01-08 10:15:16 +0800
+Processing by RecordsController#index as HTML
+  Rendering records/index.html.erb within layouts/application
+  [1m[36mRecord Load (0.3ms)[0m  [1m[34mSELECT "records".* FROM "records"[0m
+  ↳ app/views/records/index.html.erb:21
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? AND "active_storage_attachments"."record_id" IN (?, ?, ?, ?, ?)[0m  [["record_type", "Record"], ["name", "file"], ["record_id", 1], ["record_id", 2], ["record_id", 3], ["record_id", 4], ["record_id", 5]]
+  ↳ app/views/records/index.html.erb:21
+  [1m[36mActiveStorage::Blob Load (0.4ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" IN (?, ?, ?, ?)[0m  [["id", 1], ["id", 2], ["id", 3], ["id", 4]]
+  ↳ app/views/records/index.html.erb:21
+  Rendered records/index.html.erb within layouts/application (37.6ms)
+Completed 200 OK in 104ms (Views: 94.1ms | ActiveRecord: 2.7ms)
+
+
+Started DELETE "/records/1" for 127.0.0.1 at 2019-01-08 10:15:19 +0800
+Processing by RecordsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"8+eNdoE44RRiZBTP2emjqe+q4DzPRY/OLlY8hjLZVhetdWtsiPPKV3lXSP2+i0+P4YUfOVztKvso+WXt/kXLZg==", "id"=>"1"}
+  [1m[36mRecord Load (0.3ms)[0m  [1m[34mSELECT  "records".* FROM "records" WHERE "records"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/records_controller.rb:71
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/records_controller.rb:61
+  [1m[36mRecord Destroy (1.0ms)[0m  [1m[31mDELETE FROM "records" WHERE "records"."id" = ?[0m  [["id", 1]]
+  ↳ app/controllers/records_controller.rb:61
+  [1m[35m (2.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/records_controller.rb:61
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 1], ["record_type", "Record"], ["name", "file"], ["LIMIT", 1]]
+  ↳ app/controllers/records_controller.rb:61
+  [1m[36mActiveStorage::Blob Load (0.5ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/records_controller.rb:61
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/records_controller.rb:61
+  [1m[36mActiveStorage::Attachment Destroy (1.0ms)[0m  [1m[31mDELETE FROM "active_storage_attachments" WHERE "active_storage_attachments"."id" = ?[0m  [["id", 1]]
+  ↳ app/controllers/records_controller.rb:61
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/records_controller.rb:61
+[ActiveJob] Enqueued ActiveStorage::PurgeJob (Job ID: 8a305164-98b6-464d-8453-624c7bbd9701) to Async(default) with arguments: #<GlobalID:0x007f8ca0b9acd8 @uri=#<URI::GID gid://rc-uploader/ActiveStorage::Blob/1>>
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://localhost:3000/records
+  ↳ /Users/fahimabdullah/.rvm/gems/ruby-2.4.1/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+Completed 302 Found in 63ms (ActiveRecord: 6.9ms)
+
+
+[ActiveJob] [ActiveStorage::PurgeJob] [8a305164-98b6-464d-8453-624c7bbd9701] Performing ActiveStorage::PurgeJob (Job ID: 8a305164-98b6-464d-8453-624c7bbd9701) from Async(default) with arguments: #<GlobalID:0x007f8ca0b87020 @uri=#<URI::GID gid://rc-uploader/ActiveStorage::Blob/1>>
+[ActiveJob] [ActiveStorage::PurgeJob] [8a305164-98b6-464d-8453-624c7bbd9701]   [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+[ActiveJob] [ActiveStorage::PurgeJob] [8a305164-98b6-464d-8453-624c7bbd9701]   ↳ /Users/fahimabdullah/.rvm/gems/ruby-2.4.1/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+Started GET "/records" for 127.0.0.1 at 2019-01-08 10:15:19 +0800
+[ActiveJob] [ActiveStorage::PurgeJob] [8a305164-98b6-464d-8453-624c7bbd9701]   [1m[36mActiveStorage::Attachment Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "active_storage_attachments" WHERE "active_storage_attachments"."blob_id" = ? LIMIT ?[0m  [["blob_id", 1], ["LIMIT", 1]]
+Processing by RecordsController#index as HTML
+[ActiveJob] [ActiveStorage::PurgeJob] [8a305164-98b6-464d-8453-624c7bbd9701]   ↳ /Users/fahimabdullah/.rvm/gems/ruby-2.4.1/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+[ActiveJob] [ActiveStorage::PurgeJob] [8a305164-98b6-464d-8453-624c7bbd9701]   [1m[36mActiveStorage::Blob Destroy (0.7ms)[0m  [1m[31mDELETE FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ?[0m  [["id", 1]]
+[ActiveJob] [ActiveStorage::PurgeJob] [8a305164-98b6-464d-8453-624c7bbd9701]   ↳ /Users/fahimabdullah/.rvm/gems/ruby-2.4.1/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+[ActiveJob] [ActiveStorage::PurgeJob] [8a305164-98b6-464d-8453-624c7bbd9701]   [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  Rendering records/index.html.erb within layouts/application
+[ActiveJob] [ActiveStorage::PurgeJob] [8a305164-98b6-464d-8453-624c7bbd9701]   ↳ /Users/fahimabdullah/.rvm/gems/ruby-2.4.1/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mRecord Load (0.3ms)[0m  [1m[34mSELECT "records".* FROM "records"[0m
+[ActiveJob] [ActiveStorage::PurgeJob] [8a305164-98b6-464d-8453-624c7bbd9701]   [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 1], ["record_type", "ActiveStorage::Blob"], ["name", "preview_image"], ["LIMIT", 1]]
+  ↳ app/views/records/index.html.erb:21
+[ActiveJob] [ActiveStorage::PurgeJob] [8a305164-98b6-464d-8453-624c7bbd9701]   ↳ /Users/fahimabdullah/.rvm/gems/ruby-2.4.1/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? AND "active_storage_attachments"."record_id" IN (?, ?, ?, ?)[0m  [["record_type", "Record"], ["name", "file"], ["record_id", 2], ["record_id", 3], ["record_id", 4], ["record_id", 5]]
+[ActiveJob] [ActiveStorage::PurgeJob] [8a305164-98b6-464d-8453-624c7bbd9701] [36m  Disk Storage (1.0ms) [0m[31mDeleted file from key: rRr5XUNzbVFeS2UtgcTsVFBf[0m
+  ↳ app/views/records/index.html.erb:21
+[ActiveJob] [ActiveStorage::PurgeJob] [8a305164-98b6-464d-8453-624c7bbd9701] [36m  Disk Storage (0.3ms) [0m[31mDeleted files by key prefix: variants/rRr5XUNzbVFeS2UtgcTsVFBf/[0m
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" IN (?, ?, ?)[0m  [["id", 2], ["id", 3], ["id", 4]]
+[ActiveJob] [ActiveStorage::PurgeJob] [8a305164-98b6-464d-8453-624c7bbd9701] Performed ActiveStorage::PurgeJob (Job ID: 8a305164-98b6-464d-8453-624c7bbd9701) from Async(default) in 46.3ms
+  ↳ app/views/records/index.html.erb:21
+  Rendered records/index.html.erb within layouts/application (15.1ms)
+Completed 200 OK in 139ms (Views: 134.8ms | ActiveRecord: 0.8ms)
+
+
+Started DELETE "/records/2" for 127.0.0.1 at 2019-01-08 10:15:22 +0800
+Processing by RecordsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"JuN6yLFRFgfA+xCq8FMCluKA3mhT4U2yCFZQXvHI8oV4cZzSuJo9RNvITJiXMe6w7K8hbcBJ6IcO+Qk1PVRv9A==", "id"=>"2"}
+  [1m[36mRecord Load (0.3ms)[0m  [1m[34mSELECT  "records".* FROM "records" WHERE "records"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/records_controller.rb:71
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/records_controller.rb:61
+  [1m[36mRecord Destroy (0.3ms)[0m  [1m[31mDELETE FROM "records" WHERE "records"."id" = ?[0m  [["id", 2]]
+  ↳ app/controllers/records_controller.rb:61
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/records_controller.rb:61
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 2], ["record_type", "Record"], ["name", "file"], ["LIMIT", 1]]
+  ↳ app/controllers/records_controller.rb:61
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/records_controller.rb:61
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/records_controller.rb:61
+  [1m[36mActiveStorage::Attachment Destroy (0.9ms)[0m  [1m[31mDELETE FROM "active_storage_attachments" WHERE "active_storage_attachments"."id" = ?[0m  [["id", 2]]
+  ↳ app/controllers/records_controller.rb:61
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/records_controller.rb:61
+[ActiveJob] Enqueued ActiveStorage::PurgeJob (Job ID: 91a1b174-dacc-46bf-bf96-a8afe5f56108) to Async(default) with arguments: #<GlobalID:0x007f8c9b2bd638 @uri=#<URI::GID gid://rc-uploader/ActiveStorage::Blob/2>>
+Redirected to http://localhost:3000/records
+Completed 302 Found in 21ms (ActiveRecord: 4.6ms)
+
+
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ /Users/fahimabdullah/.rvm/gems/ruby-2.4.1/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+[ActiveJob] [ActiveStorage::PurgeJob] [91a1b174-dacc-46bf-bf96-a8afe5f56108] Performing ActiveStorage::PurgeJob (Job ID: 91a1b174-dacc-46bf-bf96-a8afe5f56108) from Async(default) with arguments: #<GlobalID:0x007f8c9b254b38 @uri=#<URI::GID gid://rc-uploader/ActiveStorage::Blob/2>>
+[ActiveJob] [ActiveStorage::PurgeJob] [91a1b174-dacc-46bf-bf96-a8afe5f56108]   [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+[ActiveJob] [ActiveStorage::PurgeJob] [91a1b174-dacc-46bf-bf96-a8afe5f56108]   ↳ /Users/fahimabdullah/.rvm/gems/ruby-2.4.1/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+[ActiveJob] [ActiveStorage::PurgeJob] [91a1b174-dacc-46bf-bf96-a8afe5f56108]   [1m[36mActiveStorage::Attachment Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "active_storage_attachments" WHERE "active_storage_attachments"."blob_id" = ? LIMIT ?[0m  [["blob_id", 2], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::PurgeJob] [91a1b174-dacc-46bf-bf96-a8afe5f56108]   ↳ /Users/fahimabdullah/.rvm/gems/ruby-2.4.1/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+[ActiveJob] [ActiveStorage::PurgeJob] [91a1b174-dacc-46bf-bf96-a8afe5f56108]   [1m[36mActiveStorage::Blob Destroy (1.3ms)[0m  [1m[31mDELETE FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ?[0m  [["id", 2]]
+[ActiveJob] [ActiveStorage::PurgeJob] [91a1b174-dacc-46bf-bf96-a8afe5f56108]   ↳ /Users/fahimabdullah/.rvm/gems/ruby-2.4.1/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+[ActiveJob] [ActiveStorage::PurgeJob] [91a1b174-dacc-46bf-bf96-a8afe5f56108]   [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+Started GET "/records" for 127.0.0.1 at 2019-01-08 10:15:22 +0800
+[ActiveJob] [ActiveStorage::PurgeJob] [91a1b174-dacc-46bf-bf96-a8afe5f56108]   ↳ /Users/fahimabdullah/.rvm/gems/ruby-2.4.1/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+Processing by RecordsController#index as HTML
+[ActiveJob] [ActiveStorage::PurgeJob] [91a1b174-dacc-46bf-bf96-a8afe5f56108]   [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 2], ["record_type", "ActiveStorage::Blob"], ["name", "preview_image"], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::PurgeJob] [91a1b174-dacc-46bf-bf96-a8afe5f56108]   ↳ /Users/fahimabdullah/.rvm/gems/ruby-2.4.1/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+[ActiveJob] [ActiveStorage::PurgeJob] [91a1b174-dacc-46bf-bf96-a8afe5f56108] [36m  Disk Storage (0.5ms) [0m[31mDeleted file from key: zS769pbXw3hFdEQFhExQonaK[0m
+  Rendering records/index.html.erb within layouts/application
+[ActiveJob] [ActiveStorage::PurgeJob] [91a1b174-dacc-46bf-bf96-a8afe5f56108] [36m  Disk Storage (0.1ms) [0m[31mDeleted files by key prefix: variants/zS769pbXw3hFdEQFhExQonaK/[0m
+  [1m[36mRecord Load (0.2ms)[0m  [1m[34mSELECT "records".* FROM "records"[0m
+[ActiveJob] [ActiveStorage::PurgeJob] [91a1b174-dacc-46bf-bf96-a8afe5f56108] Performed ActiveStorage::PurgeJob (Job ID: 91a1b174-dacc-46bf-bf96-a8afe5f56108) from Async(default) in 21.94ms
+  ↳ app/views/records/index.html.erb:21
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? AND "active_storage_attachments"."record_id" IN (?, ?, ?)[0m  [["record_type", "Record"], ["name", "file"], ["record_id", 3], ["record_id", 4], ["record_id", 5]]
+  ↳ app/views/records/index.html.erb:21
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" IN (?, ?)[0m  [["id", 3], ["id", 4]]
+  ↳ app/views/records/index.html.erb:21
+  Rendered records/index.html.erb within layouts/application (5.5ms)
+Completed 200 OK in 73ms (Views: 68.9ms | ActiveRecord: 0.6ms)
+
+
+Started DELETE "/records/3" for 127.0.0.1 at 2019-01-08 10:15:24 +0800
+Processing by RecordsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"QH+W1k2gPfhkLl9iuDmJkpVXhorwZYbW9qvmoCh85o0e7XDMRGsWu38dA1DfW2W0m3h5j2PNI+PwBL/L5OB7/A==", "id"=>"3"}
+  [1m[36mRecord Load (0.3ms)[0m  [1m[34mSELECT  "records".* FROM "records" WHERE "records"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/records_controller.rb:71
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/records_controller.rb:61
+  [1m[36mRecord Destroy (0.3ms)[0m  [1m[31mDELETE FROM "records" WHERE "records"."id" = ?[0m  [["id", 3]]
+  ↳ app/controllers/records_controller.rb:61
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/records_controller.rb:61
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 3], ["record_type", "Record"], ["name", "file"], ["LIMIT", 1]]
+  ↳ app/controllers/records_controller.rb:61
+Redirected to http://localhost:3000/records
+Completed 302 Found in 8ms (ActiveRecord: 2.6ms)
+
+
+Started GET "/records" for 127.0.0.1 at 2019-01-08 10:15:24 +0800
+Processing by RecordsController#index as HTML
+  Rendering records/index.html.erb within layouts/application
+  [1m[36mRecord Load (0.2ms)[0m  [1m[34mSELECT "records".* FROM "records"[0m
+  ↳ app/views/records/index.html.erb:21
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? AND "active_storage_attachments"."record_id" IN (?, ?)[0m  [["record_type", "Record"], ["name", "file"], ["record_id", 4], ["record_id", 5]]
+  ↳ app/views/records/index.html.erb:21
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" IN (?, ?)[0m  [["id", 3], ["id", 4]]
+  ↳ app/views/records/index.html.erb:21
+  Rendered records/index.html.erb within layouts/application (5.7ms)
+Completed 200 OK in 73ms (Views: 69.9ms | ActiveRecord: 0.7ms)
+
+
+Started DELETE "/records/4" for 127.0.0.1 at 2019-01-08 10:15:26 +0800
+Processing by RecordsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"7FGLtf+MskBitC/lE1Z83Kw+cdCokjf4+VldnVsnqiuyw22v9keZA3mHc9d0NJD6ohGO1Ts6ks3/9gT2l7s3Wg==", "id"=>"4"}
+  [1m[36mRecord Load (0.4ms)[0m  [1m[34mSELECT  "records".* FROM "records" WHERE "records"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/records_controller.rb:71
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/records_controller.rb:61
+  [1m[36mRecord Destroy (0.4ms)[0m  [1m[31mDELETE FROM "records" WHERE "records"."id" = ?[0m  [["id", 4]]
+  ↳ app/controllers/records_controller.rb:61
+  [1m[35m (2.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/records_controller.rb:61
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 4], ["record_type", "Record"], ["name", "file"], ["LIMIT", 1]]
+  ↳ app/controllers/records_controller.rb:61
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/records_controller.rb:61
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/records_controller.rb:61
+  [1m[36mActiveStorage::Attachment Destroy (0.7ms)[0m  [1m[31mDELETE FROM "active_storage_attachments" WHERE "active_storage_attachments"."id" = ?[0m  [["id", 3]]
+  ↳ app/controllers/records_controller.rb:61
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/records_controller.rb:61
+  [1m[36mActiveStorage::Blob Load (0.4ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+[ActiveJob] Enqueued ActiveStorage::PurgeJob (Job ID: 5f1650fe-817c-4a5f-bcd9-4cb8220b6bc1) to Async(default) with arguments: #<GlobalID:0x007f8ca0cccb60 @uri=#<URI::GID gid://rc-uploader/ActiveStorage::Blob/3>>
+  ↳ /Users/fahimabdullah/.rvm/gems/ruby-2.4.1/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/records
+[ActiveJob] [ActiveStorage::PurgeJob] [5f1650fe-817c-4a5f-bcd9-4cb8220b6bc1] Performing ActiveStorage::PurgeJob (Job ID: 5f1650fe-817c-4a5f-bcd9-4cb8220b6bc1) from Async(default) with arguments: #<GlobalID:0x007f8c9d33c5f8 @uri=#<URI::GID gid://rc-uploader/ActiveStorage::Blob/3>>
+Completed 302 Found in 26ms (ActiveRecord: 5.4ms)
+
+
+[ActiveJob] [ActiveStorage::PurgeJob] [5f1650fe-817c-4a5f-bcd9-4cb8220b6bc1]   [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+[ActiveJob] [ActiveStorage::PurgeJob] [5f1650fe-817c-4a5f-bcd9-4cb8220b6bc1]   ↳ /Users/fahimabdullah/.rvm/gems/ruby-2.4.1/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+[ActiveJob] [ActiveStorage::PurgeJob] [5f1650fe-817c-4a5f-bcd9-4cb8220b6bc1]   [1m[36mActiveStorage::Attachment Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "active_storage_attachments" WHERE "active_storage_attachments"."blob_id" = ? LIMIT ?[0m  [["blob_id", 3], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::PurgeJob] [5f1650fe-817c-4a5f-bcd9-4cb8220b6bc1]   ↳ /Users/fahimabdullah/.rvm/gems/ruby-2.4.1/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+[ActiveJob] [ActiveStorage::PurgeJob] [5f1650fe-817c-4a5f-bcd9-4cb8220b6bc1]   [1m[36mActiveStorage::Blob Destroy (0.5ms)[0m  [1m[31mDELETE FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ?[0m  [["id", 3]]
+[ActiveJob] [ActiveStorage::PurgeJob] [5f1650fe-817c-4a5f-bcd9-4cb8220b6bc1]   ↳ /Users/fahimabdullah/.rvm/gems/ruby-2.4.1/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+[ActiveJob] [ActiveStorage::PurgeJob] [5f1650fe-817c-4a5f-bcd9-4cb8220b6bc1]   [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+[ActiveJob] [ActiveStorage::PurgeJob] [5f1650fe-817c-4a5f-bcd9-4cb8220b6bc1]   ↳ /Users/fahimabdullah/.rvm/gems/ruby-2.4.1/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+[ActiveJob] [ActiveStorage::PurgeJob] [5f1650fe-817c-4a5f-bcd9-4cb8220b6bc1]   [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 3], ["record_type", "ActiveStorage::Blob"], ["name", "preview_image"], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::PurgeJob] [5f1650fe-817c-4a5f-bcd9-4cb8220b6bc1]   ↳ /Users/fahimabdullah/.rvm/gems/ruby-2.4.1/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+[ActiveJob] [ActiveStorage::PurgeJob] [5f1650fe-817c-4a5f-bcd9-4cb8220b6bc1] [36m  Disk Storage (1.7ms) [0m[31mDeleted file from key: sayYe3YxRKTpMCbUzkj1rpU3[0m
+Started GET "/records" for 127.0.0.1 at 2019-01-08 10:15:26 +0800
+[ActiveJob] [ActiveStorage::PurgeJob] [5f1650fe-817c-4a5f-bcd9-4cb8220b6bc1] [36m  Disk Storage (0.2ms) [0m[31mDeleted files by key prefix: variants/sayYe3YxRKTpMCbUzkj1rpU3/[0m
+Processing by RecordsController#index as HTML
+[ActiveJob] [ActiveStorage::PurgeJob] [5f1650fe-817c-4a5f-bcd9-4cb8220b6bc1] Performed ActiveStorage::PurgeJob (Job ID: 5f1650fe-817c-4a5f-bcd9-4cb8220b6bc1) from Async(default) in 14.94ms
+  Rendering records/index.html.erb within layouts/application
+  [1m[36mRecord Load (0.2ms)[0m  [1m[34mSELECT "records".* FROM "records"[0m
+  ↳ app/views/records/index.html.erb:21
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? AND "active_storage_attachments"."record_id" = ?[0m  [["record_type", "Record"], ["name", "file"], ["record_id", 5]]
+  ↳ app/views/records/index.html.erb:21
+  [1m[36mActiveStorage::Blob Load (0.7ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ?[0m  [["id", 4]]
+  ↳ app/views/records/index.html.erb:21
+  Rendered records/index.html.erb within layouts/application (5.6ms)
+Completed 200 OK in 67ms (Views: 63.3ms | ActiveRecord: 1.1ms)
+
+
+Started DELETE "/records/5" for 127.0.0.1 at 2019-01-08 10:15:29 +0800
+Processing by RecordsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"qZC/qRjy164suy7ZjEjtdFzr0UYbHSd8l/IUAM162/D3AlmzETn87TeIcuvrKgFSUsQuQ4i1gkmRXU1rAeZGgQ==", "id"=>"5"}
+  [1m[36mRecord Load (0.2ms)[0m  [1m[34mSELECT  "records".* FROM "records" WHERE "records"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/records_controller.rb:71
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/records_controller.rb:61
+  [1m[36mRecord Destroy (0.4ms)[0m  [1m[31mDELETE FROM "records" WHERE "records"."id" = ?[0m  [["id", 5]]
+  ↳ app/controllers/records_controller.rb:61
+  [1m[35m (1.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/records_controller.rb:61
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 5], ["record_type", "Record"], ["name", "file"], ["LIMIT", 1]]
+  ↳ app/controllers/records_controller.rb:61
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/records_controller.rb:61
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/records_controller.rb:61
+  [1m[36mActiveStorage::Attachment Destroy (0.6ms)[0m  [1m[31mDELETE FROM "active_storage_attachments" WHERE "active_storage_attachments"."id" = ?[0m  [["id", 4]]
+  ↳ app/controllers/records_controller.rb:61
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/records_controller.rb:61
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+[ActiveJob] Enqueued ActiveStorage::PurgeJob (Job ID: e14e19e6-9179-438f-bcb0-39d3f408f263) to Async(default) with arguments: #<GlobalID:0x007f8ca1002f00 @uri=#<URI::GID gid://rc-uploader/ActiveStorage::Blob/4>>
+  ↳ /Users/fahimabdullah/.rvm/gems/ruby-2.4.1/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/records
+[ActiveJob] [ActiveStorage::PurgeJob] [e14e19e6-9179-438f-bcb0-39d3f408f263] Performing ActiveStorage::PurgeJob (Job ID: e14e19e6-9179-438f-bcb0-39d3f408f263) from Async(default) with arguments: #<GlobalID:0x007f8c9d1c18b8 @uri=#<URI::GID gid://rc-uploader/ActiveStorage::Blob/4>>
+Completed 302 Found in 20ms (ActiveRecord: 5.1ms)
+
+
+[ActiveJob] [ActiveStorage::PurgeJob] [e14e19e6-9179-438f-bcb0-39d3f408f263]   [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+[ActiveJob] [ActiveStorage::PurgeJob] [e14e19e6-9179-438f-bcb0-39d3f408f263]   ↳ /Users/fahimabdullah/.rvm/gems/ruby-2.4.1/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+[ActiveJob] [ActiveStorage::PurgeJob] [e14e19e6-9179-438f-bcb0-39d3f408f263]   [1m[36mActiveStorage::Attachment Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "active_storage_attachments" WHERE "active_storage_attachments"."blob_id" = ? LIMIT ?[0m  [["blob_id", 4], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::PurgeJob] [e14e19e6-9179-438f-bcb0-39d3f408f263]   ↳ /Users/fahimabdullah/.rvm/gems/ruby-2.4.1/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+[ActiveJob] [ActiveStorage::PurgeJob] [e14e19e6-9179-438f-bcb0-39d3f408f263]   [1m[36mActiveStorage::Blob Destroy (1.0ms)[0m  [1m[31mDELETE FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ?[0m  [["id", 4]]
+[ActiveJob] [ActiveStorage::PurgeJob] [e14e19e6-9179-438f-bcb0-39d3f408f263]   ↳ /Users/fahimabdullah/.rvm/gems/ruby-2.4.1/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+[ActiveJob] [ActiveStorage::PurgeJob] [e14e19e6-9179-438f-bcb0-39d3f408f263]   [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+[ActiveJob] [ActiveStorage::PurgeJob] [e14e19e6-9179-438f-bcb0-39d3f408f263]   ↳ /Users/fahimabdullah/.rvm/gems/ruby-2.4.1/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+[ActiveJob] [ActiveStorage::PurgeJob] [e14e19e6-9179-438f-bcb0-39d3f408f263]   [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 4], ["record_type", "ActiveStorage::Blob"], ["name", "preview_image"], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::PurgeJob] [e14e19e6-9179-438f-bcb0-39d3f408f263]   ↳ /Users/fahimabdullah/.rvm/gems/ruby-2.4.1/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+[ActiveJob] [ActiveStorage::PurgeJob] [e14e19e6-9179-438f-bcb0-39d3f408f263] [36m  Disk Storage (1.3ms) [0m[31mDeleted file from key: jKoQDsjP9erRCy2ms1rsWtAF[0m
+Started GET "/records" for 127.0.0.1 at 2019-01-08 10:15:29 +0800
+[ActiveJob] [ActiveStorage::PurgeJob] [e14e19e6-9179-438f-bcb0-39d3f408f263] [36m  Disk Storage (0.1ms) [0m[31mDeleted files by key prefix: variants/jKoQDsjP9erRCy2ms1rsWtAF/[0m
+Processing by RecordsController#index as HTML
+[ActiveJob] [ActiveStorage::PurgeJob] [e14e19e6-9179-438f-bcb0-39d3f408f263] Performed ActiveStorage::PurgeJob (Job ID: e14e19e6-9179-438f-bcb0-39d3f408f263) from Async(default) in 14.57ms
+  Rendering records/index.html.erb within layouts/application
+  [1m[36mRecord Load (0.2ms)[0m  [1m[34mSELECT "records".* FROM "records"[0m
+  ↳ app/views/records/index.html.erb:21
+  Rendered records/index.html.erb within layouts/application (4.4ms)
+Completed 500 Internal Server Error in 17ms (ActiveRecord: 0.2ms)
+
+
+  
+ActionView::Template::Error (undefined method `file' for nil:NilClass):
+    29:             </tr>
+    30:           <% end %>
+    31:             <tr>
+    32:               <td><%= @records.last.file.name %></td>
+    33:             </tr>
+    34:         </tbody>
+    35:       </table>
+  
+app/views/records/index.html.erb:32:in `_app_views_records_index_html_erb___711269335863912602_70120973817540'
+Started GET "/records" for 127.0.0.1 at 2019-01-08 10:15:43 +0800
+Processing by RecordsController#index as HTML
+  Rendering records/index.html.erb within layouts/application
+  [1m[36mRecord Load (0.2ms)[0m  [1m[34mSELECT "records".* FROM "records"[0m
+  ↳ app/views/records/index.html.erb:21
+  Rendered records/index.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 83ms (Views: 78.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/records/new" for 127.0.0.1 at 2019-01-08 10:15:45 +0800
+Processing by RecordsController#new as HTML
+  Rendering records/new.html.erb within layouts/application
+  Rendered records/_form.html.erb (2.8ms)
+  Rendered records/new.html.erb within layouts/application (8.7ms)
+Completed 200 OK in 107ms (Views: 99.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/records" for 127.0.0.1 at 2019-01-08 10:16:32 +0800
+Processing by RecordsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"arviSO9FlL5z87UpCMhuxd/sE6D7SZKF1E+ggsaeEJb1p0+Ky8/FXm0Oj9LSHhwJhemxj2b4iO6d6VXk8vT56A==", "record"=>{"awbnum"=>"123", "file"=>#<ActionDispatch::Http::UploadedFile:0x007f8c9d1cbed0 @tempfile=#<Tempfile:/var/folders/tj/9ddypmz11k3csy6c8gc_vw600000gq/T/RackMultipart20190108-61436-nvap3b.jpg>, @original_filename="building-and-cityscape-in-kuala-lumpur-malaysia.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"record[file]\"; filename=\"building-and-cityscape-in-kuala-lumpur-malaysia.jpg\"\r\nContent-Type: image/jpeg\r\n">}, "commit"=>"Submit"}
+[36m  Disk Storage (14.2ms) [0m[32mUploaded file to key: VZFhpJiAmjeUPLFHW5D1HNjj (checksum: /tvN/Pl9/j2fx2ZqaLScoA==)[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/records_controller.rb:31
+  [1m[36mActiveStorage::Blob Create (0.7ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "metadata", "byte_size", "checksum", "created_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["key", "VZFhpJiAmjeUPLFHW5D1HNjj"], ["filename", "building-and-cityscape-in-kuala-lumpur-malaysia.jpg"], ["content_type", "image/jpeg"], ["metadata", "{\"identified\":true}"], ["byte_size", 2873908], ["checksum", "/tvN/Pl9/j2fx2ZqaLScoA=="], ["created_at", "2019-01-08 02:16:32.985495"]]
+  ↳ app/controllers/records_controller.rb:31
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/records_controller.rb:31
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/records_controller.rb:31
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/records_controller.rb:31
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/records_controller.rb:34
+  [1m[36mRecord Create (0.4ms)[0m  [1m[32mINSERT INTO "records" ("awbnum", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["awbnum", "123"], ["created_at", "2019-01-08 02:16:32.990429"], ["updated_at", "2019-01-08 02:16:32.990429"]]
+  ↳ app/controllers/records_controller.rb:34
+  [1m[36mActiveStorage::Attachment Create (0.3ms)[0m  [1m[32mINSERT INTO "active_storage_attachments" ("name", "record_type", "record_id", "blob_id", "created_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "file"], ["record_type", "Record"], ["record_id", 6], ["blob_id", 5], ["created_at", "2019-01-08 02:16:32.992072"]]
+  ↳ app/controllers/records_controller.rb:34
+  [1m[36mRecord Update (0.1ms)[0m  [1m[33mUPDATE "records" SET "updated_at" = ? WHERE "records"."id" = ?[0m  [["updated_at", "2019-01-08 02:16:32.993243"], ["id", 6]]
+  ↳ app/controllers/records_controller.rb:34
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/records_controller.rb:34
+  [1m[36mActiveStorage::Blob Load (0.4ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+[ActiveJob] Enqueued ActiveStorage::AnalyzeJob (Job ID: 41bce298-5e3d-4ac6-b362-02000b505869) to Async(default) with arguments: #<GlobalID:0x007f8ca13872c0 @uri=#<URI::GID gid://rc-uploader/ActiveStorage::Blob/5>>
+  ↳ /Users/fahimabdullah/.rvm/gems/ruby-2.4.1/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/records/6
+[ActiveJob] [ActiveStorage::AnalyzeJob] [41bce298-5e3d-4ac6-b362-02000b505869] Performing ActiveStorage::AnalyzeJob (Job ID: 41bce298-5e3d-4ac6-b362-02000b505869) from Async(default) with arguments: #<GlobalID:0x007f8ca13665c0 @uri=#<URI::GID gid://rc-uploader/ActiveStorage::Blob/5>>
+Completed 302 Found in 66ms (ActiveRecord: 3.8ms)
+
+
+[ActiveJob] [ActiveStorage::AnalyzeJob] [41bce298-5e3d-4ac6-b362-02000b505869] [36m  Disk Storage (4.6ms) [0m[34mDownloaded file from key: VZFhpJiAmjeUPLFHW5D1HNjj[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [41bce298-5e3d-4ac6-b362-02000b505869] Skipping image analysis because the mini_magick gem isn't installed
+[ActiveJob] [ActiveStorage::AnalyzeJob] [41bce298-5e3d-4ac6-b362-02000b505869]   [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [41bce298-5e3d-4ac6-b362-02000b505869]   ↳ /Users/fahimabdullah/.rvm/gems/ruby-2.4.1/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+[ActiveJob] [ActiveStorage::AnalyzeJob] [41bce298-5e3d-4ac6-b362-02000b505869]   [1m[36mActiveStorage::Blob Update (0.5ms)[0m  [1m[33mUPDATE "active_storage_blobs" SET "metadata" = ? WHERE "active_storage_blobs"."id" = ?[0m  [["metadata", "{\"identified\":true,\"analyzed\":true}"], ["id", 5]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [41bce298-5e3d-4ac6-b362-02000b505869]   ↳ /Users/fahimabdullah/.rvm/gems/ruby-2.4.1/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+Started GET "/records/6" for 127.0.0.1 at 2019-01-08 10:16:33 +0800
+[ActiveJob] [ActiveStorage::AnalyzeJob] [41bce298-5e3d-4ac6-b362-02000b505869]   [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+Processing by RecordsController#show as HTML
+[ActiveJob] [ActiveStorage::AnalyzeJob] [41bce298-5e3d-4ac6-b362-02000b505869]   ↳ /Users/fahimabdullah/.rvm/gems/ruby-2.4.1/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  Parameters: {"id"=>"6"}
+[ActiveJob] [ActiveStorage::AnalyzeJob] [41bce298-5e3d-4ac6-b362-02000b505869] Performed ActiveStorage::AnalyzeJob (Job ID: 41bce298-5e3d-4ac6-b362-02000b505869) from Async(default) in 16.83ms
+  [1m[36mRecord Load (0.2ms)[0m  [1m[34mSELECT  "records".* FROM "records" WHERE "records"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/records_controller.rb:71
+  Rendering records/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 6], ["record_type", "Record"], ["name", "file"], ["LIMIT", 1]]
+  ↳ app/views/records/show.html.erb:8
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/records/show.html.erb:8
+  Rendered records/show.html.erb within layouts/application (5.2ms)
+Completed 200 OK in 99ms (Views: 94.8ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/records" for 127.0.0.1 at 2019-01-08 10:16:36 +0800
+Processing by RecordsController#index as HTML
+  Rendering records/index.html.erb within layouts/application
+  [1m[36mRecord Load (0.3ms)[0m  [1m[34mSELECT "records".* FROM "records"[0m
+  ↳ app/views/records/index.html.erb:21
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? AND "active_storage_attachments"."record_id" = ?[0m  [["record_type", "Record"], ["name", "file"], ["record_id", 6]]
+  ↳ app/views/records/index.html.erb:21
+  [1m[36mActiveStorage::Blob Load (0.6ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ?[0m  [["id", 5]]
+  ↳ app/views/records/index.html.erb:21
+  Rendered records/index.html.erb within layouts/application (9.2ms)
+Completed 200 OK in 127ms (Views: 115.6ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/records/new" for 127.0.0.1 at 2019-01-08 10:16:37 +0800
+Processing by RecordsController#new as HTML
+  Rendering records/new.html.erb within layouts/application
+  Rendered records/_form.html.erb (3.1ms)
+  Rendered records/new.html.erb within layouts/application (8.0ms)
+Completed 200 OK in 88ms (Views: 81.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/records" for 127.0.0.1 at 2019-01-08 10:17:02 +0800
+Processing by RecordsController#index as HTML
+  Rendering records/index.html.erb within layouts/application
+  [1m[36mRecord Load (0.2ms)[0m  [1m[34mSELECT "records".* FROM "records"[0m
+  ↳ app/views/records/index.html.erb:21
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? AND "active_storage_attachments"."record_id" = ?[0m  [["record_type", "Record"], ["name", "file"], ["record_id", 6]]
+  ↳ app/views/records/index.html.erb:21
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ?[0m  [["id", 5]]
+  ↳ app/views/records/index.html.erb:21
+  Rendered records/index.html.erb within layouts/application (4.8ms)
+Completed 200 OK in 78ms (Views: 74.3ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/records/new" for 127.0.0.1 at 2019-01-08 10:17:04 +0800
+Processing by RecordsController#new as HTML
+  Rendering records/new.html.erb within layouts/application
+  Rendered records/_form.html.erb (7.8ms)
+  Rendered records/new.html.erb within layouts/application (12.4ms)
+Completed 200 OK in 109ms (Views: 104.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/records" for 127.0.0.1 at 2019-01-08 10:17:05 +0800
+Processing by RecordsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"JHazxS8Zl50wed1IcLi3ZDhGfd1pYGAR+rgN4oKaixO7ah4HC5PGfS6E57OqbsWoYkPf8vTRenqzHviEtvBibQ==", "record"=>{"awbnum"=>"324", "file"=>#<ActionDispatch::Http::UploadedFile:0x007f8c9d3ac9e8 @tempfile=#<Tempfile:/var/folders/tj/9ddypmz11k3csy6c8gc_vw600000gq/T/RackMultipart20190108-61436-6b1i54.mov>, @original_filename="DEAR HOME H.264.mov", @content_type="video/quicktime", @headers="Content-Disposition: form-data; name=\"record[file]\"; filename=\"DEAR HOME H.264.mov\"\r\nContent-Type: video/quicktime\r\n">}, "commit"=>"Submit"}
+[36m  Disk Storage (4748.7ms) [0m[32mUploaded file to key: xfyGP4b9xcu2pUJvVYDgtApd (checksum: r9ZyS7MpRFjquhyxG4n+Zg==)[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/records_controller.rb:31
+  [1m[36mActiveStorage::Blob Create (1.3ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "metadata", "byte_size", "checksum", "created_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["key", "xfyGP4b9xcu2pUJvVYDgtApd"], ["filename", "DEAR HOME H.264.mov"], ["content_type", "video/quicktime"], ["metadata", "{\"identified\":true}"], ["byte_size", 808142084], ["checksum", "r9ZyS7MpRFjquhyxG4n+Zg=="], ["created_at", "2019-01-08 02:17:12.604731"]]
+  ↳ app/controllers/records_controller.rb:31
+  [1m[35m (2.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/records_controller.rb:31
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/records_controller.rb:31
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/records_controller.rb:31
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/records_controller.rb:34
+  [1m[36mRecord Create (0.5ms)[0m  [1m[32mINSERT INTO "records" ("awbnum", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["awbnum", "324"], ["created_at", "2019-01-08 02:17:12.612886"], ["updated_at", "2019-01-08 02:17:12.612886"]]
+  ↳ app/controllers/records_controller.rb:34
+  [1m[36mActiveStorage::Attachment Create (0.3ms)[0m  [1m[32mINSERT INTO "active_storage_attachments" ("name", "record_type", "record_id", "blob_id", "created_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "file"], ["record_type", "Record"], ["record_id", 7], ["blob_id", 6], ["created_at", "2019-01-08 02:17:12.615011"]]
+  ↳ app/controllers/records_controller.rb:34
+  [1m[36mRecord Update (0.5ms)[0m  [1m[33mUPDATE "records" SET "updated_at" = ? WHERE "records"."id" = ?[0m  [["updated_at", "2019-01-08 02:17:12.616857"], ["id", 7]]
+  ↳ app/controllers/records_controller.rb:34
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/records_controller.rb:34
+  [1m[36mActiveStorage::Blob Load (1.0ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ /Users/fahimabdullah/.rvm/gems/ruby-2.4.1/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+[ActiveJob] [ActiveStorage::AnalyzeJob] [24406d37-1323-4217-b7d0-d9caabbdc531] Performing ActiveStorage::AnalyzeJob (Job ID: 24406d37-1323-4217-b7d0-d9caabbdc531) from Async(default) with arguments: #<GlobalID:0x007f8ca0d43378 @uri=#<URI::GID gid://rc-uploader/ActiveStorage::Blob/6>>
+[ActiveJob] Enqueued ActiveStorage::AnalyzeJob (Job ID: 24406d37-1323-4217-b7d0-d9caabbdc531) to Async(default) with arguments: #<GlobalID:0x007f8ca0d58d18 @uri=#<URI::GID gid://rc-uploader/ActiveStorage::Blob/6>>
+Redirected to http://localhost:3000/records/7
+Completed 302 Found in 7212ms (ActiveRecord: 6.8ms)
+
+
+Started GET "/records/7" for 127.0.0.1 at 2019-01-08 10:17:12 +0800
+Processing by RecordsController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mRecord Load (0.1ms)[0m  [1m[34mSELECT  "records".* FROM "records" WHERE "records"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/records_controller.rb:71
+  Rendering records/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 7], ["record_type", "Record"], ["name", "file"], ["LIMIT", 1]]
+  ↳ app/views/records/show.html.erb:8
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/records/show.html.erb:8
+  Rendered records/show.html.erb within layouts/application (7.6ms)
+Completed 200 OK in 189ms (Views: 183.3ms | ActiveRecord: 0.5ms)
+
+
+[ActiveJob] [ActiveStorage::AnalyzeJob] [24406d37-1323-4217-b7d0-d9caabbdc531] [36m  Disk Storage (2414.1ms) [0m[34mDownloaded file from key: xfyGP4b9xcu2pUJvVYDgtApd[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [24406d37-1323-4217-b7d0-d9caabbdc531] Skipping video analysis because ffmpeg isn't installed
+[ActiveJob] [ActiveStorage::AnalyzeJob] [24406d37-1323-4217-b7d0-d9caabbdc531]   [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [24406d37-1323-4217-b7d0-d9caabbdc531]   ↳ /Users/fahimabdullah/.rvm/gems/ruby-2.4.1/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+[ActiveJob] [ActiveStorage::AnalyzeJob] [24406d37-1323-4217-b7d0-d9caabbdc531]   [1m[36mActiveStorage::Blob Update (0.5ms)[0m  [1m[33mUPDATE "active_storage_blobs" SET "metadata" = ? WHERE "active_storage_blobs"."id" = ?[0m  [["metadata", "{\"identified\":true,\"analyzed\":true}"], ["id", 6]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [24406d37-1323-4217-b7d0-d9caabbdc531]   ↳ /Users/fahimabdullah/.rvm/gems/ruby-2.4.1/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+[ActiveJob] [ActiveStorage::AnalyzeJob] [24406d37-1323-4217-b7d0-d9caabbdc531]   [1m[35m (2.0ms)[0m  [1m[36mcommit transaction[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [24406d37-1323-4217-b7d0-d9caabbdc531]   ↳ /Users/fahimabdullah/.rvm/gems/ruby-2.4.1/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+[ActiveJob] [ActiveStorage::AnalyzeJob] [24406d37-1323-4217-b7d0-d9caabbdc531] Performed ActiveStorage::AnalyzeJob (Job ID: 24406d37-1323-4217-b7d0-d9caabbdc531) from Async(default) in 2529.66ms
+Started GET "/records" for 127.0.0.1 at 2019-01-08 10:17:26 +0800
+Processing by RecordsController#index as HTML
+  Rendering records/index.html.erb within layouts/application
+  [1m[36mRecord Load (0.4ms)[0m  [1m[34mSELECT "records".* FROM "records"[0m
+  ↳ app/views/records/index.html.erb:21
+  [1m[36mActiveStorage::Attachment Load (1.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? AND "active_storage_attachments"."record_id" IN (?, ?)[0m  [["record_type", "Record"], ["name", "file"], ["record_id", 6], ["record_id", 7]]
+  ↳ app/views/records/index.html.erb:21
+  [1m[36mActiveStorage::Blob Load (0.4ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" IN (?, ?)[0m  [["id", 5], ["id", 6]]
+  ↳ app/views/records/index.html.erb:21
+  Rendered records/index.html.erb within layouts/application (19.4ms)
+Completed 200 OK in 131ms (Views: 116.7ms | ActiveRecord: 2.7ms)
+
+
+Started DELETE "/records/7" for 127.0.0.1 at 2019-01-08 10:17:30 +0800
+Processing by RecordsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"aJTegNjoyq0zD5lsiEgQKcuLSPLPkgRykxQ9/mhAb0U2Bjia0SPh7ig8xV7vKvwPxaS391w6oUeVu2SVpNzyNA==", "id"=>"7"}
+  [1m[36mRecord Load (0.2ms)[0m  [1m[34mSELECT  "records".* FROM "records" WHERE "records"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/records_controller.rb:71
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/records_controller.rb:61
+  [1m[36mRecord Destroy (0.8ms)[0m  [1m[31mDELETE FROM "records" WHERE "records"."id" = ?[0m  [["id", 7]]
+  ↳ app/controllers/records_controller.rb:61
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/records_controller.rb:61
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 7], ["record_type", "Record"], ["name", "file"], ["LIMIT", 1]]
+  ↳ app/controllers/records_controller.rb:61
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/records_controller.rb:61
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/records_controller.rb:61
+  [1m[36mActiveStorage::Attachment Destroy (0.5ms)[0m  [1m[31mDELETE FROM "active_storage_attachments" WHERE "active_storage_attachments"."id" = ?[0m  [["id", 6]]
+  ↳ app/controllers/records_controller.rb:61
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/records_controller.rb:61
+  [1m[36mActiveStorage::Blob Load (0.5ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+[ActiveJob] Enqueued ActiveStorage::PurgeJob (Job ID: 7432d4e8-255d-4402-ba5b-509ff58f582f) to Async(default) with arguments: #<GlobalID:0x007f8ca150fd90 @uri=#<URI::GID gid://rc-uploader/ActiveStorage::Blob/6>>
+  ↳ /Users/fahimabdullah/.rvm/gems/ruby-2.4.1/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/records
+[ActiveJob] [ActiveStorage::PurgeJob] [7432d4e8-255d-4402-ba5b-509ff58f582f] Performing ActiveStorage::PurgeJob (Job ID: 7432d4e8-255d-4402-ba5b-509ff58f582f) from Async(default) with arguments: #<GlobalID:0x007f8c9b2cc570 @uri=#<URI::GID gid://rc-uploader/ActiveStorage::Blob/6>>
+Completed 302 Found in 24ms (ActiveRecord: 5.1ms)
+
+
+[ActiveJob] [ActiveStorage::PurgeJob] [7432d4e8-255d-4402-ba5b-509ff58f582f]   [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+[ActiveJob] [ActiveStorage::PurgeJob] [7432d4e8-255d-4402-ba5b-509ff58f582f]   ↳ /Users/fahimabdullah/.rvm/gems/ruby-2.4.1/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+[ActiveJob] [ActiveStorage::PurgeJob] [7432d4e8-255d-4402-ba5b-509ff58f582f]   [1m[36mActiveStorage::Attachment Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "active_storage_attachments" WHERE "active_storage_attachments"."blob_id" = ? LIMIT ?[0m  [["blob_id", 6], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::PurgeJob] [7432d4e8-255d-4402-ba5b-509ff58f582f]   ↳ /Users/fahimabdullah/.rvm/gems/ruby-2.4.1/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+[ActiveJob] [ActiveStorage::PurgeJob] [7432d4e8-255d-4402-ba5b-509ff58f582f]   [1m[36mActiveStorage::Blob Destroy (0.7ms)[0m  [1m[31mDELETE FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ?[0m  [["id", 6]]
+[ActiveJob] [ActiveStorage::PurgeJob] [7432d4e8-255d-4402-ba5b-509ff58f582f]   ↳ /Users/fahimabdullah/.rvm/gems/ruby-2.4.1/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+[ActiveJob] [ActiveStorage::PurgeJob] [7432d4e8-255d-4402-ba5b-509ff58f582f]   [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+[ActiveJob] [ActiveStorage::PurgeJob] [7432d4e8-255d-4402-ba5b-509ff58f582f]   ↳ /Users/fahimabdullah/.rvm/gems/ruby-2.4.1/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+[ActiveJob] [ActiveStorage::PurgeJob] [7432d4e8-255d-4402-ba5b-509ff58f582f]   [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 6], ["record_type", "ActiveStorage::Blob"], ["name", "preview_image"], ["LIMIT", 1]]
+Started GET "/records" for 127.0.0.1 at 2019-01-08 10:17:30 +0800
+[ActiveJob] [ActiveStorage::PurgeJob] [7432d4e8-255d-4402-ba5b-509ff58f582f]   ↳ /Users/fahimabdullah/.rvm/gems/ruby-2.4.1/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+Processing by RecordsController#index as HTML
+[ActiveJob] [ActiveStorage::PurgeJob] [7432d4e8-255d-4402-ba5b-509ff58f582f] [36m  Disk Storage (63.6ms) [0m[31mDeleted file from key: xfyGP4b9xcu2pUJvVYDgtApd[0m
+[ActiveJob] [ActiveStorage::PurgeJob] [7432d4e8-255d-4402-ba5b-509ff58f582f] Performed ActiveStorage::PurgeJob (Job ID: 7432d4e8-255d-4402-ba5b-509ff58f582f) from Async(default) in 77.38ms
+  Rendering records/index.html.erb within layouts/application
+  [1m[36mRecord Load (0.3ms)[0m  [1m[34mSELECT "records".* FROM "records"[0m
+  ↳ app/views/records/index.html.erb:21
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? AND "active_storage_attachments"."record_id" = ?[0m  [["record_type", "Record"], ["name", "file"], ["record_id", 6]]
+  ↳ app/views/records/index.html.erb:21
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ?[0m  [["id", 5]]
+  ↳ app/views/records/index.html.erb:21
+  Rendered records/index.html.erb within layouts/application (5.6ms)
+Completed 200 OK in 76ms (Views: 71.8ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/records/new" for 127.0.0.1 at 2019-01-08 10:17:32 +0800
+Processing by RecordsController#new as HTML
+  Rendering records/new.html.erb within layouts/application
+  Rendered records/_form.html.erb (3.5ms)
+  Rendered records/new.html.erb within layouts/application (9.2ms)
+Completed 200 OK in 120ms (Views: 115.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/records" for 127.0.0.1 at 2019-01-08 10:17:45 +0800
+Processing by RecordsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"w2vsLxA/VbWO2PRWrOGXxiTOqlXrr4PZUstHWvoi5FVcd0HtNLUEVZAlzq12N+UKfssIenYembIbbbI8zkgNKw==", "record"=>{"awbnum"=>"234", "file"=>#<ActionDispatch::Http::UploadedFile:0x007f8c9b27c750 @tempfile=#<Tempfile:/var/folders/tj/9ddypmz11k3csy6c8gc_vw600000gq/T/RackMultipart20190108-61436-gxh7a1.png>, @original_filename="aaLogo.png", @content_type="image/png", @headers="Content-Disposition: form-data; name=\"record[file]\"; filename=\"aaLogo.png\"\r\nContent-Type: image/png\r\n">}, "commit"=>"Submit"}
+[36m  Disk Storage (3.0ms) [0m[32mUploaded file to key: Hwq7dZLvJUVX2WahgakTecnk (checksum: 47Tr3JoWm6Uo/I+KW1Y2TQ==)[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/records_controller.rb:31
+  [1m[36mActiveStorage::Blob Create (0.6ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "metadata", "byte_size", "checksum", "created_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["key", "Hwq7dZLvJUVX2WahgakTecnk"], ["filename", "aaLogo.png"], ["content_type", "image/png"], ["metadata", "{\"identified\":true}"], ["byte_size", 145725], ["checksum", "47Tr3JoWm6Uo/I+KW1Y2TQ=="], ["created_at", "2019-01-08 02:17:45.558720"]]
+  ↳ app/controllers/records_controller.rb:31
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/records_controller.rb:31
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/records_controller.rb:31
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/records_controller.rb:31
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/records_controller.rb:34
+  [1m[36mRecord Create (0.4ms)[0m  [1m[32mINSERT INTO "records" ("awbnum", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["awbnum", "234"], ["created_at", "2019-01-08 02:17:45.564534"], ["updated_at", "2019-01-08 02:17:45.564534"]]
+  ↳ app/controllers/records_controller.rb:34
+  [1m[36mActiveStorage::Attachment Create (0.3ms)[0m  [1m[32mINSERT INTO "active_storage_attachments" ("name", "record_type", "record_id", "blob_id", "created_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "file"], ["record_type", "Record"], ["record_id", 8], ["blob_id", 7], ["created_at", "2019-01-08 02:17:45.566280"]]
+  ↳ app/controllers/records_controller.rb:34
+  [1m[36mRecord Update (0.2ms)[0m  [1m[33mUPDATE "records" SET "updated_at" = ? WHERE "records"."id" = ?[0m  [["updated_at", "2019-01-08 02:17:45.567745"], ["id", 8]]
+  ↳ app/controllers/records_controller.rb:34
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/records_controller.rb:34
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+[ActiveJob] Enqueued ActiveStorage::AnalyzeJob (Job ID: 50e62b45-5a80-4fa3-a16f-e570bf67bb98) to Async(default) with arguments: #<GlobalID:0x007f8ca0cc7408 @uri=#<URI::GID gid://rc-uploader/ActiveStorage::Blob/7>>
+  ↳ /Users/fahimabdullah/.rvm/gems/ruby-2.4.1/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/records/8
+[ActiveJob] [ActiveStorage::AnalyzeJob] [50e62b45-5a80-4fa3-a16f-e570bf67bb98] Performing ActiveStorage::AnalyzeJob (Job ID: 50e62b45-5a80-4fa3-a16f-e570bf67bb98) from Async(default) with arguments: #<GlobalID:0x007f8ca0cb4c68 @uri=#<URI::GID gid://rc-uploader/ActiveStorage::Blob/7>>
+Completed 302 Found in 24ms (ActiveRecord: 3.7ms)
+
+
+[ActiveJob] [ActiveStorage::AnalyzeJob] [50e62b45-5a80-4fa3-a16f-e570bf67bb98] [36m  Disk Storage (1.9ms) [0m[34mDownloaded file from key: Hwq7dZLvJUVX2WahgakTecnk[0m
+Started GET "/records/8" for 127.0.0.1 at 2019-01-08 10:17:45 +0800
+[ActiveJob] [ActiveStorage::AnalyzeJob] [50e62b45-5a80-4fa3-a16f-e570bf67bb98] Skipping image analysis because the mini_magick gem isn't installed
+Processing by RecordsController#show as HTML
+[ActiveJob] [ActiveStorage::AnalyzeJob] [50e62b45-5a80-4fa3-a16f-e570bf67bb98]   [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  Parameters: {"id"=>"8"}
+[ActiveJob] [ActiveStorage::AnalyzeJob] [50e62b45-5a80-4fa3-a16f-e570bf67bb98]   ↳ /Users/fahimabdullah/.rvm/gems/ruby-2.4.1/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mRecord Load (0.3ms)[0m  [1m[34mSELECT  "records".* FROM "records" WHERE "records"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [50e62b45-5a80-4fa3-a16f-e570bf67bb98]   [1m[36mActiveStorage::Blob Update (0.5ms)[0m  [1m[33mUPDATE "active_storage_blobs" SET "metadata" = ? WHERE "active_storage_blobs"."id" = ?[0m  [["metadata", "{\"identified\":true,\"analyzed\":true}"], ["id", 7]]
+  ↳ app/controllers/records_controller.rb:71
+[ActiveJob] [ActiveStorage::AnalyzeJob] [50e62b45-5a80-4fa3-a16f-e570bf67bb98]   ↳ /Users/fahimabdullah/.rvm/gems/ruby-2.4.1/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+[ActiveJob] [ActiveStorage::AnalyzeJob] [50e62b45-5a80-4fa3-a16f-e570bf67bb98]   [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [50e62b45-5a80-4fa3-a16f-e570bf67bb98]   ↳ /Users/fahimabdullah/.rvm/gems/ruby-2.4.1/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+[ActiveJob] [ActiveStorage::AnalyzeJob] [50e62b45-5a80-4fa3-a16f-e570bf67bb98] Performed ActiveStorage::AnalyzeJob (Job ID: 50e62b45-5a80-4fa3-a16f-e570bf67bb98) from Async(default) in 30.56ms
+  Rendering records/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 8], ["record_type", "Record"], ["name", "file"], ["LIMIT", 1]]
+  ↳ app/views/records/show.html.erb:8
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/records/show.html.erb:8
+  Rendered records/show.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 72ms (Views: 64.4ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/records" for 127.0.0.1 at 2019-01-08 10:17:47 +0800
+Processing by RecordsController#index as HTML
+  Rendering records/index.html.erb within layouts/application
+  [1m[36mRecord Load (0.3ms)[0m  [1m[34mSELECT "records".* FROM "records"[0m
+  ↳ app/views/records/index.html.erb:21
+  [1m[36mActiveStorage::Attachment Load (0.6ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? AND "active_storage_attachments"."record_id" IN (?, ?)[0m  [["record_type", "Record"], ["name", "file"], ["record_id", 6], ["record_id", 8]]
+  ↳ app/views/records/index.html.erb:21
+  [1m[36mActiveStorage::Blob Load (0.4ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" IN (?, ?)[0m  [["id", 5], ["id", 7]]
+  ↳ app/views/records/index.html.erb:21
+  Rendered records/index.html.erb within layouts/application (11.8ms)
+Completed 200 OK in 104ms (Views: 99.0ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/records/new" for 127.0.0.1 at 2019-01-08 10:17:48 +0800
+Processing by RecordsController#new as HTML
+  Rendering records/new.html.erb within layouts/application
+  Rendered records/_form.html.erb (2.5ms)
+  Rendered records/new.html.erb within layouts/application (6.4ms)
+Completed 200 OK in 106ms (Views: 97.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/records" for 127.0.0.1 at 2019-01-08 10:17:59 +0800
+Processing by RecordsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"yOH25WwPPzEoBAoZ56CP7XX7TGw1pVVXkeKYNNqs/UBX/VsnSIVu0Tb5MOI9dv0hL/7uQ6gUTzzYRG1S7sYUPg==", "record"=>{"awbnum"=>"444", "file"=>#<ActionDispatch::Http::UploadedFile:0x007f8c9d19b5c8 @tempfile=#<Tempfile:/var/folders/tj/9ddypmz11k3csy6c8gc_vw600000gq/T/RackMultipart20190108-61436-16s2o7t.png>, @original_filename="Screen Shot 2019-01-03 at 5.06.06 PM.png", @content_type="image/png", @headers="Content-Disposition: form-data; name=\"record[file]\"; filename=\"Screen Shot 2019-01-03 at 5.06.06 PM.png\"\r\nContent-Type: image/png\r\n">}, "commit"=>"Submit"}
+[36m  Disk Storage (9.1ms) [0m[32mUploaded file to key: oSvjqRKeod9fUxWmpboyrexk (checksum: 9ziIvoObyTxNsbq07CS3ug==)[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/records_controller.rb:31
+  [1m[36mActiveStorage::Blob Create (0.6ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "metadata", "byte_size", "checksum", "created_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["key", "oSvjqRKeod9fUxWmpboyrexk"], ["filename", "Screen Shot 2019-01-03 at 5.06.06 PM.png"], ["content_type", "image/png"], ["metadata", "{\"identified\":true}"], ["byte_size", 1267202], ["checksum", "9ziIvoObyTxNsbq07CS3ug=="], ["created_at", "2019-01-08 02:17:59.147839"]]
+  ↳ app/controllers/records_controller.rb:31
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/records_controller.rb:31
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/records_controller.rb:31
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/records_controller.rb:31
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/records_controller.rb:34
+  [1m[36mRecord Create (0.4ms)[0m  [1m[32mINSERT INTO "records" ("awbnum", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["awbnum", "444"], ["created_at", "2019-01-08 02:17:59.152551"], ["updated_at", "2019-01-08 02:17:59.152551"]]
+  ↳ app/controllers/records_controller.rb:34
+  [1m[36mActiveStorage::Attachment Create (0.4ms)[0m  [1m[32mINSERT INTO "active_storage_attachments" ("name", "record_type", "record_id", "blob_id", "created_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "file"], ["record_type", "Record"], ["record_id", 9], ["blob_id", 8], ["created_at", "2019-01-08 02:17:59.154310"]]
+  ↳ app/controllers/records_controller.rb:34
+  [1m[36mRecord Update (0.1ms)[0m  [1m[33mUPDATE "records" SET "updated_at" = ? WHERE "records"."id" = ?[0m  [["updated_at", "2019-01-08 02:17:59.156671"], ["id", 9]]
+  ↳ app/controllers/records_controller.rb:34
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/records_controller.rb:34
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+[ActiveJob] Enqueued ActiveStorage::AnalyzeJob (Job ID: 3fb87812-b543-4645-bd0b-b8b5a1aec5c2) to Async(default) with arguments: #<GlobalID:0x007f8c9f5ba8c8 @uri=#<URI::GID gid://rc-uploader/ActiveStorage::Blob/8>>
+  ↳ /Users/fahimabdullah/.rvm/gems/ruby-2.4.1/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/records/9
+[ActiveJob] [ActiveStorage::AnalyzeJob] [3fb87812-b543-4645-bd0b-b8b5a1aec5c2] Performing ActiveStorage::AnalyzeJob (Job ID: 3fb87812-b543-4645-bd0b-b8b5a1aec5c2) from Async(default) with arguments: #<GlobalID:0x007f8c9d0fc4f0 @uri=#<URI::GID gid://rc-uploader/ActiveStorage::Blob/8>>
+Completed 302 Found in 31ms (ActiveRecord: 3.6ms)
+
+
+[ActiveJob] [ActiveStorage::AnalyzeJob] [3fb87812-b543-4645-bd0b-b8b5a1aec5c2] [36m  Disk Storage (5.4ms) [0m[34mDownloaded file from key: oSvjqRKeod9fUxWmpboyrexk[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [3fb87812-b543-4645-bd0b-b8b5a1aec5c2] Skipping image analysis because the mini_magick gem isn't installed
+[ActiveJob] [ActiveStorage::AnalyzeJob] [3fb87812-b543-4645-bd0b-b8b5a1aec5c2]   [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [3fb87812-b543-4645-bd0b-b8b5a1aec5c2]   ↳ /Users/fahimabdullah/.rvm/gems/ruby-2.4.1/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+[ActiveJob] [ActiveStorage::AnalyzeJob] [3fb87812-b543-4645-bd0b-b8b5a1aec5c2]   [1m[36mActiveStorage::Blob Update (0.7ms)[0m  [1m[33mUPDATE "active_storage_blobs" SET "metadata" = ? WHERE "active_storage_blobs"."id" = ?[0m  [["metadata", "{\"identified\":true,\"analyzed\":true}"], ["id", 8]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [3fb87812-b543-4645-bd0b-b8b5a1aec5c2]   ↳ /Users/fahimabdullah/.rvm/gems/ruby-2.4.1/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+Started GET "/records/9" for 127.0.0.1 at 2019-01-08 10:17:59 +0800
+[ActiveJob] [ActiveStorage::AnalyzeJob] [3fb87812-b543-4645-bd0b-b8b5a1aec5c2]   [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+Processing by RecordsController#show as HTML
+[ActiveJob] [ActiveStorage::AnalyzeJob] [3fb87812-b543-4645-bd0b-b8b5a1aec5c2]   ↳ /Users/fahimabdullah/.rvm/gems/ruby-2.4.1/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  Parameters: {"id"=>"9"}
+[ActiveJob] [ActiveStorage::AnalyzeJob] [3fb87812-b543-4645-bd0b-b8b5a1aec5c2] Performed ActiveStorage::AnalyzeJob (Job ID: 3fb87812-b543-4645-bd0b-b8b5a1aec5c2) from Async(default) in 17.72ms
+  [1m[36mRecord Load (0.2ms)[0m  [1m[34mSELECT  "records".* FROM "records" WHERE "records"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/records_controller.rb:71
+  Rendering records/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 9], ["record_type", "Record"], ["name", "file"], ["LIMIT", 1]]
+  ↳ app/views/records/show.html.erb:8
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/views/records/show.html.erb:8
+  Rendered records/show.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 81ms (Views: 76.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/records" for 127.0.0.1 at 2019-01-08 10:18:00 +0800
+Processing by RecordsController#index as HTML
+  Rendering records/index.html.erb within layouts/application
+  [1m[36mRecord Load (0.3ms)[0m  [1m[34mSELECT "records".* FROM "records"[0m
+  ↳ app/views/records/index.html.erb:21
+  [1m[36mActiveStorage::Attachment Load (0.5ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? AND "active_storage_attachments"."record_id" IN (?, ?, ?)[0m  [["record_type", "Record"], ["name", "file"], ["record_id", 6], ["record_id", 8], ["record_id", 9]]
+  ↳ app/views/records/index.html.erb:21
+  [1m[36mActiveStorage::Blob Load (0.4ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" IN (?, ?, ?)[0m  [["id", 5], ["id", 7], ["id", 8]]
+  ↳ app/views/records/index.html.erb:21
+  Rendered records/index.html.erb within layouts/application (12.4ms)
+Completed 200 OK in 141ms (Views: 133.1ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/records/new" for 127.0.0.1 at 2019-01-08 10:18:01 +0800
+Processing by RecordsController#new as HTML
+  Rendering records/new.html.erb within layouts/application
+  Rendered records/_form.html.erb (4.5ms)
+  Rendered records/new.html.erb within layouts/application (11.0ms)
+Completed 200 OK in 122ms (Views: 116.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/records" for 127.0.0.1 at 2019-01-08 10:18:31 +0800
+Processing by RecordsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Zstagf/Fm5ZxR9e/enBwPbFsXO8xT+q6n0CUuTW+yTf51/dD20/Kdm+67USgpgLx62n+wKz+8NHW5mHfAdQgSQ==", "record"=>{"awbnum"=>"12312434", "file"=>#<ActionDispatch::Http::UploadedFile:0x007f8ca0bd09f0 @tempfile=#<Tempfile:/var/folders/tj/9ddypmz11k3csy6c8gc_vw600000gq/T/RackMultipart20190108-61436-9046lt.png>, @original_filename="Screen Shot 2019-01-06 at 6.00.35 PM.png", @content_type="image/png", @headers="Content-Disposition: form-data; name=\"record[file]\"; filename=\"Screen Shot 2019-01-06 at 6.00.35 PM.png\"\r\nContent-Type: image/png\r\n">}, "commit"=>"Submit"}
+[36m  Disk Storage (11.6ms) [0m[32mUploaded file to key: qopTy2fBqkF7XPCG5NEuNYfd (checksum: cw0UbPcOkmyPwA1uE5jW3w==)[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/records_controller.rb:31
+  [1m[36mActiveStorage::Blob Create (0.4ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "metadata", "byte_size", "checksum", "created_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["key", "qopTy2fBqkF7XPCG5NEuNYfd"], ["filename", "Screen Shot 2019-01-06 at 6.00.35 PM.png"], ["content_type", "image/png"], ["metadata", "{\"identified\":true}"], ["byte_size", 2047868], ["checksum", "cw0UbPcOkmyPwA1uE5jW3w=="], ["created_at", "2019-01-08 02:18:31.955002"]]
+  ↳ app/controllers/records_controller.rb:31
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/records_controller.rb:31
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/records_controller.rb:31
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/records_controller.rb:31
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/records_controller.rb:34
+  [1m[36mRecord Create (0.5ms)[0m  [1m[32mINSERT INTO "records" ("awbnum", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["awbnum", "12312434"], ["created_at", "2019-01-08 02:18:31.960839"], ["updated_at", "2019-01-08 02:18:31.960839"]]
+  ↳ app/controllers/records_controller.rb:34
+  [1m[36mActiveStorage::Attachment Create (0.3ms)[0m  [1m[32mINSERT INTO "active_storage_attachments" ("name", "record_type", "record_id", "blob_id", "created_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "file"], ["record_type", "Record"], ["record_id", 10], ["blob_id", 9], ["created_at", "2019-01-08 02:18:31.963248"]]
+  ↳ app/controllers/records_controller.rb:34
+  [1m[36mRecord Update (0.1ms)[0m  [1m[33mUPDATE "records" SET "updated_at" = ? WHERE "records"."id" = ?[0m  [["updated_at", "2019-01-08 02:18:31.964540"], ["id", 10]]
+  ↳ app/controllers/records_controller.rb:34
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/records_controller.rb:34
+[ActiveJob] Enqueued ActiveStorage::AnalyzeJob (Job ID: bb088628-f5e6-4461-931a-5eed669e3496) to Async(default) with arguments: #<GlobalID:0x007f8ca11ed4f0 @uri=#<URI::GID gid://rc-uploader/ActiveStorage::Blob/9>>
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+Redirected to http://localhost:3000/records/10
+  ↳ /Users/fahimabdullah/.rvm/gems/ruby-2.4.1/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+Completed 302 Found in 35ms (ActiveRecord: 3.9ms)
+
+
+[ActiveJob] [ActiveStorage::AnalyzeJob] [bb088628-f5e6-4461-931a-5eed669e3496] Performing ActiveStorage::AnalyzeJob (Job ID: bb088628-f5e6-4461-931a-5eed669e3496) from Async(default) with arguments: #<GlobalID:0x007f8ca11d57d8 @uri=#<URI::GID gid://rc-uploader/ActiveStorage::Blob/9>>
+[ActiveJob] [ActiveStorage::AnalyzeJob] [bb088628-f5e6-4461-931a-5eed669e3496] [36m  Disk Storage (14.3ms) [0m[34mDownloaded file from key: qopTy2fBqkF7XPCG5NEuNYfd[0m
+Started GET "/records/10" for 127.0.0.1 at 2019-01-08 10:18:31 +0800
+Processing by RecordsController#show as HTML
+[ActiveJob] [ActiveStorage::AnalyzeJob] [bb088628-f5e6-4461-931a-5eed669e3496] Skipping image analysis because the mini_magick gem isn't installed
+  Parameters: {"id"=>"10"}
+[ActiveJob] [ActiveStorage::AnalyzeJob] [bb088628-f5e6-4461-931a-5eed669e3496]   [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mRecord Load (0.1ms)[0m  [1m[34mSELECT  "records".* FROM "records" WHERE "records"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [bb088628-f5e6-4461-931a-5eed669e3496]   ↳ /Users/fahimabdullah/.rvm/gems/ruby-2.4.1/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  ↳ app/controllers/records_controller.rb:71
+[ActiveJob] [ActiveStorage::AnalyzeJob] [bb088628-f5e6-4461-931a-5eed669e3496]   [1m[36mActiveStorage::Blob Update (0.4ms)[0m  [1m[33mUPDATE "active_storage_blobs" SET "metadata" = ? WHERE "active_storage_blobs"."id" = ?[0m  [["metadata", "{\"identified\":true,\"analyzed\":true}"], ["id", 9]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [bb088628-f5e6-4461-931a-5eed669e3496]   ↳ /Users/fahimabdullah/.rvm/gems/ruby-2.4.1/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+[ActiveJob] [ActiveStorage::AnalyzeJob] [bb088628-f5e6-4461-931a-5eed669e3496]   [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  Rendering records/show.html.erb within layouts/application
+[ActiveJob] [ActiveStorage::AnalyzeJob] [bb088628-f5e6-4461-931a-5eed669e3496]   ↳ /Users/fahimabdullah/.rvm/gems/ruby-2.4.1/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 10], ["record_type", "Record"], ["name", "file"], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [bb088628-f5e6-4461-931a-5eed669e3496] Performed ActiveStorage::AnalyzeJob (Job ID: bb088628-f5e6-4461-931a-5eed669e3496) from Async(default) in 41.08ms
+  ↳ app/views/records/show.html.erb:8
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/views/records/show.html.erb:8
+  Rendered records/show.html.erb within layouts/application (6.4ms)
+Completed 200 OK in 78ms (Views: 72.5ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/records" for 127.0.0.1 at 2019-01-08 10:18:34 +0800
+Processing by RecordsController#index as HTML
+  Rendering records/index.html.erb within layouts/application
+  [1m[36mRecord Load (0.3ms)[0m  [1m[34mSELECT "records".* FROM "records"[0m
+  ↳ app/views/records/index.html.erb:21
+  [1m[36mActiveStorage::Attachment Load (0.8ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? AND "active_storage_attachments"."record_id" IN (?, ?, ?, ?)[0m  [["record_type", "Record"], ["name", "file"], ["record_id", 6], ["record_id", 8], ["record_id", 9], ["record_id", 10]]
+  ↳ app/views/records/index.html.erb:21
+  [1m[36mActiveStorage::Blob Load (0.5ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" IN (?, ?, ?, ?)[0m  [["id", 5], ["id", 7], ["id", 8], ["id", 9]]
+  ↳ app/views/records/index.html.erb:21
+  Rendered records/index.html.erb within layouts/application (12.6ms)
+Completed 200 OK in 81ms (Views: 73.8ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/records/10" for 127.0.0.1 at 2019-01-08 10:18:37 +0800
+Processing by RecordsController#show as HTML
+  Parameters: {"id"=>"10"}
+  [1m[36mRecord Load (0.7ms)[0m  [1m[34mSELECT  "records".* FROM "records" WHERE "records"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/records_controller.rb:71
+  Rendering records/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.5ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 10], ["record_type", "Record"], ["name", "file"], ["LIMIT", 1]]
+  ↳ app/views/records/show.html.erb:8
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/views/records/show.html.erb:8
+  Rendered records/show.html.erb within layouts/application (8.1ms)
+Completed 200 OK in 111ms (Views: 101.0ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/records" for 127.0.0.1 at 2019-01-08 10:18:38 +0800
+Processing by RecordsController#index as HTML
+  Rendering records/index.html.erb within layouts/application
+  [1m[36mRecord Load (0.3ms)[0m  [1m[34mSELECT "records".* FROM "records"[0m
+  ↳ app/views/records/index.html.erb:21
+  [1m[36mActiveStorage::Attachment Load (0.6ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? AND "active_storage_attachments"."record_id" IN (?, ?, ?, ?)[0m  [["record_type", "Record"], ["name", "file"], ["record_id", 6], ["record_id", 8], ["record_id", 9], ["record_id", 10]]
+  ↳ app/views/records/index.html.erb:21
+  [1m[36mActiveStorage::Blob Load (0.6ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" IN (?, ?, ?, ?)[0m  [["id", 5], ["id", 7], ["id", 8], ["id", 9]]
+  ↳ app/views/records/index.html.erb:21
+  Rendered records/index.html.erb within layouts/application (13.8ms)
+Completed 200 OK in 103ms (Views: 94.6ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/records" for 127.0.0.1 at 2019-01-08 10:20:34 +0800
+Processing by RecordsController#index as HTML
+  Rendering records/index.html.erb within layouts/application
+  [1m[36mRecord Load (0.2ms)[0m  [1m[34mSELECT "records".* FROM "records"[0m
+  ↳ app/views/records/index.html.erb:21
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? AND "active_storage_attachments"."record_id" IN (?, ?, ?, ?)[0m  [["record_type", "Record"], ["name", "file"], ["record_id", 6], ["record_id", 8], ["record_id", 9], ["record_id", 10]]
+  ↳ app/views/records/index.html.erb:21
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" IN (?, ?, ?, ?)[0m  [["id", 5], ["id", 7], ["id", 8], ["id", 9]]
+  ↳ app/views/records/index.html.erb:21
+  Rendered records/index.html.erb within layouts/application (45.0ms)
+Completed 200 OK in 133ms (Views: 123.9ms | ActiveRecord: 3.2ms)
+
+
+Started GET "/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBDZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--b6a8bd3eb73cc5142dceec688c41b385c75e5c88/building-and-cityscape-in-kuala-lumpur-malaysia.jpg" for 127.0.0.1 at 2019-01-08 10:20:36 +0800
+Processing by ActiveStorage::BlobsController#show as JPEG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBDZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--b6a8bd3eb73cc5142dceec688c41b385c75e5c88", "filename"=>"building-and-cityscape-in-kuala-lumpur-malaysia"}
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /Users/fahimabdullah/.rvm/gems/ruby-2.4.1/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+[36m  Disk Storage (2.7ms) [0m[34mGenerated URL for file at key: VZFhpJiAmjeUPLFHW5D1HNjj (http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRWbHBHYUhCS2FVRnRhbVZWVUV4R1NGYzFSREZJVG1wcUJqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSUJqR2x1YkdsdVpUc2dabWxzWlc1aGJXVTlJbUoxYVd4a2FXNW5MV0Z1WkMxamFYUjVjMk5oY0dVdGFXNHRhM1ZoYkdFdGJIVnRjSFZ5TFcxaGJHRjVjMmxoTG1wd1p5STdJR1pwYkdWdVlXMWxLajFWVkVZdE9DY25ZblZwYkdScGJtY3RZVzVrTFdOcGRIbHpZMkZ3WlMxcGJpMXJkV0ZzWVMxc2RXMXdkWEl0YldGc1lYbHphV0V1YW5CbkJqc0dWRG9SWTI5dWRHVnVkRjkwZVhCbFNTSVBhVzFoWjJVdmFuQmxad1k3QmxRPSIsImV4cCI6IjIwMTktMDEtMDhUMDI6MjU6MzYuODQ2WiIsInB1ciI6ImJsb2Jfa2V5In19--375144af609bd240e5432d594de904c010ccb995/building-and-cityscape-in-kuala-lumpur-malaysia.jpg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22building-and-cityscape-in-kuala-lumpur-malaysia.jpg%22%3B+filename%2A%3DUTF-8%27%27building-and-cityscape-in-kuala-lumpur-malaysia.jpg)[0m
+Redirected to http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRWbHBHYUhCS2FVRnRhbVZWVUV4R1NGYzFSREZJVG1wcUJqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSUJqR2x1YkdsdVpUc2dabWxzWlc1aGJXVTlJbUoxYVd4a2FXNW5MV0Z1WkMxamFYUjVjMk5oY0dVdGFXNHRhM1ZoYkdFdGJIVnRjSFZ5TFcxaGJHRjVjMmxoTG1wd1p5STdJR1pwYkdWdVlXMWxLajFWVkVZdE9DY25ZblZwYkdScGJtY3RZVzVrTFdOcGRIbHpZMkZ3WlMxcGJpMXJkV0ZzWVMxc2RXMXdkWEl0YldGc1lYbHphV0V1YW5CbkJqc0dWRG9SWTI5dWRHVnVkRjkwZVhCbFNTSVBhVzFoWjJVdmFuQmxad1k3QmxRPSIsImV4cCI6IjIwMTktMDEtMDhUMDI6MjU6MzYuODQ2WiIsInB1ciI6ImJsb2Jfa2V5In19--375144af609bd240e5432d594de904c010ccb995/building-and-cityscape-in-kuala-lumpur-malaysia.jpg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22building-and-cityscape-in-kuala-lumpur-malaysia.jpg%22%3B+filename%2A%3DUTF-8%27%27building-and-cityscape-in-kuala-lumpur-malaysia.jpg
+Completed 302 Found in 7ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRWbHBHYUhCS2FVRnRhbVZWVUV4R1NGYzFSREZJVG1wcUJqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSUJqR2x1YkdsdVpUc2dabWxzWlc1aGJXVTlJbUoxYVd4a2FXNW5MV0Z1WkMxamFYUjVjMk5oY0dVdGFXNHRhM1ZoYkdFdGJIVnRjSFZ5TFcxaGJHRjVjMmxoTG1wd1p5STdJR1pwYkdWdVlXMWxLajFWVkVZdE9DY25ZblZwYkdScGJtY3RZVzVrTFdOcGRIbHpZMkZ3WlMxcGJpMXJkV0ZzWVMxc2RXMXdkWEl0YldGc1lYbHphV0V1YW5CbkJqc0dWRG9SWTI5dWRHVnVkRjkwZVhCbFNTSVBhVzFoWjJVdmFuQmxad1k3QmxRPSIsImV4cCI6IjIwMTktMDEtMDhUMDI6MjU6MzYuODQ2WiIsInB1ciI6ImJsb2Jfa2V5In19--375144af609bd240e5432d594de904c010ccb995/building-and-cityscape-in-kuala-lumpur-malaysia.jpg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22building-and-cityscape-in-kuala-lumpur-malaysia.jpg%22%3B+filename%2A%3DUTF-8%27%27building-and-cityscape-in-kuala-lumpur-malaysia.jpg" for 127.0.0.1 at 2019-01-08 10:20:36 +0800
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"content_type"=>"image/jpeg", "disposition"=>"inline; filename=\"building-and-cityscape-in-kuala-lumpur-malaysia.jpg\"; filename*=UTF-8''building-and-cityscape-in-kuala-lumpur-malaysia.jpg", "encoded_key"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRWbHBHYUhCS2FVRnRhbVZWVUV4R1NGYzFSREZJVG1wcUJqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSUJqR2x1YkdsdVpUc2dabWxzWlc1aGJXVTlJbUoxYVd4a2FXNW5MV0Z1WkMxamFYUjVjMk5oY0dVdGFXNHRhM1ZoYkdFdGJIVnRjSFZ5TFcxaGJHRjVjMmxoTG1wd1p5STdJR1pwYkdWdVlXMWxLajFWVkVZdE9DY25ZblZwYkdScGJtY3RZVzVrTFdOcGRIbHpZMkZ3WlMxcGJpMXJkV0ZzWVMxc2RXMXdkWEl0YldGc1lYbHphV0V1YW5CbkJqc0dWRG9SWTI5dWRHVnVkRjkwZVhCbFNTSVBhVzFoWjJVdmFuQmxad1k3QmxRPSIsImV4cCI6IjIwMTktMDEtMDhUMDI6MjU6MzYuODQ2WiIsInB1ciI6ImJsb2Jfa2V5In19--375144af609bd240e5432d594de904c010ccb995", "filename"=>"building-and-cityscape-in-kuala-lumpur-malaysia"}
+Completed 200 OK in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/records" for 127.0.0.1 at 2019-01-08 10:20:53 +0800
+Processing by RecordsController#index as HTML
+  Rendering records/index.html.erb within layouts/application
+  [1m[36mRecord Load (0.2ms)[0m  [1m[34mSELECT "records".* FROM "records"[0m
+  ↳ app/views/records/index.html.erb:21
+  [1m[36mActiveStorage::Attachment Load (0.5ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? AND "active_storage_attachments"."record_id" IN (?, ?, ?, ?)[0m  [["record_type", "Record"], ["name", "file"], ["record_id", 6], ["record_id", 8], ["record_id", 9], ["record_id", 10]]
+  ↳ app/views/records/index.html.erb:21
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" IN (?, ?, ?, ?)[0m  [["id", 5], ["id", 7], ["id", 8], ["id", 9]]
+  ↳ app/views/records/index.html.erb:21
+  Rendered records/index.html.erb within layouts/application (29.4ms)
+Completed 200 OK in 107ms (Views: 101.9ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/records" for 127.0.0.1 at 2019-01-08 10:21:38 +0800
+Processing by RecordsController#index as HTML
+  Rendering records/index.html.erb within layouts/application
+  [1m[36mRecord Load (0.5ms)[0m  [1m[34mSELECT "records".* FROM "records"[0m
+  ↳ app/views/records/index.html.erb:21
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? AND "active_storage_attachments"."record_id" IN (?, ?, ?, ?)[0m  [["record_type", "Record"], ["name", "file"], ["record_id", 6], ["record_id", 8], ["record_id", 9], ["record_id", 10]]
+  ↳ app/views/records/index.html.erb:21
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" IN (?, ?, ?, ?)[0m  [["id", 5], ["id", 7], ["id", 8], ["id", 9]]
+  ↳ app/views/records/index.html.erb:21
+  Rendered records/index.html.erb within layouts/application (11.3ms)
+Completed 200 OK in 68ms (Views: 64.3ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/records" for 127.0.0.1 at 2019-01-08 10:21:48 +0800
+Processing by RecordsController#index as HTML
+  Rendering records/index.html.erb within layouts/application
+  [1m[36mRecord Load (0.2ms)[0m  [1m[34mSELECT "records".* FROM "records"[0m
+  ↳ app/views/records/index.html.erb:21
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? AND "active_storage_attachments"."record_id" IN (?, ?, ?, ?)[0m  [["record_type", "Record"], ["name", "file"], ["record_id", 6], ["record_id", 8], ["record_id", 9], ["record_id", 10]]
+  ↳ app/views/records/index.html.erb:21
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" IN (?, ?, ?, ?)[0m  [["id", 5], ["id", 7], ["id", 8], ["id", 9]]
+  ↳ app/views/records/index.html.erb:21
+  Rendered records/index.html.erb within layouts/application (20.3ms)
+Completed 200 OK in 83ms (Views: 79.3ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/records" for 127.0.0.1 at 2019-01-08 10:22:08 +0800
+Processing by RecordsController#index as HTML
+  Rendering records/index.html.erb within layouts/application
+  [1m[36mRecord Load (0.2ms)[0m  [1m[34mSELECT "records".* FROM "records"[0m
+  ↳ app/views/records/index.html.erb:20
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? AND "active_storage_attachments"."record_id" IN (?, ?, ?, ?)[0m  [["record_type", "Record"], ["name", "file"], ["record_id", 6], ["record_id", 8], ["record_id", 9], ["record_id", 10]]
+  ↳ app/views/records/index.html.erb:20
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" IN (?, ?, ?, ?)[0m  [["id", 5], ["id", 7], ["id", 8], ["id", 9]]
+  ↳ app/views/records/index.html.erb:20
+  Rendered records/index.html.erb within layouts/application (8.0ms)
+Completed 200 OK in 87ms (Views: 81.6ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/records" for 127.0.0.1 at 2019-01-08 10:22:14 +0800
+Processing by RecordsController#index as HTML
+  Rendering records/index.html.erb within layouts/application
+  [1m[36mRecord Load (0.2ms)[0m  [1m[34mSELECT "records".* FROM "records"[0m
+  ↳ app/views/records/index.html.erb:20
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? AND "active_storage_attachments"."record_id" IN (?, ?, ?, ?)[0m  [["record_type", "Record"], ["name", "file"], ["record_id", 6], ["record_id", 8], ["record_id", 9], ["record_id", 10]]
+  ↳ app/views/records/index.html.erb:20
+  [1m[36mActiveStorage::Blob Load (0.5ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" IN (?, ?, ?, ?)[0m  [["id", 5], ["id", 7], ["id", 8], ["id", 9]]
+  ↳ app/views/records/index.html.erb:20
+  Rendered records/index.html.erb within layouts/application (13.9ms)
+Completed 200 OK in 76ms (Views: 72.9ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/records" for 127.0.0.1 at 2019-01-08 10:22:20 +0800
+Processing by RecordsController#index as HTML
+  Rendering records/index.html.erb within layouts/application
+  [1m[36mRecord Load (0.2ms)[0m  [1m[34mSELECT "records".* FROM "records"[0m
+  ↳ app/views/records/index.html.erb:20
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? AND "active_storage_attachments"."record_id" IN (?, ?, ?, ?)[0m  [["record_type", "Record"], ["name", "file"], ["record_id", 6], ["record_id", 8], ["record_id", 9], ["record_id", 10]]
+  ↳ app/views/records/index.html.erb:20
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" IN (?, ?, ?, ?)[0m  [["id", 5], ["id", 7], ["id", 8], ["id", 9]]
+  ↳ app/views/records/index.html.erb:20
+  Rendered records/index.html.erb within layouts/application (8.9ms)
+Completed 200 OK in 65ms (Views: 61.2ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/records" for 127.0.0.1 at 2019-01-08 10:24:33 +0800
+Processing by RecordsController#index as HTML
+  Rendering records/index.html.erb within layouts/application
+  [1m[36mRecord Load (0.2ms)[0m  [1m[34mSELECT "records".* FROM "records"[0m
+  ↳ app/views/records/index.html.erb:20
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? AND "active_storage_attachments"."record_id" IN (?, ?, ?, ?)[0m  [["record_type", "Record"], ["name", "file"], ["record_id", 6], ["record_id", 8], ["record_id", 9], ["record_id", 10]]
+  ↳ app/views/records/index.html.erb:20
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" IN (?, ?, ?, ?)[0m  [["id", 5], ["id", 7], ["id", 8], ["id", 9]]
+  ↳ app/views/records/index.html.erb:20
+  Rendered records/index.html.erb within layouts/application (9.3ms)
+Completed 200 OK in 66ms (Views: 62.5ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBDZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--b6a8bd3eb73cc5142dceec688c41b385c75e5c88/building-and-cityscape-in-kuala-lumpur-malaysia.jpg" for 127.0.0.1 at 2019-01-08 10:24:36 +0800
+Processing by ActiveStorage::BlobsController#show as JPEG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBDZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--b6a8bd3eb73cc5142dceec688c41b385c75e5c88", "filename"=>"building-and-cityscape-in-kuala-lumpur-malaysia"}
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /Users/fahimabdullah/.rvm/gems/ruby-2.4.1/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+[36m  Disk Storage (0.7ms) [0m[34mGenerated URL for file at key: VZFhpJiAmjeUPLFHW5D1HNjj (http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRWbHBHYUhCS2FVRnRhbVZWVUV4R1NGYzFSREZJVG1wcUJqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSUJqR2x1YkdsdVpUc2dabWxzWlc1aGJXVTlJbUoxYVd4a2FXNW5MV0Z1WkMxamFYUjVjMk5oY0dVdGFXNHRhM1ZoYkdFdGJIVnRjSFZ5TFcxaGJHRjVjMmxoTG1wd1p5STdJR1pwYkdWdVlXMWxLajFWVkVZdE9DY25ZblZwYkdScGJtY3RZVzVrTFdOcGRIbHpZMkZ3WlMxcGJpMXJkV0ZzWVMxc2RXMXdkWEl0YldGc1lYbHphV0V1YW5CbkJqc0dWRG9SWTI5dWRHVnVkRjkwZVhCbFNTSVBhVzFoWjJVdmFuQmxad1k3QmxRPSIsImV4cCI6IjIwMTktMDEtMDhUMDI6Mjk6MzYuNzQ1WiIsInB1ciI6ImJsb2Jfa2V5In19--71647490fedbd642f3eb019ae7e2bdb023c59cd5/building-and-cityscape-in-kuala-lumpur-malaysia.jpg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22building-and-cityscape-in-kuala-lumpur-malaysia.jpg%22%3B+filename%2A%3DUTF-8%27%27building-and-cityscape-in-kuala-lumpur-malaysia.jpg)[0m
+Redirected to http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRWbHBHYUhCS2FVRnRhbVZWVUV4R1NGYzFSREZJVG1wcUJqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSUJqR2x1YkdsdVpUc2dabWxzWlc1aGJXVTlJbUoxYVd4a2FXNW5MV0Z1WkMxamFYUjVjMk5oY0dVdGFXNHRhM1ZoYkdFdGJIVnRjSFZ5TFcxaGJHRjVjMmxoTG1wd1p5STdJR1pwYkdWdVlXMWxLajFWVkVZdE9DY25ZblZwYkdScGJtY3RZVzVrTFdOcGRIbHpZMkZ3WlMxcGJpMXJkV0ZzWVMxc2RXMXdkWEl0YldGc1lYbHphV0V1YW5CbkJqc0dWRG9SWTI5dWRHVnVkRjkwZVhCbFNTSVBhVzFoWjJVdmFuQmxad1k3QmxRPSIsImV4cCI6IjIwMTktMDEtMDhUMDI6Mjk6MzYuNzQ1WiIsInB1ciI6ImJsb2Jfa2V5In19--71647490fedbd642f3eb019ae7e2bdb023c59cd5/building-and-cityscape-in-kuala-lumpur-malaysia.jpg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22building-and-cityscape-in-kuala-lumpur-malaysia.jpg%22%3B+filename%2A%3DUTF-8%27%27building-and-cityscape-in-kuala-lumpur-malaysia.jpg
+Completed 302 Found in 4ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRWbHBHYUhCS2FVRnRhbVZWVUV4R1NGYzFSREZJVG1wcUJqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSUJqR2x1YkdsdVpUc2dabWxzWlc1aGJXVTlJbUoxYVd4a2FXNW5MV0Z1WkMxamFYUjVjMk5oY0dVdGFXNHRhM1ZoYkdFdGJIVnRjSFZ5TFcxaGJHRjVjMmxoTG1wd1p5STdJR1pwYkdWdVlXMWxLajFWVkVZdE9DY25ZblZwYkdScGJtY3RZVzVrTFdOcGRIbHpZMkZ3WlMxcGJpMXJkV0ZzWVMxc2RXMXdkWEl0YldGc1lYbHphV0V1YW5CbkJqc0dWRG9SWTI5dWRHVnVkRjkwZVhCbFNTSVBhVzFoWjJVdmFuQmxad1k3QmxRPSIsImV4cCI6IjIwMTktMDEtMDhUMDI6Mjk6MzYuNzQ1WiIsInB1ciI6ImJsb2Jfa2V5In19--71647490fedbd642f3eb019ae7e2bdb023c59cd5/building-and-cityscape-in-kuala-lumpur-malaysia.jpg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22building-and-cityscape-in-kuala-lumpur-malaysia.jpg%22%3B+filename%2A%3DUTF-8%27%27building-and-cityscape-in-kuala-lumpur-malaysia.jpg" for 127.0.0.1 at 2019-01-08 10:24:36 +0800
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"content_type"=>"image/jpeg", "disposition"=>"inline; filename=\"building-and-cityscape-in-kuala-lumpur-malaysia.jpg\"; filename*=UTF-8''building-and-cityscape-in-kuala-lumpur-malaysia.jpg", "encoded_key"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRWbHBHYUhCS2FVRnRhbVZWVUV4R1NGYzFSREZJVG1wcUJqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSUJqR2x1YkdsdVpUc2dabWxzWlc1aGJXVTlJbUoxYVd4a2FXNW5MV0Z1WkMxamFYUjVjMk5oY0dVdGFXNHRhM1ZoYkdFdGJIVnRjSFZ5TFcxaGJHRjVjMmxoTG1wd1p5STdJR1pwYkdWdVlXMWxLajFWVkVZdE9DY25ZblZwYkdScGJtY3RZVzVrTFdOcGRIbHpZMkZ3WlMxcGJpMXJkV0ZzWVMxc2RXMXdkWEl0YldGc1lYbHphV0V1YW5CbkJqc0dWRG9SWTI5dWRHVnVkRjkwZVhCbFNTSVBhVzFoWjJVdmFuQmxad1k3QmxRPSIsImV4cCI6IjIwMTktMDEtMDhUMDI6Mjk6MzYuNzQ1WiIsInB1ciI6ImJsb2Jfa2V5In19--71647490fedbd642f3eb019ae7e2bdb023c59cd5", "filename"=>"building-and-cityscape-in-kuala-lumpur-malaysia"}
+Completed 200 OK in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBEQT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--80e6211ff62ce8f5c95796b9b54c5878659fc3cd/aaLogo.png" for 127.0.0.1 at 2019-01-08 10:24:41 +0800
+Processing by ActiveStorage::BlobsController#show as PNG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBEQT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--80e6211ff62ce8f5c95796b9b54c5878659fc3cd", "filename"=>"aaLogo"}
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ /Users/fahimabdullah/.rvm/gems/ruby-2.4.1/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+[36m  Disk Storage (1.2ms) [0m[34mGenerated URL for file at key: Hwq7dZLvJUVX2WahgakTecnk (http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRTSGR4TjJSYVRIWktWVlpZTWxkaGFHZGhhMVJsWTI1ckJqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSS9hVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGlZV0ZNYjJkdkxuQnVaeUk3SUdacGJHVnVZVzFsS2oxVlZFWXRPQ2NuWVdGTWIyZHZMbkJ1WndZN0JsUTZFV052Ym5SbGJuUmZkSGx3WlVraURtbHRZV2RsTDNCdVp3WTdCbFE9IiwiZXhwIjoiMjAxOS0wMS0wOFQwMjoyOTo0MS4xODBaIiwicHVyIjoiYmxvYl9rZXkifX0=--9f1cb43f7df736fa98c234301e24286e8d7d12c3/aaLogo.png?content_type=image%2Fpng&disposition=inline%3B+filename%3D%22aaLogo.png%22%3B+filename%2A%3DUTF-8%27%27aaLogo.png)[0m
+Redirected to http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRTSGR4TjJSYVRIWktWVlpZTWxkaGFHZGhhMVJsWTI1ckJqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSS9hVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGlZV0ZNYjJkdkxuQnVaeUk3SUdacGJHVnVZVzFsS2oxVlZFWXRPQ2NuWVdGTWIyZHZMbkJ1WndZN0JsUTZFV052Ym5SbGJuUmZkSGx3WlVraURtbHRZV2RsTDNCdVp3WTdCbFE9IiwiZXhwIjoiMjAxOS0wMS0wOFQwMjoyOTo0MS4xODBaIiwicHVyIjoiYmxvYl9rZXkifX0=--9f1cb43f7df736fa98c234301e24286e8d7d12c3/aaLogo.png?content_type=image%2Fpng&disposition=inline%3B+filename%3D%22aaLogo.png%22%3B+filename%2A%3DUTF-8%27%27aaLogo.png
+Completed 302 Found in 6ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRTSGR4TjJSYVRIWktWVlpZTWxkaGFHZGhhMVJsWTI1ckJqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSS9hVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGlZV0ZNYjJkdkxuQnVaeUk3SUdacGJHVnVZVzFsS2oxVlZFWXRPQ2NuWVdGTWIyZHZMbkJ1WndZN0JsUTZFV052Ym5SbGJuUmZkSGx3WlVraURtbHRZV2RsTDNCdVp3WTdCbFE9IiwiZXhwIjoiMjAxOS0wMS0wOFQwMjoyOTo0MS4xODBaIiwicHVyIjoiYmxvYl9rZXkifX0=--9f1cb43f7df736fa98c234301e24286e8d7d12c3/aaLogo.png?content_type=image%2Fpng&disposition=inline%3B+filename%3D%22aaLogo.png%22%3B+filename%2A%3DUTF-8%27%27aaLogo.png" for 127.0.0.1 at 2019-01-08 10:24:41 +0800
+Processing by ActiveStorage::DiskController#show as PNG
+  Parameters: {"content_type"=>"image/png", "disposition"=>"inline; filename=\"aaLogo.png\"; filename*=UTF-8''aaLogo.png", "encoded_key"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRTSGR4TjJSYVRIWktWVlpZTWxkaGFHZGhhMVJsWTI1ckJqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSS9hVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGlZV0ZNYjJkdkxuQnVaeUk3SUdacGJHVnVZVzFsS2oxVlZFWXRPQ2NuWVdGTWIyZHZMbkJ1WndZN0JsUTZFV052Ym5SbGJuUmZkSGx3WlVraURtbHRZV2RsTDNCdVp3WTdCbFE9IiwiZXhwIjoiMjAxOS0wMS0wOFQwMjoyOTo0MS4xODBaIiwicHVyIjoiYmxvYl9rZXkifX0=--9f1cb43f7df736fa98c234301e24286e8d7d12c3", "filename"=>"aaLogo"}
+Completed 200 OK in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/records/new" for 127.0.0.1 at 2019-01-08 10:24:46 +0800
+Processing by RecordsController#new as HTML
+  Rendering records/new.html.erb within layouts/application
+  Rendered records/_form.html.erb (2.9ms)
+  Rendered records/new.html.erb within layouts/application (8.2ms)
+Completed 200 OK in 108ms (Views: 98.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/records" for 127.0.0.1 at 2019-01-08 10:24:54 +0800
+Processing by RecordsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"7v3Yt99bJrYrtMNfFSwtr5mklzzo1KijD6BLAbp4ZWpx4XV1+9F3VjVJ+aTP+l9jw6E1E3VlsshGBr5njhKMFA==", "record"=>{"awbnum"=>"2343", "file"=>#<ActionDispatch::Http::UploadedFile:0x007f8ca1010a60 @tempfile=#<Tempfile:/var/folders/tj/9ddypmz11k3csy6c8gc_vw600000gq/T/RackMultipart20190108-61436-1rct3xz.pdf>, @original_filename="Acropolis_Business_Setup_Package.pdf", @content_type="application/pdf", @headers="Content-Disposition: form-data; name=\"record[file]\"; filename=\"Acropolis_Business_Setup_Package.pdf\"\r\nContent-Type: application/pdf\r\n">}, "commit"=>"Submit"}
+[36m  Disk Storage (8.6ms) [0m[32mUploaded file to key: EmNeB1wSpuCxPH4G8ZYVcE4x (checksum: yGMITGWzp6C3Fu2CbzSg6w==)[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/records_controller.rb:28
+  [1m[36mActiveStorage::Blob Create (0.5ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "metadata", "byte_size", "checksum", "created_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["key", "EmNeB1wSpuCxPH4G8ZYVcE4x"], ["filename", "Acropolis_Business_Setup_Package.pdf"], ["content_type", "application/pdf"], ["metadata", "{\"identified\":true}"], ["byte_size", 1650200], ["checksum", "yGMITGWzp6C3Fu2CbzSg6w=="], ["created_at", "2019-01-08 02:24:54.526555"]]
+  ↳ app/controllers/records_controller.rb:28
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/records_controller.rb:28
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/records_controller.rb:28
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/records_controller.rb:28
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/records_controller.rb:31
+  [1m[36mRecord Create (0.4ms)[0m  [1m[32mINSERT INTO "records" ("awbnum", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["awbnum", "2343"], ["created_at", "2019-01-08 02:24:54.532651"], ["updated_at", "2019-01-08 02:24:54.532651"]]
+  ↳ app/controllers/records_controller.rb:31
+  [1m[36mActiveStorage::Attachment Create (0.3ms)[0m  [1m[32mINSERT INTO "active_storage_attachments" ("name", "record_type", "record_id", "blob_id", "created_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "file"], ["record_type", "Record"], ["record_id", 11], ["blob_id", 10], ["created_at", "2019-01-08 02:24:54.534486"]]
+  ↳ app/controllers/records_controller.rb:31
+  [1m[36mRecord Update (0.1ms)[0m  [1m[33mUPDATE "records" SET "updated_at" = ? WHERE "records"."id" = ?[0m  [["updated_at", "2019-01-08 02:24:54.535764"], ["id", 11]]
+  ↳ app/controllers/records_controller.rb:31
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/records_controller.rb:31
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+[ActiveJob] Enqueued ActiveStorage::AnalyzeJob (Job ID: 155c41bf-9dbe-4cfb-a6e0-9a358bbfd9f9) to Async(default) with arguments: #<GlobalID:0x007f8c90d726b0 @uri=#<URI::GID gid://rc-uploader/ActiveStorage::Blob/10>>
+  ↳ /Users/fahimabdullah/.rvm/gems/ruby-2.4.1/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/records/11
+[ActiveJob] [ActiveStorage::AnalyzeJob] [155c41bf-9dbe-4cfb-a6e0-9a358bbfd9f9] Performing ActiveStorage::AnalyzeJob (Job ID: 155c41bf-9dbe-4cfb-a6e0-9a358bbfd9f9) from Async(default) with arguments: #<GlobalID:0x007f8c9087bb98 @uri=#<URI::GID gid://rc-uploader/ActiveStorage::Blob/10>>
+Completed 302 Found in 45ms (ActiveRecord: 3.7ms)
+
+
+[ActiveJob] [ActiveStorage::AnalyzeJob] [155c41bf-9dbe-4cfb-a6e0-9a358bbfd9f9]   [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [155c41bf-9dbe-4cfb-a6e0-9a358bbfd9f9]   ↳ /Users/fahimabdullah/.rvm/gems/ruby-2.4.1/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+[ActiveJob] [ActiveStorage::AnalyzeJob] [155c41bf-9dbe-4cfb-a6e0-9a358bbfd9f9]   [1m[36mActiveStorage::Blob Update (0.6ms)[0m  [1m[33mUPDATE "active_storage_blobs" SET "metadata" = ? WHERE "active_storage_blobs"."id" = ?[0m  [["metadata", "{\"identified\":true,\"analyzed\":true}"], ["id", 10]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [155c41bf-9dbe-4cfb-a6e0-9a358bbfd9f9]   ↳ /Users/fahimabdullah/.rvm/gems/ruby-2.4.1/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+[ActiveJob] [ActiveStorage::AnalyzeJob] [155c41bf-9dbe-4cfb-a6e0-9a358bbfd9f9]   [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+Started GET "/records/11" for 127.0.0.1 at 2019-01-08 10:24:54 +0800
+[ActiveJob] [ActiveStorage::AnalyzeJob] [155c41bf-9dbe-4cfb-a6e0-9a358bbfd9f9]   ↳ /Users/fahimabdullah/.rvm/gems/ruby-2.4.1/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+Processing by RecordsController#show as HTML
+[ActiveJob] [ActiveStorage::AnalyzeJob] [155c41bf-9dbe-4cfb-a6e0-9a358bbfd9f9] Performed ActiveStorage::AnalyzeJob (Job ID: 155c41bf-9dbe-4cfb-a6e0-9a358bbfd9f9) from Async(default) in 9.59ms
+  Parameters: {"id"=>"11"}
+  [1m[36mRecord Load (0.2ms)[0m  [1m[34mSELECT  "records".* FROM "records" WHERE "records"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/records_controller.rb:68
+  Rendering records/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 11], ["record_type", "Record"], ["name", "file"], ["LIMIT", 1]]
+  ↳ app/views/records/show.html.erb:8
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/views/records/show.html.erb:8
+  Rendered records/show.html.erb within layouts/application (4.2ms)
+Completed 200 OK in 75ms (Views: 70.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/records" for 127.0.0.1 at 2019-01-08 10:24:56 +0800
+Processing by RecordsController#index as HTML
+  Rendering records/index.html.erb within layouts/application
+  [1m[36mRecord Load (0.4ms)[0m  [1m[34mSELECT "records".* FROM "records"[0m
+  ↳ app/views/records/index.html.erb:20
+  [1m[36mActiveStorage::Attachment Load (0.6ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? AND "active_storage_attachments"."record_id" IN (?, ?, ?, ?, ?)[0m  [["record_type", "Record"], ["name", "file"], ["record_id", 6], ["record_id", 8], ["record_id", 9], ["record_id", 10], ["record_id", 11]]
+  ↳ app/views/records/index.html.erb:20
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" IN (?, ?, ?, ?, ?)[0m  [["id", 5], ["id", 7], ["id", 8], ["id", 9], ["id", 10]]
+  ↳ app/views/records/index.html.erb:20
+  Rendered records/index.html.erb within layouts/application (29.0ms)
+Completed 200 OK in 108ms (Views: 99.4ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBEdz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--7d7b83d6ffded2d70682c6ed97a543a90f048073/Acropolis_Business_Setup_Package.pdf" for 127.0.0.1 at 2019-01-08 10:24:57 +0800
+Processing by ActiveStorage::BlobsController#show as PDF
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBEdz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--7d7b83d6ffded2d70682c6ed97a543a90f048073", "filename"=>"Acropolis_Business_Setup_Package"}
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ /Users/fahimabdullah/.rvm/gems/ruby-2.4.1/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+[36m  Disk Storage (0.9ms) [0m[34mGenerated URL for file at key: EmNeB1wSpuCxPH4G8ZYVcE4x (http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRSVzFPWlVJeGQxTndkVU40VUVnMFJ6aGFXVlpqUlRSNEJqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSnphVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGlRV055YjNCdmJHbHpYMEoxYzJsdVpYTnpYMU5sZEhWd1gxQmhZMnRoWjJVdWNHUm1JanNnWm1sc1pXNWhiV1VxUFZWVVJpMDRKeWRCWTNKdmNHOXNhWE5mUW5WemFXNWxjM05mVTJWMGRYQmZVR0ZqYTJGblpTNXdaR1lHT3daVU9oRmpiMjUwWlc1MFgzUjVjR1ZKSWhSaGNIQnNhV05oZEdsdmJpOXdaR1lHT3daVSIsImV4cCI6IjIwMTktMDEtMDhUMDI6Mjk6NTcuOTMyWiIsInB1ciI6ImJsb2Jfa2V5In19--add34053f2b403840603d437624c0c45480b1b6f/Acropolis_Business_Setup_Package.pdf?content_type=application%2Fpdf&disposition=inline%3B+filename%3D%22Acropolis_Business_Setup_Package.pdf%22%3B+filename%2A%3DUTF-8%27%27Acropolis_Business_Setup_Package.pdf)[0m
+Redirected to http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRSVzFPWlVJeGQxTndkVU40VUVnMFJ6aGFXVlpqUlRSNEJqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSnphVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGlRV055YjNCdmJHbHpYMEoxYzJsdVpYTnpYMU5sZEhWd1gxQmhZMnRoWjJVdWNHUm1JanNnWm1sc1pXNWhiV1VxUFZWVVJpMDRKeWRCWTNKdmNHOXNhWE5mUW5WemFXNWxjM05mVTJWMGRYQmZVR0ZqYTJGblpTNXdaR1lHT3daVU9oRmpiMjUwWlc1MFgzUjVjR1ZKSWhSaGNIQnNhV05oZEdsdmJpOXdaR1lHT3daVSIsImV4cCI6IjIwMTktMDEtMDhUMDI6Mjk6NTcuOTMyWiIsInB1ciI6ImJsb2Jfa2V5In19--add34053f2b403840603d437624c0c45480b1b6f/Acropolis_Business_Setup_Package.pdf?content_type=application%2Fpdf&disposition=inline%3B+filename%3D%22Acropolis_Business_Setup_Package.pdf%22%3B+filename%2A%3DUTF-8%27%27Acropolis_Business_Setup_Package.pdf
+Completed 302 Found in 4ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRSVzFPWlVJeGQxTndkVU40VUVnMFJ6aGFXVlpqUlRSNEJqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSnphVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGlRV055YjNCdmJHbHpYMEoxYzJsdVpYTnpYMU5sZEhWd1gxQmhZMnRoWjJVdWNHUm1JanNnWm1sc1pXNWhiV1VxUFZWVVJpMDRKeWRCWTNKdmNHOXNhWE5mUW5WemFXNWxjM05mVTJWMGRYQmZVR0ZqYTJGblpTNXdaR1lHT3daVU9oRmpiMjUwWlc1MFgzUjVjR1ZKSWhSaGNIQnNhV05oZEdsdmJpOXdaR1lHT3daVSIsImV4cCI6IjIwMTktMDEtMDhUMDI6Mjk6NTcuOTMyWiIsInB1ciI6ImJsb2Jfa2V5In19--add34053f2b403840603d437624c0c45480b1b6f/Acropolis_Business_Setup_Package.pdf?content_type=application%2Fpdf&disposition=inline%3B+filename%3D%22Acropolis_Business_Setup_Package.pdf%22%3B+filename%2A%3DUTF-8%27%27Acropolis_Business_Setup_Package.pdf" for 127.0.0.1 at 2019-01-08 10:24:57 +0800
+Processing by ActiveStorage::DiskController#show as PDF
+  Parameters: {"content_type"=>"application/pdf", "disposition"=>"inline; filename=\"Acropolis_Business_Setup_Package.pdf\"; filename*=UTF-8''Acropolis_Business_Setup_Package.pdf", "encoded_key"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRSVzFPWlVJeGQxTndkVU40VUVnMFJ6aGFXVlpqUlRSNEJqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSnphVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGlRV055YjNCdmJHbHpYMEoxYzJsdVpYTnpYMU5sZEhWd1gxQmhZMnRoWjJVdWNHUm1JanNnWm1sc1pXNWhiV1VxUFZWVVJpMDRKeWRCWTNKdmNHOXNhWE5mUW5WemFXNWxjM05mVTJWMGRYQmZVR0ZqYTJGblpTNXdaR1lHT3daVU9oRmpiMjUwWlc1MFgzUjVjR1ZKSWhSaGNIQnNhV05oZEdsdmJpOXdaR1lHT3daVSIsImV4cCI6IjIwMTktMDEtMDhUMDI6Mjk6NTcuOTMyWiIsInB1ciI6ImJsb2Jfa2V5In19--add34053f2b403840603d437624c0c45480b1b6f", "filename"=>"Acropolis_Business_Setup_Package"}
+Completed 200 OK in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/records/new" for 127.0.0.1 at 2019-01-08 10:25:05 +0800
+Processing by RecordsController#new as HTML
+  Rendering records/new.html.erb within layouts/application
+  Rendered records/_form.html.erb (2.7ms)
+  Rendered records/new.html.erb within layouts/application (7.7ms)
+Completed 200 OK in 83ms (Views: 77.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/records" for 127.0.0.1 at 2019-01-08 10:25:19 +0800
+Processing by RecordsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"+sxxYi5FJbwc3bG0F/AsTB8mD55cN3hlMm1FAmAHTSJl0NygCs90XAIgi0/NJl6ARSOtscGGYg57y7BkVG2kXA==", "record"=>{"awbnum"=>"123", "file"=>#<ActionDispatch::Http::UploadedFile:0x007f8c90918d08 @tempfile=#<Tempfile:/var/folders/tj/9ddypmz11k3csy6c8gc_vw600000gq/T/RackMultipart20190108-61436-161vyk9.html>, @original_filename="faq.html", @content_type="text/html", @headers="Content-Disposition: form-data; name=\"record[file]\"; filename=\"faq.html\"\r\nContent-Type: text/html\r\n">}, "commit"=>"Submit"}
+[36m  Disk Storage (2.7ms) [0m[32mUploaded file to key: ToN3MR1RMRCnhs1QofPyGgYz (checksum: mT+3YtuJj4tpnwtQTDkwYg==)[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/records_controller.rb:28
+  [1m[36mActiveStorage::Blob Create (0.7ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "metadata", "byte_size", "checksum", "created_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["key", "ToN3MR1RMRCnhs1QofPyGgYz"], ["filename", "faq.html"], ["content_type", "text/html"], ["metadata", "{\"identified\":true}"], ["byte_size", 5415], ["checksum", "mT+3YtuJj4tpnwtQTDkwYg=="], ["created_at", "2019-01-08 02:25:19.634588"]]
+  ↳ app/controllers/records_controller.rb:28
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/records_controller.rb:28
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/records_controller.rb:28
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/records_controller.rb:28
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/records_controller.rb:31
+  [1m[36mRecord Create (0.4ms)[0m  [1m[32mINSERT INTO "records" ("awbnum", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["awbnum", "123"], ["created_at", "2019-01-08 02:25:19.639921"], ["updated_at", "2019-01-08 02:25:19.639921"]]
+  ↳ app/controllers/records_controller.rb:31
+  [1m[36mActiveStorage::Attachment Create (0.4ms)[0m  [1m[32mINSERT INTO "active_storage_attachments" ("name", "record_type", "record_id", "blob_id", "created_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "file"], ["record_type", "Record"], ["record_id", 12], ["blob_id", 11], ["created_at", "2019-01-08 02:25:19.641822"]]
+  ↳ app/controllers/records_controller.rb:31
+  [1m[36mRecord Update (0.1ms)[0m  [1m[33mUPDATE "records" SET "updated_at" = ? WHERE "records"."id" = ?[0m  [["updated_at", "2019-01-08 02:25:19.643212"], ["id", 12]]
+  ↳ app/controllers/records_controller.rb:31
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/records_controller.rb:31
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+[ActiveJob] Enqueued ActiveStorage::AnalyzeJob (Job ID: c4b337be-bd99-4c4d-aba7-9958d0776e6c) to Async(default) with arguments: #<GlobalID:0x007f8c918c5648 @uri=#<URI::GID gid://rc-uploader/ActiveStorage::Blob/11>>
+  ↳ /Users/fahimabdullah/.rvm/gems/ruby-2.4.1/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/records/12
+[ActiveJob] [ActiveStorage::AnalyzeJob] [c4b337be-bd99-4c4d-aba7-9958d0776e6c] Performing ActiveStorage::AnalyzeJob (Job ID: c4b337be-bd99-4c4d-aba7-9958d0776e6c) from Async(default) with arguments: #<GlobalID:0x007f8c918b9438 @uri=#<URI::GID gid://rc-uploader/ActiveStorage::Blob/11>>
+Completed 302 Found in 26ms (ActiveRecord: 3.8ms)
+
+
+[ActiveJob] [ActiveStorage::AnalyzeJob] [c4b337be-bd99-4c4d-aba7-9958d0776e6c]   [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [c4b337be-bd99-4c4d-aba7-9958d0776e6c]   ↳ /Users/fahimabdullah/.rvm/gems/ruby-2.4.1/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+[ActiveJob] [ActiveStorage::AnalyzeJob] [c4b337be-bd99-4c4d-aba7-9958d0776e6c]   [1m[36mActiveStorage::Blob Update (0.7ms)[0m  [1m[33mUPDATE "active_storage_blobs" SET "metadata" = ? WHERE "active_storage_blobs"."id" = ?[0m  [["metadata", "{\"identified\":true,\"analyzed\":true}"], ["id", 11]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [c4b337be-bd99-4c4d-aba7-9958d0776e6c]   ↳ /Users/fahimabdullah/.rvm/gems/ruby-2.4.1/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+[ActiveJob] [ActiveStorage::AnalyzeJob] [c4b337be-bd99-4c4d-aba7-9958d0776e6c]   [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [c4b337be-bd99-4c4d-aba7-9958d0776e6c]   ↳ /Users/fahimabdullah/.rvm/gems/ruby-2.4.1/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+[ActiveJob] [ActiveStorage::AnalyzeJob] [c4b337be-bd99-4c4d-aba7-9958d0776e6c] Performed ActiveStorage::AnalyzeJob (Job ID: c4b337be-bd99-4c4d-aba7-9958d0776e6c) from Async(default) in 8.74ms
+Started GET "/records/12" for 127.0.0.1 at 2019-01-08 10:25:19 +0800
+Processing by RecordsController#show as HTML
+  Parameters: {"id"=>"12"}
+  [1m[36mRecord Load (0.2ms)[0m  [1m[34mSELECT  "records".* FROM "records" WHERE "records"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/records_controller.rb:68
+  Rendering records/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 12], ["record_type", "Record"], ["name", "file"], ["LIMIT", 1]]
+  ↳ app/views/records/show.html.erb:8
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/views/records/show.html.erb:8
+  Rendered records/show.html.erb within layouts/application (5.5ms)
+Completed 200 OK in 69ms (Views: 63.5ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/records" for 127.0.0.1 at 2019-01-08 10:25:21 +0800
+Processing by RecordsController#index as HTML
+  Rendering records/index.html.erb within layouts/application
+  [1m[36mRecord Load (0.2ms)[0m  [1m[34mSELECT "records".* FROM "records"[0m
+  ↳ app/views/records/index.html.erb:20
+  [1m[36mActiveStorage::Attachment Load (0.5ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? AND "active_storage_attachments"."record_id" IN (?, ?, ?, ?, ?, ?)[0m  [["record_type", "Record"], ["name", "file"], ["record_id", 6], ["record_id", 8], ["record_id", 9], ["record_id", 10], ["record_id", 11], ["record_id", 12]]
+  ↳ app/views/records/index.html.erb:20
+  [1m[36mActiveStorage::Blob Load (0.5ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" IN (?, ?, ?, ?, ?, ?)[0m  [["id", 5], ["id", 7], ["id", 8], ["id", 9], ["id", 10], ["id", 11]]
+  ↳ app/views/records/index.html.erb:20
+  Rendered records/index.html.erb within layouts/application (15.7ms)
+Completed 200 OK in 86ms (Views: 79.2ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBFQT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--3589b5f8b23e16502875f8970b5150df9010974e/faq.html" for 127.0.0.1 at 2019-01-08 10:25:23 +0800
+Processing by ActiveStorage::BlobsController#show as HTML
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBFQT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--3589b5f8b23e16502875f8970b5150df9010974e", "filename"=>"faq"}
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ /Users/fahimabdullah/.rvm/gems/ruby-2.4.1/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+[36m  Disk Storage (0.9ms) [0m[34mGenerated URL for file at key: ToN3MR1RMRCnhs1QofPyGgYz (http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRWRzlPTTAxU01WSk5Va051YUhNeFVXOW1VSGxIWjFsNkJqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSS9ZWFIwWVdOb2JXVnVkRHNnWm1sc1pXNWhiV1U5SW1aaGNTNW9kRzFzSWpzZ1ptbHNaVzVoYldVcVBWVlVSaTA0SnlkbVlYRXVhSFJ0YkFZN0JrWTZFV052Ym5SbGJuUmZkSGx3WlVraUhXRndjR3hwWTJGMGFXOXVMMjlqZEdWMExYTjBjbVZoYlFZN0JsUT0iLCJleHAiOiIyMDE5LTAxLTA4VDAyOjMwOjIzLjU3MFoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--faedc7c98125eba71f589f89132b69166d79d7a9/faq.html?content_type=application%2Foctet-stream&disposition=attachment%3B+filename%3D%22faq.html%22%3B+filename%2A%3DUTF-8%27%27faq.html)[0m
+Redirected to http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRWRzlPTTAxU01WSk5Va051YUhNeFVXOW1VSGxIWjFsNkJqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSS9ZWFIwWVdOb2JXVnVkRHNnWm1sc1pXNWhiV1U5SW1aaGNTNW9kRzFzSWpzZ1ptbHNaVzVoYldVcVBWVlVSaTA0SnlkbVlYRXVhSFJ0YkFZN0JrWTZFV052Ym5SbGJuUmZkSGx3WlVraUhXRndjR3hwWTJGMGFXOXVMMjlqZEdWMExYTjBjbVZoYlFZN0JsUT0iLCJleHAiOiIyMDE5LTAxLTA4VDAyOjMwOjIzLjU3MFoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--faedc7c98125eba71f589f89132b69166d79d7a9/faq.html?content_type=application%2Foctet-stream&disposition=attachment%3B+filename%3D%22faq.html%22%3B+filename%2A%3DUTF-8%27%27faq.html
+Completed 302 Found in 5ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRWRzlPTTAxU01WSk5Va051YUhNeFVXOW1VSGxIWjFsNkJqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSS9ZWFIwWVdOb2JXVnVkRHNnWm1sc1pXNWhiV1U5SW1aaGNTNW9kRzFzSWpzZ1ptbHNaVzVoYldVcVBWVlVSaTA0SnlkbVlYRXVhSFJ0YkFZN0JrWTZFV052Ym5SbGJuUmZkSGx3WlVraUhXRndjR3hwWTJGMGFXOXVMMjlqZEdWMExYTjBjbVZoYlFZN0JsUT0iLCJleHAiOiIyMDE5LTAxLTA4VDAyOjMwOjIzLjU3MFoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--faedc7c98125eba71f589f89132b69166d79d7a9/faq.html?content_type=application%2Foctet-stream&disposition=attachment%3B+filename%3D%22faq.html%22%3B+filename%2A%3DUTF-8%27%27faq.html" for 127.0.0.1 at 2019-01-08 10:25:23 +0800
+Processing by ActiveStorage::DiskController#show as HTML
+  Parameters: {"content_type"=>"application/octet-stream", "disposition"=>"attachment; filename=\"faq.html\"; filename*=UTF-8''faq.html", "encoded_key"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRWRzlPTTAxU01WSk5Va051YUhNeFVXOW1VSGxIWjFsNkJqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSS9ZWFIwWVdOb2JXVnVkRHNnWm1sc1pXNWhiV1U5SW1aaGNTNW9kRzFzSWpzZ1ptbHNaVzVoYldVcVBWVlVSaTA0SnlkbVlYRXVhSFJ0YkFZN0JrWTZFV052Ym5SbGJuUmZkSGx3WlVraUhXRndjR3hwWTJGMGFXOXVMMjlqZEdWMExYTjBjbVZoYlFZN0JsUT0iLCJleHAiOiIyMDE5LTAxLTA4VDAyOjMwOjIzLjU3MFoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--faedc7c98125eba71f589f89132b69166d79d7a9", "filename"=>"faq"}
+Completed 200 OK in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRTSGR4TjJSYVRIWktWVlpZTWxkaGFHZGhhMVJsWTI1ckJqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSS9hVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGlZV0ZNYjJkdkxuQnVaeUk3SUdacGJHVnVZVzFsS2oxVlZFWXRPQ2NuWVdGTWIyZHZMbkJ1WndZN0JsUTZFV052Ym5SbGJuUmZkSGx3WlVraURtbHRZV2RsTDNCdVp3WTdCbFE9IiwiZXhwIjoiMjAxOS0wMS0wOFQwMjoyOTo0MS4xODBaIiwicHVyIjoiYmxvYl9rZXkifX0=--9f1cb43f7df736fa98c234301e24286e8d7d12c3/aaLogo.png?content_type=image%2Fpng&disposition=inline%3B+filename%3D%22aaLogo.png%22%3B+filename%2A%3DUTF-8%27%27aaLogo.png" for 127.0.0.1 at 2019-01-08 10:25:34 +0800
+Processing by ActiveStorage::DiskController#show as PNG
+  Parameters: {"content_type"=>"image/png", "disposition"=>"inline; filename=\"aaLogo.png\"; filename*=UTF-8''aaLogo.png", "encoded_key"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRTSGR4TjJSYVRIWktWVlpZTWxkaGFHZGhhMVJsWTI1ckJqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSS9hVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGlZV0ZNYjJkdkxuQnVaeUk3SUdacGJHVnVZVzFsS2oxVlZFWXRPQ2NuWVdGTWIyZHZMbkJ1WndZN0JsUTZFV052Ym5SbGJuUmZkSGx3WlVraURtbHRZV2RsTDNCdVp3WTdCbFE9IiwiZXhwIjoiMjAxOS0wMS0wOFQwMjoyOTo0MS4xODBaIiwicHVyIjoiYmxvYl9rZXkifX0=--9f1cb43f7df736fa98c234301e24286e8d7d12c3", "filename"=>"aaLogo"}
+Completed 304 Not Modified in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBEUT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--1ec1fea881a549ff49ac46fb556802cff2c10e04/Screen%20Shot%202019-01-03%20at%205.06.06%20PM.png" for 127.0.0.1 at 2019-01-08 10:25:37 +0800
+Processing by ActiveStorage::BlobsController#show as PNG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBEUT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--1ec1fea881a549ff49ac46fb556802cff2c10e04", "filename"=>"Screen Shot 2019-01-03 at 5.06.06 PM"}
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ /Users/fahimabdullah/.rvm/gems/ruby-2.4.1/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+[36m  Disk Storage (0.9ms) [0m[34mGenerated URL for file at key: oSvjqRKeod9fUxWmpboyrexk (http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRiMU4yYW5GU1MyVnZaRGxtVlhoWGJYQmliM2x5WlhockJqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSUJnR2x1YkdsdVpUc2dabWxzWlc1aGJXVTlJbE5qY21WbGJpQlRhRzkwSURJd01Ua3RNREV0TURNZ1lYUWdOUzR3Tmk0d05pQlFUUzV3Ym1jaU95Qm1hV3hsYm1GdFpTbzlWVlJHTFRnbkoxTmpjbVZsYmlVeU1GTm9iM1FsTWpBeU1ERTVMVEF4TFRBekpUSXdZWFFsTWpBMUxqQTJMakEySlRJd1VFMHVjRzVuQmpzR1ZEb1JZMjl1ZEdWdWRGOTBlWEJsU1NJT2FXMWhaMlV2Y0c1bkJqc0dWQT09IiwiZXhwIjoiMjAxOS0wMS0wOFQwMjozMDozNy41NjBaIiwicHVyIjoiYmxvYl9rZXkifX0=--e2b7ad12c0fd686a717bfae3c0b9bd33ffa495bb/Screen%20Shot%202019-01-03%20at%205.06.06%20PM.png?content_type=image%2Fpng&disposition=inline%3B+filename%3D%22Screen+Shot+2019-01-03+at+5.06.06+PM.png%22%3B+filename%2A%3DUTF-8%27%27Screen%2520Shot%25202019-01-03%2520at%25205.06.06%2520PM.png)[0m
+Redirected to http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRiMU4yYW5GU1MyVnZaRGxtVlhoWGJYQmliM2x5WlhockJqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSUJnR2x1YkdsdVpUc2dabWxzWlc1aGJXVTlJbE5qY21WbGJpQlRhRzkwSURJd01Ua3RNREV0TURNZ1lYUWdOUzR3Tmk0d05pQlFUUzV3Ym1jaU95Qm1hV3hsYm1GdFpTbzlWVlJHTFRnbkoxTmpjbVZsYmlVeU1GTm9iM1FsTWpBeU1ERTVMVEF4TFRBekpUSXdZWFFsTWpBMUxqQTJMakEySlRJd1VFMHVjRzVuQmpzR1ZEb1JZMjl1ZEdWdWRGOTBlWEJsU1NJT2FXMWhaMlV2Y0c1bkJqc0dWQT09IiwiZXhwIjoiMjAxOS0wMS0wOFQwMjozMDozNy41NjBaIiwicHVyIjoiYmxvYl9rZXkifX0=--e2b7ad12c0fd686a717bfae3c0b9bd33ffa495bb/Screen%20Shot%202019-01-03%20at%205.06.06%20PM.png?content_type=image%2Fpng&disposition=inline%3B+filename%3D%22Screen+Shot+2019-01-03+at+5.06.06+PM.png%22%3B+filename%2A%3DUTF-8%27%27Screen%2520Shot%25202019-01-03%2520at%25205.06.06%2520PM.png
+Completed 302 Found in 5ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRiMU4yYW5GU1MyVnZaRGxtVlhoWGJYQmliM2x5WlhockJqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSUJnR2x1YkdsdVpUc2dabWxzWlc1aGJXVTlJbE5qY21WbGJpQlRhRzkwSURJd01Ua3RNREV0TURNZ1lYUWdOUzR3Tmk0d05pQlFUUzV3Ym1jaU95Qm1hV3hsYm1GdFpTbzlWVlJHTFRnbkoxTmpjbVZsYmlVeU1GTm9iM1FsTWpBeU1ERTVMVEF4TFRBekpUSXdZWFFsTWpBMUxqQTJMakEySlRJd1VFMHVjRzVuQmpzR1ZEb1JZMjl1ZEdWdWRGOTBlWEJsU1NJT2FXMWhaMlV2Y0c1bkJqc0dWQT09IiwiZXhwIjoiMjAxOS0wMS0wOFQwMjozMDozNy41NjBaIiwicHVyIjoiYmxvYl9rZXkifX0=--e2b7ad12c0fd686a717bfae3c0b9bd33ffa495bb/Screen%20Shot%202019-01-03%20at%205.06.06%20PM.png?content_type=image%2Fpng&disposition=inline%3B+filename%3D%22Screen+Shot+2019-01-03+at+5.06.06+PM.png%22%3B+filename%2A%3DUTF-8%27%27Screen%2520Shot%25202019-01-03%2520at%25205.06.06%2520PM.png" for 127.0.0.1 at 2019-01-08 10:25:37 +0800
+Processing by ActiveStorage::DiskController#show as PNG
+  Parameters: {"content_type"=>"image/png", "disposition"=>"inline; filename=\"Screen Shot 2019-01-03 at 5.06.06 PM.png\"; filename*=UTF-8''Screen%20Shot%202019-01-03%20at%205.06.06%20PM.png", "encoded_key"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRiMU4yYW5GU1MyVnZaRGxtVlhoWGJYQmliM2x5WlhockJqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSUJnR2x1YkdsdVpUc2dabWxzWlc1aGJXVTlJbE5qY21WbGJpQlRhRzkwSURJd01Ua3RNREV0TURNZ1lYUWdOUzR3Tmk0d05pQlFUUzV3Ym1jaU95Qm1hV3hsYm1GdFpTbzlWVlJHTFRnbkoxTmpjbVZsYmlVeU1GTm9iM1FsTWpBeU1ERTVMVEF4TFRBekpUSXdZWFFsTWpBMUxqQTJMakEySlRJd1VFMHVjRzVuQmpzR1ZEb1JZMjl1ZEdWdWRGOTBlWEJsU1NJT2FXMWhaMlV2Y0c1bkJqc0dWQT09IiwiZXhwIjoiMjAxOS0wMS0wOFQwMjozMDozNy41NjBaIiwicHVyIjoiYmxvYl9rZXkifX0=--e2b7ad12c0fd686a717bfae3c0b9bd33ffa495bb", "filename"=>"Screen Shot 2019-01-03 at 5.06.06 PM"}
+Completed 200 OK in 2ms (ActiveRecord: 0.0ms)
+
+
