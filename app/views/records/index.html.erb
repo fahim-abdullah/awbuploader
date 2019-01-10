@@ -1,18 +1,14 @@
-
 <div class="container">
-
-
   <p id="notice"><%= notice %></p>
-
   <h1 class="red-heading" align="center">Record Table</h1>
-
   <div class="row">
     <div class="col-12">
-      <table class="table">
+      <table id="awbtable" class="table">
         <thead class="thead-dark">
           <tr>
             <th>Airway Bill</th>
-            <th colspan="5">Actions</th>
+            <th>Date Created</th>
+            <th>Actions</th>
           </tr>
         </thead>
 
@@ -20,17 +16,14 @@
           <% @records.each do |record| %>
             <tr>
               <td><%= record.awbnum %></td>
-              <td><%= link_to 'Show', record %></td>
-              <td><%= link_to 'Edit', edit_record_path(record) %></td>
-              <td><%= link_to 'Destroy', record, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-              <td><%= link_to 'Download', record.file, download: '' %></td>
-              <td><%= link_to 'View', record.file, target: '_blank' %></td>
+              <td><%= record.created_at.strftime("%d %b %Y - %H:%M") %>
+              <td><%= link_to 'Show', record %> <%= link_to 'Edit', edit_record_path(record) %> <%= link_to 'Download', record.file, download: '' %> <%= link_to 'View', record.file, target: '_blank' %> <%= link_to 'Delete', record, method: :delete, data: { confirm: 'Are you sure?' } %></td>
             </tr>
           <% end %>
         </tbody>
       </table>
+      <br>
       <%= link_to 'New Record', new_record_path, class: 'submit', style: 'text-decoration: none;' %>
     </div>
   </div>
-
 </div>

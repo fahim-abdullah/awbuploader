@@ -5,6 +5,8 @@
   <%= @record.awbnum %>
 </p>
 
+<%= image_tag(@record.file, style: "width: 400px")  %>
+<br><br>
 <%= link_to 'View', @record.file, target: '_blank' %> |
 <%= link_to 'Download', @record.file, download: '' %> |
 

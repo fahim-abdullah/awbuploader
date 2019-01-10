@@ -1,5 +1,7 @@
 class RecordsController < ApplicationController
   before_action :set_record, only: [:show, :edit, :update, :destroy]
+  before_action :set_timezone
+  # before_action :filename
 
   # GET /records
   # GET /records.json
@@ -11,6 +13,7 @@ class RecordsController < ApplicationController
   # GET /records/1
   # GET /records/1.json
   def show
+    # redirect_to @record.file.service_url(filename: filename)
   end
 
   # GET /records/new
@@ -67,6 +70,14 @@ class RecordsController < ApplicationController
     def set_record
       @record = Record.find(params[:id])
     end
+
+    def set_timezone
+      Time.zone = "Kuala Lumpur"
+    end
+
+    # def filename
+    #   ActiveStorage::Filename.new("bruh#{@record.file.filename.extension_with_delimiter}")
+    # end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def record_params
