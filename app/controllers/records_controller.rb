@@ -1,4 +1,9 @@
 class RecordsController < ApplicationController
+  require 'open-uri'
+  require 'zip/zip'
+  require 'rubygems'
+  require 'zip'
+
   before_action :set_record, only: [:show, :edit, :update, :destroy]
   before_action :set_timezone
   # before_action :filename
@@ -65,7 +70,37 @@ class RecordsController < ApplicationController
     end
   end
 
-  private
+  def batch_download
+    ids = params["record"].to_unsafe_h.map(&:first)
+
+    if ids.present?
+      folder_path = "#{Rails.root}/public/downloads/"
+      zipfile_name = "#{Rails.root}/public/archive.zip"
+
+      FileUtils.remove_dir(folder_path) if Dir.exist?(folder_path)
+      FileUtils.remove_entry(zipfile_name) if File.exist?(zipfile_name)
+      Dir.mkdir("#{Rails.root}/public/downloads")
+
+      Record.where(id: ids).each do |attachment|
+        open(folder_path + "#{attachment.file.filename}", 'wb') do |file|
+          # file << open("#{rails_blob_path(attachment.file)}").read
+          # file << "#{rails_blob_path(attachment.file)}"
+          file << "#{url_for(attachment.file)}"
+        end
+      end
+
+      input_filenames = Dir.entries(folder_path).select {|f| !File.directory? f}
+
+      Zip::File.open(zipfile_name, Zip::File::CREATE) do |zipfile|
+        input_filenames.each do |attachment|
+          zipfile.add(attachment,File.join(folder_path,attachment))
+        end
+      end
+
+      send_file(File.join("#{Rails.root}/public/", 'archive.zip'), :type => 'application/zip', :filename => "#{Time.now.to_date}.zip")
+    end
+  end
+private
     # Use callbacks to share common setup or constraints between actions.
     def set_record
       @record = Record.find(params[:id])

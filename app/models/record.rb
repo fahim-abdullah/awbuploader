@@ -5,7 +5,7 @@ class Record < ApplicationRecord
 
 	def set_filename
 	    if self.file.attached?
-	      self.file.blob.update(filename: "bruhWhat.#{self.file.filename.extension}")
+	      self.file.blob.update(filename: "#{self.awbnum}.#{self.file.filename.extension}")
 	    end
   	end
 end

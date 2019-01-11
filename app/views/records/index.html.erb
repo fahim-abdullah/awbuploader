@@ -1,29 +1,43 @@
-<div class="container">
-  <p id="notice"><%= notice %></p>
-  <h1 class="red-heading" align="center">Record Table</h1>
-  <div class="row">
-    <div class="col-12">
-      <table id="awbtable" class="table">
-        <thead class="thead-dark">
-          <tr>
-            <th>Airway Bill</th>
-            <th>Date Created</th>
-            <th>Actions</th>
-          </tr>
-        </thead>
-
-        <tbody>
-          <% @records.each do |record| %>
+<%= form_tag records_batch_download_path do %>
+  <div class="container">
+    <p id="notice"><%= notice %></p>
+    <h1 class="red-heading" align="center">Record Table</h1>
+    <div class="row">
+      <div class="col-12">
+        <table id="awbtable" class="table">
+          <thead class="thead-dark">
             <tr>
-              <td><%= record.awbnum %></td>
-              <td><%= record.created_at.strftime("%d %b %Y - %H:%M") %>
-              <td><%= link_to 'Show', record %> <%= link_to 'Edit', edit_record_path(record) %> <%= link_to 'Download', record.file, download: '' %> <%= link_to 'View', record.file, target: '_blank' %> <%= link_to 'Delete', record, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+              <th id="select"></th>
+              <th>Airway Bill</th>
+              <th>Date Created</th>
+              <th>Actions</th>
+
             </tr>
-          <% end %>
-        </tbody>
-      </table>
-      <br>
-      <%= link_to 'New Record', new_record_path, class: 'submit', style: 'text-decoration: none;' %>
+          </thead>
+
+          <tbody>
+            <% @records.each do |record| %>
+              <tr>
+                <td><%= check_box_tag "record[#{record.id}]" %></td>
+                <td><%= record.awbnum %></td>
+                <td><%= record.created_at.strftime("%d %b %Y - %H:%M") %>
+                <td><%= link_to 'Show', record %> <%= link_to 'Edit', edit_record_path(record) %> <%= link_to 'Download', record.file, download: '' %> <%= link_to 'View', record.file, target: '_blank' %> <%= link_to 'Delete', record, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+        <br>
+        <%= link_to 'New Record', new_record_path, class: 'submit', style: 'text-decoration: none;' %>
+        <%= submit_tag "Download", :onclick => "bruh()" %>
+      </div>
     </div>
   </div>
-</div>
+<% end %>
+
+<br><br>
+
+<script type="text/javascript">
+  function bruh() {
+    location.reload();
+  }
+</script>

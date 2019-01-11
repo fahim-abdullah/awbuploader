@@ -5,4 +5,8 @@ Rails.application.routes.draw do
   
   get 'static/view' => 'static#view'
 
+  namespace :records do
+  	post :batch_download
+  end
+
 end
