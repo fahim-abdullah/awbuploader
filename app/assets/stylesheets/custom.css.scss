@@ -73,8 +73,38 @@
     text-decoration: none;
 }
 
-.submit:hover {
+.submit:hover, .awb-button:hover {
     color: white;
     background-color: black;
+    border: 1px solid black;
+}
+
+.awb-button {
+    font-weight: 600;
+    padding: 10px 30px;
+    border: none;
+    margin: 5px 2px;
+    border-radius: 3px;
+    font-size: 12px;
+    min-height: 40px;
+    min-width: 130px;
+    transition: 0.3s;
+    text-decoration: none; 
+}
+
+.btn1 {
+    color: white;
+    background-color: #F00000;
+    border: 2.5px solid #F00000;
+    text-decoration: none;
+}
+
+.btn1:hover {
+    border: 2.5px solid black;
+}
+
+.btn2 {
+    color: black;
+    background-color: white;
     border: 1px solid black;
 }

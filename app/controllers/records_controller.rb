@@ -6,7 +6,6 @@ class RecordsController < ApplicationController
 
   before_action :set_record, only: [:show, :edit, :update, :destroy]
   before_action :set_timezone
-  # before_action :filename
 
   # GET /records
   # GET /records.json
@@ -65,7 +64,7 @@ class RecordsController < ApplicationController
   def destroy
     @record.destroy
     respond_to do |format|
-      format.html { redirect_to records_url, notice: 'Record was successfully destroyed.' }
+      format.html { redirect_to records_url, notice: 'Record was successfully deleted.' }
       format.json { head :no_content }
     end
   end
@@ -110,8 +109,9 @@ private
       Time.zone = "Kuala Lumpur"
     end
 
-    # def filename
-    #   ActiveStorage::Filename.new("bruh#{@record.file.filename.extension_with_delimiter}")
+    # def set_start_end_times
+    #   @start_time = params[:start_time].present? ? Time.zone.parse(params[:start_time]) : Time.now - 14.day
+    #   @end_time   = params[:end_time].present? ? Time.zone.parse(params[:end_time]).end_of_day : Time.now
     # end
 
     # Never trust parameters from the scary internet, only allow the white list through.
