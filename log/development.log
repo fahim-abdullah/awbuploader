@@ -20281,3 +20281,23 @@ Processing by RecordsController#index as HTML
 Completed 200 OK in 97ms (Views: 91.1ms | ActiveRecord: 0.2ms)
 
 
+Started GET "/records" for 127.0.0.1 at 2019-01-17 17:23:33 +0800
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/fahimabdullah/.rvm/gems/ruby-2.4.1/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+Processing by RecordsController#index as HTML
+  Rendering records/index.html.erb within layouts/application
+  [1m[36mRecord Load (0.4ms)[0m  [1m[34mSELECT "records".* FROM "records"[0m
+  ↳ app/views/records/index.html.erb:18
+  Rendered records/index.html.erb within layouts/application (12.0ms)
+Completed 200 OK in 330ms (Views: 317.7ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/records" for 127.0.0.1 at 2019-01-17 17:23:37 +0800
+Processing by RecordsController#index as HTML
+  Rendering records/index.html.erb within layouts/application
+  [1m[36mRecord Load (0.3ms)[0m  [1m[34mSELECT "records".* FROM "records"[0m
+  ↳ app/views/records/index.html.erb:18
+  Rendered records/index.html.erb within layouts/application (7.8ms)
+Completed 200 OK in 130ms (Views: 127.0ms | ActiveRecord: 0.3ms)
+
+
