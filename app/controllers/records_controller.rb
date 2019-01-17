@@ -10,8 +10,13 @@ class RecordsController < ApplicationController
   # GET /records
   # GET /records.json
   def index
-    @records = Record.all.with_attached_file
+    @records = Record.all
     # @files = Record.all
+    
+    # render json: @records.map { |record|
+    #     record.as_json.merge({ file: url_for(record.file) })
+    # }
+
   end
 
   # GET /records/1
@@ -70,35 +75,61 @@ class RecordsController < ApplicationController
   end
 
   def batch_download
-    ids = params["record"].to_unsafe_h.map(&:first)
+    if params["record"].present?
+      ids = params["record"].to_unsafe_h.map(&:first)
 
-    if ids.present?
-      folder_path = "#{Rails.root}/public/downloads/"
-      zipfile_name = "#{Rails.root}/public/archive.zip"
-
-      FileUtils.remove_dir(folder_path) if Dir.exist?(folder_path)
-      FileUtils.remove_entry(zipfile_name) if File.exist?(zipfile_name)
-      Dir.mkdir("#{Rails.root}/public/downloads")
-
-      Record.where(id: ids).each do |attachment|
-        open(folder_path + "#{attachment.file.filename}", 'wb') do |file|
-          # file << open("#{rails_blob_path(attachment.file)}").read
-          # file << "#{rails_blob_path(attachment.file)}"
-          file << "#{url_for(attachment.file)}"
+      if ids.present?
+        folder = []
+        input_filenames = []
+        Record.where(id: ids).each do |attachment| 
+          input_filenames.push("#{attachment.file.filename}")
+          pre_path = "/rails/active_storage/blobs/"
+          path_find = "#{rails_blob_path(attachment.file)}"
+          folder.push(pre_path + path_find.split('/')[4])
         end
-      end
+        container = Hash[folder.zip(input_filenames)]
 
-      input_filenames = Dir.entries(folder_path).select {|f| !File.directory? f}
+        zipfile_name = "/Users/fahimabdullah/Documents/archive.zip"
 
-      Zip::File.open(zipfile_name, Zip::File::CREATE) do |zipfile|
-        input_filenames.each do |attachment|
-          zipfile.add(attachment,File.join(folder_path,attachment))
+        Zip::File.open(zipfile_name, Zip::File::CREATE) do |zipfile|
+          # input_filenames.each do |filename|
+          container.map do |path, filename|
+          zipfile.add(filename, File.join(path, filename))
+          end
+          zipfile.get_output_stream("myFile") { |f| f.write "myFile contains just this" }
         end
-      end
+        # =====
+    #     folder_path = "#{Rails.root}/public/downloads/"
+    #     zipfile_name = "#{Rails.root}/public/archive.zip"
 
-      send_file(File.join("#{Rails.root}/public/", 'archive.zip'), :type => 'application/zip', :filename => "#{Time.now.to_date}.zip")
+    #     FileUtils.remove_dir(folder_path) if Dir.exist?(folder_path)
+    #     FileUtils.remove_entry(zipfile_name) if File.exist?(zipfile_name)
+    #     Dir.mkdir("#{Rails.root}/public/downloads")
+
+    #     Record.where(id: ids).each do |attachment|
+    #       open(folder_path + "#{attachment.file.filename}", 'wb') do |file|
+    #         # file << "#{(attachment.file)}"
+    #         file << open("#{attachment.doc.url}").read
+    #         # file << open("#{rails_blob_path(attachment.file)}").read
+    #       end
+    #     end
+
+    #     input_filenames = Dir.entries(folder_path).select {|f| !File.directory? f}
+
+    #     Zip::File.open(zipfile_name, Zip::File::CREATE) do |zipfile|
+    #       input_filenames.each do |attachment|
+    #         zipfile.add(attachment,File.join(folder_path,attachment))
+    #       end
+    #     end
+
+    #     send_file(File.join("#{Rails.root}/public/", 'archive.zip'), :type => 'application/zip', :filename => "#{Time.now.to_date}.zip")
+    #   end
+    # else
+    #   redirect_back fallback_location: root_path
     end
   end
+end
+
 private
     # Use callbacks to share common setup or constraints between actions.
     def set_record
@@ -116,6 +147,6 @@ private
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def record_params
-      params.require(:record).permit(:awbnum, :file)
+      params.require(:record).permit(:awbnum, :doc)
     end
 end

@@ -5,10 +5,10 @@
   <%= @record.awbnum %>
 </p>
 
-<%= image_tag(@record.file, style: "width: 400px")  %>
+<%= image_tag @record.doc.url, style: "width: 400px" %>
 <br><br>
-<%= link_to 'View', @record.file, target: '_blank' %> |
-<%= link_to 'Download', @record.file, download: '' %> |
+<%= link_to 'View', @record.doc.url, target: '_blank' %> |
+<%= link_to 'Download', @record.doc.url, download: '' %> |
 
 <%= link_to 'Edit', edit_record_path(@record) %> |
 <%= link_to 'Back', records_path %>
