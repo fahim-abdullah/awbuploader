@@ -79,25 +79,25 @@ class RecordsController < ApplicationController
       ids = params["record"].to_unsafe_h.map(&:first)
 
       if ids.present?
-        folder = []
-        input_filenames = []
-        Record.where(id: ids).each do |attachment| 
-          input_filenames.push("#{attachment.file.filename}")
-          pre_path = "/rails/active_storage/blobs/"
-          path_find = "#{rails_blob_path(attachment.file)}"
-          folder.push(pre_path + path_find.split('/')[4])
-        end
-        container = Hash[folder.zip(input_filenames)]
+        # folder = []
+        # input_filenames = []
+        # Record.where(id: ids).each do |attachment| 
+        #   input_filenames.push("#{attachment.file.filename}")
+        #   pre_path = "/rails/active_storage/blobs/"
+        #   path_find = "#{rails_blob_path(attachment.file)}"
+        #   folder.push(pre_path + path_find.split('/')[4])
+        # end
+        # container = Hash[folder.zip(input_filenames)]
 
-        zipfile_name = "/Users/fahimabdullah/Documents/archive.zip"
+        # zipfile_name = "/Users/fahimabdullah/Documents/archive.zip"
 
-        Zip::File.open(zipfile_name, Zip::File::CREATE) do |zipfile|
-          # input_filenames.each do |filename|
-          container.map do |path, filename|
-          zipfile.add(filename, File.join(path, filename))
-          end
-          zipfile.get_output_stream("myFile") { |f| f.write "myFile contains just this" }
-        end
+        # Zip::File.open(zipfile_name, Zip::File::CREATE) do |zipfile|
+        #   # input_filenames.each do |filename|
+        #   container.map do |path, filename|
+        #   zipfile.add(filename, File.join(path, filename))
+        #   end
+        #   zipfile.get_output_stream("myFile") { |f| f.write "myFile contains just this" }
+        # end
         # =====
     #     folder_path = "#{Rails.root}/public/downloads/"
     #     zipfile_name = "#{Rails.root}/public/archive.zip"
@@ -147,6 +147,6 @@ private
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def record_params
-      params.require(:record).permit(:awbnum, :doc)
+      params.require(:record).permit(:prefix, :awbnum, :doc)
     end
 end

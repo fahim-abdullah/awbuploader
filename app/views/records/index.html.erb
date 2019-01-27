@@ -1,6 +1,6 @@
 <%= form_tag records_batch_download_path do %>
   <div class="container">
-    <h1 class="red-heading" align="center">Record Table</h1>
+    <h1 class="red-heading" style="padding: 0; margin: 30px 0 15px 0;">RECORD TABLE</h1>
     <div class="row">
       <div class="col-12">
         <p id="notice"><%= notice %></p>
@@ -18,12 +18,12 @@
             <% @records.each do |record| %>
               <tr>
                 <td><%= check_box_tag "record[#{record.id}]" %></td>
-                <td><%= record.awbnum %></td>
+                <td><%= record.prefix + '-' + record.awbnum %></td>
                 <td><%= record.created_at.strftime("%d %b %Y - %H:%M") %>
                 <td><%= link_to 'Show', record, class: 'btn btn-outline-primary btn-sm' %> 
                     <%= link_to 'Download', record.doc.url, download: '', class: 'btn btn-outline-success btn-sm' %> 
                     <%= link_to 'Edit', edit_record_path(record), class: 'btn btn-outline-warning btn-sm' %> 
-                    <%= link_to 'Delete', record, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-outline-danger btn-sm' %>
+                    <%= link_to 'Delete', record, method: :delete, class: 'btn btn-outline-danger btn-sm' %>
                 </td>
               </tr>
             <% end %>

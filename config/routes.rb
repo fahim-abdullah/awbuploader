@@ -8,5 +8,5 @@ Rails.application.routes.draw do
   namespace :records do
   	post :batch_download
   end
-
+  
 end
