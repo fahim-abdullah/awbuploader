@@ -17,6 +17,8 @@ allFiles = os.listdir()
 awbNums = [i.split('.') if (i != '.DS_Store') else '' for i in allFiles]
 awbNums.remove(['adr','py'])
 awbNums.remove(['ghostdriver','log'])
+awbNums.remove(['rcs','py'])
+awbNums.remove(['logfile','txt'])
 print(awbNums)
 
 prefix = browser.find_element_by_xpath("//input[@id='ctl00_ContentPlaceHolder1_txtAWBPrefix']")
@@ -25,6 +27,8 @@ showBtn = browser.find_element_by_xpath("//input[@id='ctl00_ContentPlaceHolder1_
 
 for i in awbNums:
     if len(i) > 1 :
+        file = open("logfile.txt","a")
+        file.write("Iniated process : " + i[0] + "\n")
         imagePath = os.getcwd() + ('/' + i[0] + '.' + i[1])
 
         prefix.clear()
@@ -37,9 +41,12 @@ for i in awbNums:
         fileBtn.send_keys(imagePath)
         browser.find_element_by_xpath("//tbody//tr[7]//td[6]//input[1]").click()
 
-        # os.remove(i[0] + '.' + i[1])
-        shutil.copy(i[0] + '.' + i[1], 'bruh/' + i[0] + '.' + i[1])
-        print(i[0] + " Uploaded")
+        # Remove file
+        os.remove(i[0] + '.' + i[1])
+
+        # shutil.copy(i[0] + '.' + i[1], 'bruh/' + i[0] + '.' + i[1])
+        file.write(i[0] + " Uploaded \n\n")
+        file.close()
     else:
         pass
 
