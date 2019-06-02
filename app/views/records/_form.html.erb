@@ -2,7 +2,6 @@
   <% if record.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(record.errors.count, "error") %> prohibited this record from being saved:</h2>
-
       <ul>
       <% record.errors.full_messages.each do |message| %>
         <li><%= message %></li>
@@ -15,5 +14,4 @@
     <%= form.file_field :doc, :required => true, class: 'uploadBtn', :accept => "image/*" %>
     <br>
     <%= form.submit 'Submit', :class => 'submit' %>
-
 <% end %>
