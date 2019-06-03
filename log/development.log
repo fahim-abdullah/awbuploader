@@ -23263,3 +23263,162 @@ Processing by RecordsController#index as HTML
 Completed 200 OK in 117ms (Views: 110.2ms | ActiveRecord: 1.0ms)
 
 
+Started GET "/" for 127.0.0.1 at 2019-06-02 22:42:23 +0600
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/fahimabdullah/.rvm/gems/ruby-2.4.1/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+Processing by RecordsController#index as HTML
+  Rendering records/index.html.erb within layouts/application
+  [1m[36mRecord Load (0.5ms)[0m  [1m[34mSELECT "records".* FROM "records"[0m
+  ↳ app/views/records/index.html.erb:18
+  Rendered records/index.html.erb within layouts/application (21.8ms)
+Completed 200 OK in 581ms (Views: 564.8ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-06-02 22:42:39 +0600
+Processing by RecordsController#index as HTML
+  Rendering records/index.html.erb within layouts/application
+  [1m[36mRecord Load (0.8ms)[0m  [1m[34mSELECT "records".* FROM "records"[0m
+  ↳ app/views/records/index.html.erb:18
+  Rendered records/index.html.erb within layouts/application (11.7ms)
+Completed 200 OK in 89ms (Views: 74.5ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-06-02 22:42:41 +0600
+Processing by RecordsController#index as HTML
+  Rendering records/index.html.erb within layouts/application
+  [1m[36mRecord Load (0.6ms)[0m  [1m[34mSELECT "records".* FROM "records"[0m
+  ↳ app/views/records/index.html.erb:18
+  Rendered records/index.html.erb within layouts/application (7.2ms)
+Completed 200 OK in 123ms (Views: 118.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-06-02 22:42:42 +0600
+Processing by RecordsController#index as HTML
+  Rendering records/index.html.erb within layouts/application
+  [1m[36mRecord Load (0.2ms)[0m  [1m[34mSELECT "records".* FROM "records"[0m
+  ↳ app/views/records/index.html.erb:18
+  Rendered records/index.html.erb within layouts/application (8.2ms)
+Completed 200 OK in 97ms (Views: 87.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-06-02 22:42:43 +0600
+Processing by RecordsController#index as HTML
+  Rendering records/index.html.erb within layouts/application
+  [1m[36mRecord Load (0.3ms)[0m  [1m[34mSELECT "records".* FROM "records"[0m
+  ↳ app/views/records/index.html.erb:18
+  Rendered records/index.html.erb within layouts/application (5.1ms)
+Completed 200 OK in 101ms (Views: 96.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-06-02 22:42:44 +0600
+Processing by RecordsController#index as HTML
+  Rendering records/index.html.erb within layouts/application
+  [1m[36mRecord Load (0.3ms)[0m  [1m[34mSELECT "records".* FROM "records"[0m
+  ↳ app/views/records/index.html.erb:18
+  Rendered records/index.html.erb within layouts/application (8.8ms)
+Completed 200 OK in 114ms (Views: 106.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-06-02 22:42:45 +0600
+Processing by RecordsController#index as HTML
+  Rendering records/index.html.erb within layouts/application
+  [1m[36mRecord Load (0.3ms)[0m  [1m[34mSELECT "records".* FROM "records"[0m
+  ↳ app/views/records/index.html.erb:18
+  Rendered records/index.html.erb within layouts/application (4.6ms)
+Completed 200 OK in 115ms (Views: 108.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/records/new" for 127.0.0.1 at 2019-06-02 22:42:47 +0600
+Processing by RecordsController#new as HTML
+  Rendering records/new.html.erb within layouts/application
+  Rendered records/_form.html.erb (7.9ms)
+  Rendered records/new.html.erb within layouts/application (15.8ms)
+Completed 200 OK in 95ms (Views: 88.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/records/new" for 127.0.0.1 at 2019-06-02 22:42:49 +0600
+Processing by RecordsController#new as HTML
+  Rendering records/new.html.erb within layouts/application
+  Rendered records/_form.html.erb (2.1ms)
+  Rendered records/new.html.erb within layouts/application (6.0ms)
+Completed 200 OK in 86ms (Views: 79.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/records" for 127.0.0.1 at 2019-06-02 22:43:09 +0600
+Processing by RecordsController#index as HTML
+  Rendering records/index.html.erb within layouts/application
+  [1m[36mRecord Load (0.5ms)[0m  [1m[34mSELECT "records".* FROM "records"[0m
+  ↳ app/views/records/index.html.erb:18
+  Rendered records/index.html.erb within layouts/application (10.2ms)
+Completed 200 OK in 89ms (Views: 81.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/records/49" for 127.0.0.1 at 2019-06-02 22:43:11 +0600
+Processing by RecordsController#show as HTML
+  Parameters: {"id"=>"49"}
+  [1m[36mRecord Load (0.5ms)[0m  [1m[34mSELECT  "records".* FROM "records" WHERE "records"."id" = ? LIMIT ?[0m  [["id", 49], ["LIMIT", 1]]
+  ↳ app/controllers/records_controller.rb:136
+  Rendering records/show.html.erb within layouts/application
+  Rendered records/show.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 112ms (Views: 74.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/records" for 127.0.0.1 at 2019-06-02 22:43:13 +0600
+Processing by RecordsController#index as HTML
+  Rendering records/index.html.erb within layouts/application
+  [1m[36mRecord Load (0.4ms)[0m  [1m[34mSELECT "records".* FROM "records"[0m
+  ↳ app/views/records/index.html.erb:18
+  Rendered records/index.html.erb within layouts/application (8.6ms)
+Completed 200 OK in 100ms (Views: 94.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/records/48" for 127.0.0.1 at 2019-06-02 22:43:14 +0600
+Processing by RecordsController#show as HTML
+  Parameters: {"id"=>"48"}
+  [1m[36mRecord Load (0.3ms)[0m  [1m[34mSELECT  "records".* FROM "records" WHERE "records"."id" = ? LIMIT ?[0m  [["id", 48], ["LIMIT", 1]]
+  ↳ app/controllers/records_controller.rb:136
+  Rendering records/show.html.erb within layouts/application
+  Rendered records/show.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 98ms (Views: 87.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/records" for 127.0.0.1 at 2019-06-02 22:43:16 +0600
+Processing by RecordsController#index as HTML
+  Rendering records/index.html.erb within layouts/application
+  [1m[36mRecord Load (0.5ms)[0m  [1m[34mSELECT "records".* FROM "records"[0m
+  ↳ app/views/records/index.html.erb:18
+  Rendered records/index.html.erb within layouts/application (10.5ms)
+Completed 200 OK in 86ms (Views: 78.4ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/records/batch_download" for 127.0.0.1 at 2019-06-02 22:43:18 +0600
+Processing by RecordsController#batch_download as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"or7viINlPhjvCHjSi/SShbgh5WK0u1VxwyJl01+ZwjirZvwLJpWJEcZDCN2/Il6TBe4uzjeQxnW47EkhKRZprQ==", "commit"=>"Download"}
+No template found for RecordsController#batch_download, rendering head :no_content
+Completed 204 No Content in 155ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/records" for 127.0.0.1 at 2019-06-02 22:43:28 +0600
+Processing by RecordsController#index as HTML
+  Rendering records/index.html.erb within layouts/application
+  [1m[36mRecord Load (0.8ms)[0m  [1m[34mSELECT "records".* FROM "records"[0m
+  ↳ app/views/records/index.html.erb:18
+  Rendered records/index.html.erb within layouts/application (7.9ms)
+Completed 200 OK in 116ms (Views: 106.7ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/records/batch_download" for 127.0.0.1 at 2019-06-02 22:43:31 +0600
+Processing by RecordsController#batch_download as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"gBh5mZOoQ93sUlLv6LcWxAcy+aCTpzRjILEW4gYXhlGSOelGrmXQfKORX3AZ5aMJh8flA5F5upg+iMSucR0Omg==", "awbtable_length"=>"10", "record"=>{"48"=>"1", "49"=>"1"}, "commit"=>"Download"}
+No template found for RecordsController#batch_download, rendering head :no_content
+Completed 204 No Content in 258ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/records/new" for 127.0.0.1 at 2019-06-02 22:44:23 +0600
+Processing by RecordsController#new as HTML
+  Rendering records/new.html.erb within layouts/application
+  Rendered records/_form.html.erb (6.0ms)
+  Rendered records/new.html.erb within layouts/application (10.7ms)
+Completed 200 OK in 88ms (Views: 82.8ms | ActiveRecord: 0.0ms)
+
+
