@@ -4,11 +4,11 @@ from selenium.webdriver.chrome.options import Options
 import os, shutil, time
 
 url = "https://airasia.smartkargo.com/loginframe.aspx"
-browser = webdriver.PhantomJS()
+browser = webdriver.Chrome()
 browser.get(url)
 
 browser.find_element_by_name("txtUserName").send_keys('1024349')
-browser.find_element_by_name("txtPwd").send_keys('bruhWhat#9')
+browser.find_element_by_name("txtPwd").send_keys('AirAsia#9')
 browser.find_element_by_id("btnLogin").click()
 
 browser.get("https://airasia.smartkargo.com/ePouchNew.aspx")
@@ -19,6 +19,9 @@ awbNums.remove(['adr','py'])
 awbNums.remove(['ghostdriver','log'])
 awbNums.remove(['rcs','py'])
 awbNums.remove(['logfile','txt'])
+awbNums.remove(['geckodriver','log'])
+awbNums.remove(['bruh'])
+
 print(awbNums)
 
 prefix = browser.find_element_by_xpath("//input[@id='ctl00_ContentPlaceHolder1_txtAWBPrefix']")
@@ -27,6 +30,7 @@ showBtn = browser.find_element_by_xpath("//input[@id='ctl00_ContentPlaceHolder1_
 
 for i in awbNums:
     if len(i) > 1 :
+        # Start writing log
         file = open("logfile.txt","a")
         file.write("Iniated process : " + i[0] + "\n")
         imagePath = os.getcwd() + ('/' + i[0] + '.' + i[1])
@@ -42,11 +46,12 @@ for i in awbNums:
         browser.find_element_by_xpath("//tbody//tr[7]//td[6]//input[1]").click()
 
         # Remove file
+        shutil.copy(i[0] + '.' + i[1], 'bruh/' + i[0] + '.' + i[1])
         os.remove(i[0] + '.' + i[1])
 
-        # shutil.copy(i[0] + '.' + i[1], 'bruh/' + i[0] + '.' + i[1])
         file.write(i[0] + " Uploaded \n\n")
         file.close()
+
     else:
         pass
 
