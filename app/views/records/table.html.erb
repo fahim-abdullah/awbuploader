@@ -7,7 +7,7 @@
         <table id="awbtable" class="table table-hover">
           <thead class="thead-light">
             <tr>
-              <th id="no-sort"></th>
+              
               <th>Airway Bill</th>
               <th>Date Created</th>
               <th class="no-sort">Actions</th>
@@ -17,11 +17,11 @@
           <tbody>
             <% @records.each do |record| %>
               <tr>
-                <td><%= check_box_tag "record[#{record.id}]" %></td>
+                
                 <td><%= record.prefix + '-' + record.awbnum %></td>
                 <td><%= record.created_at.strftime("%d %b %Y - %H:%M") %>
                 <td><%= link_to 'Show', record, class: 'btn btn-outline-primary btn-sm' %> 
-                    <%= link_to 'Download', record.doc.url, download: '', class: 'btn btn-outline-success btn-sm' %> 
+                    <%#= link_to 'Download', record.doc.url, download: '', class: 'btn btn-outline-success btn-sm' %> 
                     <%= link_to 'Edit', edit_record_path(record), class: 'btn btn-outline-warning btn-sm' %> 
                     <%= link_to 'Delete', record, method: :delete, class: 'btn btn-outline-danger btn-sm' %>
                 </td>
@@ -29,12 +29,9 @@
             <% end %>
           </tbody>
         </table>
-        <br>
-        <%= link_to 'New Record', new_record_path, class: 'awb-button btn1' %>
-        <%= submit_tag "Download", class: 'awb-button btn2' %>
+        <%= link_to 'New Record', new_record_path, class: 'btn btn-success' %>
+        <%#= submit_tag "Download", class: 'awb-button btn2' %>
       </div>
     </div>
   </div>
 <% end %>
-
-<br><br>

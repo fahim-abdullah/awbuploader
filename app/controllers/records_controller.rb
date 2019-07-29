@@ -9,7 +9,7 @@ class RecordsController < ApplicationController
 
   # GET /records
   # GET /records.json
-  def index
+  def table
     @records = Record.all
     # @files = Record.all
     
@@ -69,7 +69,7 @@ class RecordsController < ApplicationController
   def destroy
     @record.destroy
     respond_to do |format|
-      format.html { redirect_to records_url, notice: 'Record was successfully deleted.' }
+      format.html { redirect_to table_path, notice: 'Record was successfully deleted.' }
       format.json { head :no_content }
     end
   end

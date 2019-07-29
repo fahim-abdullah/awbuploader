@@ -9,9 +9,16 @@
       </ul>
     </div>
   <% end %>
-    <%= form.text_field :prefix, :required => true, class: 'awbField col-2', placeholder: 'Prefix', maxlength: 3, minlength: 3 %>
-    <%= form.text_field :awbnum, :required => true, class: 'awbField col-8', placeholder: 'AWB Number', maxlength: 8, minlength: 8 %>
-    <%= form.file_field :doc, :required => true, class: 'uploadBtn', :accept => "image/*" %>
-    <br>
-    <%= form.submit 'Submit', :class => 'submit' %>
+  <div class="row">
+    <%= form.number_field :prefix, :required => true, id: "first", class: 'form-control col-2', placeholder: 'Prefix', pattern: "/^-?\d+\.?\d*$/", :onKeyPress => "if(this.value.length==3) return false;", :style => "padding: 10px; margin-right: 10px;" %>
+    <%= form.number_field :awbnum, :required => true, id: "second", class: 'form-control col-9', placeholder: 'AWB Number', pattern: "/^-?\d+\.?\d*$/", :onKeyPress => "if(this.value.length==8) return false;", :style => "padding: 10px; margin-right: 10px;" %>
+  </div>
+
+  <div class="row">
+    <%= form.file_field :doc, :required => true, class: 'uploadBtn col-12', :accept => "image/*", :style => "padding: 10px 0" %>
+  </div>
+  <div class="row">
+
+    <%= form.submit 'Submit', id: "submit", :class => 'submit' %>
+  </div>
 <% end %>

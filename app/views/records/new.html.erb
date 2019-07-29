@@ -1,16 +1,13 @@
 <div class="container">
 	<div class="row">
 		<div class="col-12">
-			<h1 class="red-heading">Welcome to RedCargo AWB Uploading Area</h1>
-			<p class="text col-7">Snap a picture of your AWB document and key in your AWB Number to submit. Simple! For more details <span style="text-decoration: underline; cursor: pointer;">click here</span>.</p>
+			<br><br>
+			<h1 class="red-heading">RedCargo AWB Uploader</h1>
+			<p>Key in AWB Number, Snap a picture and Submit!</p>
 		</div>
 	</div>
 
-	<div class="row">
-		<div class="col-md-6 col-12" style="padding : 30px 0 0 43px">
-			<%= render 'form', record: @record %>
-			<%= link_to 'Back', records_path, class: 'btn btn-outline-primary btn-sm', style: 'margin: 0 2px' %>
-		</div>
+	<div class="col-md-6 col-12">
+		<%= render 'form', record: @record %>
 	</div>
-
 </div>
