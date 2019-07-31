@@ -25,6 +25,8 @@ print(flights)
 for i in flights:
     if len(i) > 1:
 
-        browser.get("//input[@id='ctl00_ContentPlaceHolder1_txtFlightCode']").clear()
-        browser.get("//input[@id='ctl00_ContentPlaceHolder1_txtFlightCode']").send_keys(i[0].split('-')[0])
-        browser.get("//input[@id='ctl00_ContentPlaceHolder1_txtFlightID']").send_keys(i[0].split('-')[1])
+        # browser.get("//input[@id='ctl00_ContentPlaceHolder1_txtFlightCode']").clear()
+        # browser.get("//input[@id='ctl00_ContentPlaceHolder1_txtFlightCode']").send_keys(i[0].split('-')[0])
+        # browser.get("//input[@id='ctl00_ContentPlaceHolder1_txtFlightID']").send_keys(i[0].split('-')[1])
+
+        

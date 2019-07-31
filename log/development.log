@@ -27792,3 +27792,36 @@ Processing by TripFilesController#new as HTML
 Completed 200 OK in 1149ms (Views: 1000.5ms | ActiveRecord: 0.0ms)
 
 
+Started POST "/trip_files" for 127.0.0.1 at 2019-07-31 12:07:08 +0800
+Processing by TripFilesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"R30gbHO04MbrpbUXWVgap2ReRGj0LWf1XFmsv7K2A/vvjxEA6rT37PWBsbJU99iDTRckg2ODfK2Mk/IGayso4g==", "trip_file"=>{"flight"=>"AK ", "flight_number"=>"700", "date"=>"27-02-2019", "doc"=>#<ActionDispatch::Http::UploadedFile:0x007f9d7d08fb70 @tempfile=#<Tempfile:/var/folders/tj/9ddypmz11k3csy6c8gc_vw600000gq/T/RackMultipart20190731-68928-clgezr.png>, @original_filename="  .png", @content_type="image/png", @headers="Content-Disposition: form-data; name=\"trip_file[doc]\"; filename=\"  .png\"\r\nContent-Type: image/png\r\n">}, "commit"=>"Submit"}
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/trip_files_controller.rb:30
+  [1m[36mTripFile Create (2.0ms)[0m  [1m[32mINSERT INTO "trip_files" ("flight", "flight_number", "doc", "created_at", "updated_at", "date") VALUES (?, ?, ?, ?, ?, ?)[0m  [["flight", "AK "], ["flight_number", "700"], ["doc", "AK -700_27-02-2019.png"], ["created_at", "2019-07-31 04:07:09.091978"], ["updated_at", "2019-07-31 04:07:09.091978"], ["date", "27-02-2019"]]
+  ↳ app/controllers/trip_files_controller.rb:30
+  [1m[35m (4.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/trip_files_controller.rb:30
+Redirected to http://localhost:3000/trip_files/8
+Completed 302 Found in 280ms (ActiveRecord: 6.9ms)
+
+
+Started GET "/trip_files/8" for 127.0.0.1 at 2019-07-31 12:07:09 +0800
+Processing by TripFilesController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mTripFile Load (2.0ms)[0m  [1m[34mSELECT  "trip_files".* FROM "trip_files" WHERE "trip_files"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/trip_files_controller.rb:67
+  Rendering trip_files/show.html.erb within layouts/application
+  Rendered trip_files/show.html.erb within layouts/application (16.8ms)
+  Rendered layouts/_navbar.html.erb (8.3ms)
+Completed 200 OK in 667ms (Views: 518.9ms | ActiveRecord: 3.6ms)
+
+
+Started GET "/trip_files/new" for 127.0.0.1 at 2019-07-31 12:07:14 +0800
+Processing by TripFilesController#new as HTML
+  Rendering trip_files/new.html.erb within layouts/application
+  Rendered trip_files/_form.html.erb (3.5ms)
+  Rendered trip_files/new.html.erb within layouts/application (7.6ms)
+  Rendered layouts/_navbar.html.erb (6.7ms)
+Completed 200 OK in 530ms (Views: 523.2ms | ActiveRecord: 0.0ms)
+
+
