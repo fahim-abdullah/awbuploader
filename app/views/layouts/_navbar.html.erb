@@ -1,0 +1,26 @@
+<nav class="navbar navbar-expand-md static-top">
+  <div class="container">
+      <a class="navbar-brand" href="https://redcargo.asia">
+          <img src="https://www.redcargo.asia/wp-content/uploads/2018/07/cargo-asia-logo.png" width="20%" alt="" style="background-color: white;">
+      </a>
+
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive">
+          <%= image_tag("ham.png", :alt => "menu", :style => "width: 25px") %>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+              <li class="nav-item">
+                  <%= link_to 'AWB Uploader', new_record_path, class: 'nav-link' %>
+              </li>
+
+              <li class="nav-item">
+                <%= link_to 'Export Manifest Uploader', new_trip_file_path, class: 'nav-link' %>
+              </li>
+              <!-- <li class="nav-item">
+                  <a class="nav-link" href="#">Admin Login</a>
+              </li> -->
+          </ul>
+      </div>
+  </div>
+</nav>

@@ -1,14 +1,21 @@
-<p id="notice"><%= notice %></p>
+<div class="container my-4">
 
-<p>
-  <strong>Awbnum:</strong>
-  <%= @record.awbnum %>
-</p>
+	<% if notice %>
+	<div class="alert alert-success alert-dismissible fade show">
+		<button type="button" class="close" data-dismiss="alert">&times;</button>
+		<p id="notice"><%= notice %></p>
+	</div>
+	<% end %>
 
-<%= image_tag @record.doc.url, style: "width: 400px" %>
-<br><br>
-<%= link_to 'View', @record.doc.url, target: '_blank' %> |
-<%= link_to 'Download', @record.doc.url, download: '' %> |
-
-<%= link_to 'Edit', edit_record_path(@record) %> |
-<%= link_to 'Back', records_path %>
+	<div class="jumbotron bg-light py-4">
+		<div class="row">
+			<figure class="figure">
+				<%#= image_tag @record.doc.url, class: "figure-img img-fluid rounded", width: "80%" %>
+				<figcaption class="figure-caption" style="font-size: 18px;">AWB Number : <%= @record.awbnum %></figcaption>
+			</figure>
+		</div>
+		<div class="row">
+			<%= link_to 'Create New', new_record_path, class: 'awb-button btn btn-success' %>
+		</div>
+	</div>
+</div>
