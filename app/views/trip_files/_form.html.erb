@@ -1,0 +1,32 @@
+<%= form_with(model: trip_file, local: true) do |form| %>
+  <% if trip_file.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(trip_file.errors.count, "error") %> prohibited this trip_file from being saved:</h2>
+      <ul>
+      <% trip_file.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="row mb-1">
+    <%= form.text_field :flight, :required => true, class: 'mr-1 form-control col-md-4 col-3', placeholder: 'Flight', :style => "padding: 10px; margin-right: 10px;" %>
+    <%= form.text_field :flight_number, :required => true, class: 'form-control col-md col', placeholder: 'Number' %>
+  </div>
+  <div class="row mb-1">
+    <%= form.text_field :date, :required => true, class: 'form-control col-md mx-0', placeholder: 'DD-MM-YYYY', :style => "padding: 10px; margin-right: 10px;" %>
+  </div>
+  <div class="row">
+    <hr class="col">  
+  </div>
+
+  <div class="row mb-2">
+    <%= form.file_field :doc, :required => true, class: 'mb-2 px-0 uploadBtn col-12', :accept => "image/*" %>
+  </div>
+
+  <div class="row">
+    <%= form.submit 'Submit', id: "submit", :class => 'submit' %>
+  </div>
+
+<% end %>
